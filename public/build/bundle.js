@@ -1110,7 +1110,7 @@ var app = (function () {
 
     function lowercase$1(x) {
     	x = x.toLowerCase();
-    	x = x.replacAall(" ", "-");
+    	x = x.replaceAll(" ", "-");
     	return x;
     }
 
