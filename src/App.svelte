@@ -3,8 +3,8 @@
     import Recipe         from "./components/recipe.svelte";
     import FeaturedRecipe from "./components/featured_recipe.svelte";
 
-    window.$("#search-bar").on("submit", () => {
-        let input = window.$("#search-bar-submit").value;
+    document.getElementById("search-bar").onsubmit(() => {
+        let input = document.getElementById("search-bar-submit").value;
 
         console.log(input);
     })
