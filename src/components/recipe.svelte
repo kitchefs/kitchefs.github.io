@@ -7,7 +7,7 @@
 
     function lowercase(x) {
         x = x.toLowerCase();
-        x = x.replaceall(" ", "-")
+        x = x.replaceAll(" ", "-");
         return x;
     }
 </script>

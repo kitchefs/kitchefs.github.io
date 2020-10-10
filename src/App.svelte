@@ -2,12 +2,6 @@
     import Navbar         from "./components/navbar.svelte";
     import Recipe         from "./components/recipe.svelte";
     import FeaturedRecipe from "./components/featured_recipe.svelte";
-
-    document.getElementById("search-bar").onsubmit(() => {
-        let input = document.getElementById("search-bar-submit").value;
-
-        console.log(input);
-    })
 </script>
 
 <style>
