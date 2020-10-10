@@ -5,6 +5,8 @@
 
     window.$("#search-bar").on("submit", () => {
         let input = window.$("#search-bar-submit").value;
+
+        console.log(input);
     })
 </script>
 
