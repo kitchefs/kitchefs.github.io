@@ -1,6 +1,11 @@
 <script>
-    import Navbar from "./components/navbar.svelte";
-    import Recipe from "./components/recipe.svelte";
+    import Navbar         from "./components/navbar.svelte";
+    import Recipe         from "./components/recipe.svelte";
+    import FeaturedRecipe from "./components/featured_recipe.svelte";
+
+    window.$("#search-bar").on("submit", () => {
+        let input = window.$("#search-bar-submit").value;
+    })
 </script>
 
 <style>
@@ -10,6 +15,11 @@
 </style>
 
 <svelte:head>
+    <title>Kitchefs</title>
+    <!-- Google Fonts CSS -->
+    <link 
+        href="https://fonts.googleapis.com/css?family=Playfair+Display:600,900" 
+        rel="stylesheet">
     <!-- Bootstrap CSS -->
     <link 
         rel="stylesheet" 
@@ -44,20 +54,23 @@
 <div class="container">
     <div class="row">
         <div class="row mb-2">
-            <Recipe
+            <FeaturedRecipe
                 name={'Hot Cross Buns'}
+                category={'Festive'}
                 image_src={'https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/Hot_cross_buns_-_fig_and_pecan.jpg/1200px-Hot_cross_buns_-_fig_and_pecan.jpg'}
                 description={'A perfect Easter snack for the whole family.'}
                 href={'#'} />
             
-            <Recipe
+            <FeaturedRecipe
                 name={'Blueberry Muffins'}
+                category={'Sweet'}
                 image_src={'https://i2.wp.com/smittenkitchen.com/wp-content/uploads//2010/08/perfect-blueberry-muffins.jpg'}
                 description={'A sweet treat famous for its aroma.'}
                 href={'#'} />
             
             <Recipe
                 name={'Caramel Slice'}
+                category={'Sweet'}
                 image_src={'https://www.sweetestmenu.com/wp-content/uploads/2020/04/caramelslice2a.jpg'}
                 description={'Perfect for any sweet-tooth, this Caramal Slice is bound to turn a few heads!'}
                 href={'#'} />
