@@ -1,7 +1,7 @@
 <script>
     export let name;
     export let category;
-    export let image_src;
+    export let image;
     export let description;
     export let href;
 
@@ -40,7 +40,7 @@
             <p class="mb-auto">{description}</p>
         </div>
         <div class="col-auto d-none d-lg-block">
-            <img src={image_src} width="150px" height="100%" alt={name} />
+            <img src={image} width="150px" height="100%" alt={name} />
         </div>
     </div>
 </div>

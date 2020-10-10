@@ -57,21 +57,21 @@
             <FeaturedRecipe
                 name={'Hot Cross Buns'}
                 category={'Festive'}
-                image_src={'https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/Hot_cross_buns_-_fig_and_pecan.jpg/1200px-Hot_cross_buns_-_fig_and_pecan.jpg'}
+                image={'https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/Hot_cross_buns_-_fig_and_pecan.jpg/1200px-Hot_cross_buns_-_fig_and_pecan.jpg'}
                 description={'A perfect Easter snack for the whole family.'}
                 href={'#'} />
             
             <FeaturedRecipe
                 name={'Blueberry Muffins'}
                 category={'Sweet'}
-                image_src={'https://i2.wp.com/smittenkitchen.com/wp-content/uploads//2010/08/perfect-blueberry-muffins.jpg'}
+                image={'https://i2.wp.com/smittenkitchen.com/wp-content/uploads//2010/08/perfect-blueberry-muffins.jpg'}
                 description={'A sweet treat famous for its aroma.'}
                 href={'#'} />
             
             <Recipe
                 name={'Caramel Slice'}
                 category={'Sweet'}
-                image_src={'https://www.sweetestmenu.com/wp-content/uploads/2020/04/caramelslice2a.jpg'}
+                image={'https://www.sweetestmenu.com/wp-content/uploads/2020/04/caramelslice2a.jpg'}
                 description={'Perfect for any sweet-tooth, this Caramal Slice is bound to turn a few heads!'}
                 href={'#'} />
         </div>
