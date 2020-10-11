@@ -15,7 +15,7 @@
 <style>
     img {
         object-fit: cover;
-    }
+    } 
     h3 {
         font-family: "Playfair Display";
         font-size: 150%;
