@@ -21,7 +21,7 @@
         font-size: 150%;
     }
     .featured-item-card {
-        height: 250px;
+        height: 220px;
     }
     hr {
         border: 0;
