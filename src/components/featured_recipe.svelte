@@ -40,7 +40,7 @@
             <p class="mb-auto">{description}</p>
         </div>
         <div class="col-auto d-none d-lg-block">
-            <img src={image} width="150px" height="100%" alt={name} />
+            <img src={image} width="150px" height="200px" alt={name} />
         </div>
     </div>
 </div>
