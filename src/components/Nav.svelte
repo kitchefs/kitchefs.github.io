@@ -42,9 +42,10 @@
 	}
 
 	a {
-		text-decoration: none;
-		padding: 1em 0.5em;
-		display: block;
+		color: #000000 !important;
+		text-decoration: none !important;
+		padding: 1em 0.5em !important;
+		display: block !important;
 	}
 </style>
 
