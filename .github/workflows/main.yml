@@ -17,5 +17,5 @@ jobs:
       env:
         REPO: self
         BRANCH: gh-pages
-        FOLDER: public
+        FOLDER: __sapper__/export
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
