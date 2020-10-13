@@ -42,20 +42,39 @@
 	}
 
 	a {
-		color: #000000 !important;
+		color: #ffffff !important;
 		text-decoration: none !important;
 		padding: 1em 0.5em !important;
 		display: block !important;
 	}
 </style>
 
-<nav>
-	<ul>
-		<li><a aria-current="{segment === undefined ? 'page' : undefined}" href=".">home</a></li>
-		<li><a aria-current="{segment === 'about' ? 'page' : undefined}" href="about">about</a></li>
+<nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+    <button
+        class="navbar-toggler"
+        type="button"
+        data-toggle="collapse"
+        data-target="#navbarsExampleDefault"
+        aria-controls="navbarsExampleDefault"
+        aria-expanded="false"
+        aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon" />
+    </button>
 
-		<!-- for the blog link, we're using rel=prefetch so that Sapper prefetches
-		     the blog data when we hover over the link or tap it on a touchscreen -->
-		<li><a rel=prefetch aria-current="{segment === 'blog' ? 'page' : undefined}" href="blog">blog</a></li>
-	</ul>
+    <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+        <ul class="navbar-nav mr-auto">
+			<li><a aria-current="{segment === undefined ? 'page' : undefined}" href=".">Home</a></li>
+			<li><a aria-current="{segment === 'about' ? 'page' : undefined}" href="about">About</a></li>
+
+			<li><a rel=prefetch aria-current="{segment === 'blog' ? 'page' : undefined}" href="blog">Blog</a></li>
+		</ul>
+		<form class="form-inline my-2 my-lg-0" id="search-bar">
+			<input
+				class="form-control mr-sm-2"
+				type="text"
+				placeholder="Search"
+				aria-label="Search" />
+			<button class="btn btn-secondary my-2 my-sm-0" type="submit" id="search-bar-submit">Search</button>
+		</form>
+    </div>
 </nav>
