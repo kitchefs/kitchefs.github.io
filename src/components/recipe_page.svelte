@@ -1,44 +1,88 @@
 <script>
     export let name;
-    export let description;
     export let image;
     export let ingredients;
     export let steps;
     export let tips;
+    export let preparation_time;
+    export let cook_time;
+    export let total_time;
 </script>
 
-<div class="container">
-        <div>
-          <img src="{image}" alt="{name}" width="25%" style="float: left; padding-right: 10px;">
-          <div>
-            <h3>{name}</h3>
-            <button class="btn btn-outline-primary">Preparation: 30 minutes</button>
-            <button class="btn btn-outline-primary">Cook Time: 45 minutes</button>
-            <button class="btn btn-outline-primary">Total Time: 6 hours, 15 minutes</button>
+<style>
+    img {
+        object-fit: cover;
+    } 
+    h3 {
+        font-family: "Playfair Display";
+        font-size: 150%;
+    }
+    hr {
+        border: 0;
+        clear: both;
+        display: block;
+        width: 96%;
+        background-color: rgba(0, 0, 0, 0.1);
+        height: 1px;
+    }
+    .badge {
+        border-radius: 0;
+    }
 
-            <div>
-              <p>Tips & Hints:</p>
-                {#each tips as tip}
-                    <ul>{tip}</ul>
-                {/each}
-            </div>
+    .badge:first-child {
+        border-radius: 2em 0 0 2em;
+        margin-left: 20px;
+    }
 
-          </div>
+    .badge:last-child {
+        border-radius: 0 2em 2em 0;
+        margin-right: 20px
+    }
+</style>
+
+
+<div class="container-fluid">
+    <div class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 position-relative">
+        <div class="col-auto d-none d-lg-block">
+            <img src={image} width="150px" height="100%" alt={name} />
         </div>
-
-        <div style="float: left;width: 25%; border-style: solid; border-width: 1px; padding: 5px;">
-          <h5>Ingredients</h5>
-            {#each ingredients as item}
-                <p>{item}</p>
-            {/each}
-      </div>
-
-      <div style="float: right; width: 75%; padding: 5px;">
-        <p>Method</p>
-        <ol>
-            {#each steps as step}
-                <li>{step}</li>
-            {/each}
-        </ol>
-      </div>
+        <div class="col p-4 d-flex flex-column position-static">
+            <h3 class="mb-0">{name}</h3>
+            <hr />
+            <div class="row">
+                <span class="col badge badge-pill badge-success">Preparation Time: {preparation_time}</span>
+                <span class="col badge badge-pill badge-warning">Cook Time: {cook_time}</span>
+                <span class="col badge badge-pill badge-danger">Total Time: {total_time}</span>
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col">
+            <h5>Tips & Hints</h5>
+            <ul>
+                {#each tips as tip}
+                    <li>{tip}</li>
+                {/each}
+            </ul>
+        </div>
+        <div class="col">
+            <h5>Ingredients</h5>
+            <ul>
+                {#each ingredients as item}
+                    <li>{item}</li>
+                {/each}
+            </ul>
+        </div>
+    </div>
+    <hr />
+    <div class="row">
+        <div class="col">
+            <h5>Method</h5>
+            <ol>
+                {#each steps as step}
+                    <li>{step}</li>
+                {/each}
+            </ol>
+        </div>
+    </div>
 </div>

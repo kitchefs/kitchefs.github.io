@@ -20,9 +20,6 @@
         font-family: "Playfair Display";
         font-size: 150%;
     }
-    .featured-item-card {
-        height: 220px;
-    }
     hr {
         border: 0;
         clear: both;

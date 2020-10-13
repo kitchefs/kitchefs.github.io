@@ -20,9 +20,6 @@
         font-family: "Playfair Display";
         font-size: 150%;
     }
-    .item-card {
-        height: 370px;
-    }
 </style>
 
 <div class="col-md-4" item-name="{lowercase(name)}" category-name="{lowercase(category)}">
