@@ -26,17 +26,10 @@
         height: 1px;
     }
     .badge {
-        border-radius: 0;
+        margin: 5px;
     }
-
-    .badge:first-child {
-        border-radius: 2em 0 0 2em;
-        margin-left: 20px;
-    }
-
-    .badge:last-child {
-        border-radius: 0 2em 2em 0;
-        margin-right: 20px
+    .badge-1491a2 {
+        background-color: #1491a2;
     }
 </style>
 
@@ -50,9 +43,9 @@
             <h3 class="mb-0">{name}</h3>
             <hr />
             <div class="row">
-                <span class="col badge badge-pill badge-success">Preparation Time: {preparation_time}</span>
-                <span class="col badge badge-pill badge-warning">Cook Time: {cook_time}</span>
-                <span class="col badge badge-pill badge-danger">Total Time: {total_time}</span>
+                <span class="col badge badge-pill badge-primary">Preparation Time: {preparation_time}</span>
+                <span class="col badge badge-pill badge-primary badge-1491a2">Cook Time: {cook_time}</span>
+                <span class="col badge badge-pill badge-success">Total Time: {total_time}</span>
             </div>
         </div>
     </div>

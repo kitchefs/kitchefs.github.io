@@ -9,23 +9,6 @@
 		padding: 0 1em;
 	}
 
-	ul {
-		margin: 0;
-		padding: 0;
-	}
-
-	/* clearfix */
-	ul::after {
-		content: '';
-		display: block;
-		clear: both;
-	}
-
-	li {
-		display: block;
-		float: left;
-	}
-
 	[aria-current] {
 		position: relative;
 		display: inline-block;
@@ -47,6 +30,12 @@
 		padding: 1em 0.5em !important;
 		display: block !important;
 	}
+
+    @media screen and (max-width: 768px) {
+        nav {
+		    padding: 0.7em;
+	    }
+    }
 </style>
 
 <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
