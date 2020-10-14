@@ -12,8 +12,8 @@
 <style>
     img {
         object-fit: cover;
-    } 
-    h3 {
+    }
+    h3, h5 {
         font-family: "Playfair Display";
         font-size: 150%;
     }
@@ -28,14 +28,11 @@
     .badge {
         margin: 5px;
     }
-    .badge-1491a2 {
-        background-color: #1491a2;
-    }
 </style>
 
-
 <div class="container-fluid">
-    <div class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 position-relative">
+    <div
+        class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 position-relative">
         <div class="col-auto d-none d-lg-block">
             <img src={image} width="150px" height="100%" alt={name} />
         </div>
@@ -43,39 +40,48 @@
             <h3 class="mb-0">{name}</h3>
             <hr />
             <div class="row">
-                <span class="col badge badge-pill badge-primary">Preparation Time: {preparation_time}</span>
-                <span class="col badge badge-pill badge-primary badge-1491a2">Cook Time: {cook_time}</span>
-                <span class="col badge badge-pill badge-success">Total Time: {total_time}</span>
+                <span class="col badge badge-pill badge-secondary">Preparation
+                    Time:
+                    {preparation_time}</span>
+                <span
+                    class="col badge badge-pill badge-secondary">Cook
+                    Time:
+                    {cook_time}</span>
+                <span class="col badge badge-pill badge-primary">Total Time:
+                    {total_time}</span>
             </div>
         </div>
     </div>
-    <div class="row">
-        <div class="col">
-            <h5>Tips & Hints</h5>
-            <ul>
-                {#each tips as tip}
-                    <li>{tip}</li>
-                {/each}
-            </ul>
-        </div>
-        <div class="col">
-            <h5>Ingredients</h5>
-            <ul>
-                {#each ingredients as item}
-                    <li>{item}</li>
-                {/each}
-            </ul>
-        </div>
+    <div>
+        <div class="col" />
+        <h5>Ingredients</h5>
+        {#each ingredients as item}
+            <div class="custom-control custom-checkbox">
+            <input type="checkbox" class="custom-control-input" id="checkbox-{item}">
+            <label class="custom-control-label" for="checkbox-{item}">{item}</label>
+          </div>
+        {/each}
     </div>
-    <hr />
-    <div class="row">
-        <div class="col">
-            <h5>Method</h5>
-            <ol>
-                {#each steps as step}
-                    <li>{step}</li>
-                {/each}
-            </ol>
-        </div>
+</div>
+<hr />
+<div>
+    <div class="col">
+        <h5>Method</h5>
+        <ol>
+            {#each steps as step}
+                <li>{step}</li>
+            {/each}
+        </ol>
+    </div>
+</div>
+<hr />
+<div>
+    <div class="col">
+        <h5>Tips</h5>
+        <ul>
+            {#each tips as tip}
+                <li>{tip}</li>
+            {/each}
+        </ul>
     </div>
 </div>

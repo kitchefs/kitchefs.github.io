@@ -53,9 +53,9 @@
     <div class="collapse navbar-collapse" id="navbarsExampleDefault">
         <ul class="navbar-nav mr-auto">
 			<li><a aria-current="{segment === undefined ? 'page' : undefined}" href=".">Home</a></li>
-			<li><a aria-current="{segment === 'about' ? 'page' : undefined}" href="about">About</a></li>
+			<li><a aria-current="{segment === 'saved_items' ? 'page' : undefined}" href="saved_items">Saved</a></li>
 
-			<li><a rel=prefetch aria-current="{segment === 'blog' ? 'page' : undefined}" href="blog">Blog</a></li>
+			<li><a rel=prefetch aria-current="{segment === 'recipes' ? 'page' : undefined}" href="recipes">Recipes</a></li>
 		</ul>
 		<form class="form-inline my-2 my-lg-0" id="search-bar">
 			<input
