@@ -48,8 +48,11 @@
         aria-expanded="false"
         aria-label="Toggle navigation">
         <span class="navbar-toggler-icon" />
-    </button>
-
+	</button>
+	<a class="navbar-brand" style="padding-right: 0px;margin-right: 0px;" href=".">
+		<img src="kitchefs_icon.png" class="d-inline-block align-top" alt="" loading="lazy">
+		Kitchefs
+	</a>
     <div class="collapse navbar-collapse" id="navbarsExampleDefault">
         <ul class="navbar-nav mr-auto">
 			<li><a aria-current="{segment === undefined ? 'page' : undefined}" href=".">Home</a></li>
