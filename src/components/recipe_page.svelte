@@ -37,7 +37,10 @@
             <img src={image} width="150px" height="100%" alt={name} />
         </div>
         <div class="col p-4 d-flex flex-column position-static">
-            <h3 class="mb-0">{name}</h3>
+            <div class="row">
+                <h3 class="mb-0">{name}</h3>
+                <!-- <h3>Save</h3> -->
+            </div>
             <hr />
             <div class="row">
                 <span class="col badge badge-pill badge-secondary">Preparation

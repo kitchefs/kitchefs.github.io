@@ -38,7 +38,7 @@
     }
 </style>
 
-<nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+<nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top" style="height: 60px; padding-left: 0px;">
     <button
         class="navbar-toggler"
         type="button"
@@ -49,11 +49,12 @@
         aria-label="Toggle navigation">
         <span class="navbar-toggler-icon" />
 	</button>
-	<a class="navbar-brand" style="padding-right: 0px;margin-right: 0px;" href=".">
-		<img src="kitchefs_icon.png" class="d-inline-block align-top" alt="" loading="lazy">
-		Kitchefs
-	</a>
+
     <div class="collapse navbar-collapse" id="navbarsExampleDefault">
+		<a class="navbar-brand" style="margin-right: 0px; padding-right: 0px;" href=".">
+		  <img src="kitchefs_icon.png" width="30" height="30" class="d-inline-block align-top" alt="">
+		  Kitchefs
+		</a>
         <ul class="navbar-nav mr-auto">
 			<li><a aria-current="{segment === undefined ? 'page' : undefined}" href=".">Home</a></li>
 			<li><a aria-current="{segment === 'saved_items' ? 'page' : undefined}" href="saved_items">Saved</a></li>
