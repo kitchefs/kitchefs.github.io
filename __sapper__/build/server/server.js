@@ -301,7 +301,7 @@ const Item = create_ssr_component(($$result, $$props, $$bindings, slots) => {
 
 const css$1 = {
 	code: "img.svelte-9xt3pv{object-fit:cover}h3.svelte-9xt3pv{font-family:\"Playfair Display\";font-size:150%}hr.svelte-9xt3pv{border:0;clear:both;display:block;width:96%;background-color:rgba(0, 0, 0, 0.1);height:1px}",
-	map: "{\"version\":3,\"file\":\"featured_item.svelte\",\"sources\":[\"featured_item.svelte\"],\"sourcesContent\":[\"<script>\\n    export let name;\\n    export let category;\\n    export let image;\\n    export let description;\\n    export let href;\\n\\n    function lowercase(x) {\\n        x = x.toLowerCase();\\n        x = x.split(' ').join('-');\\n        return x;\\n    }\\n</script>\\n\\n<style>\\n    img {\\n        object-fit: cover;\\n    }\\n    h3 {\\n        font-family: \\\"Playfair Display\\\";\\n        font-size: 150%;\\n    }\\n    hr {\\n        border: 0;\\n        clear: both;\\n        display: block;\\n        width: 96%;\\n        background-color: rgba(0, 0, 0, 0.1);\\n        height: 1px;\\n    }\\n</style>\\n\\n<div class=\\\"col-md-6\\\" item-name=\\\"{lowercase(name)}\\\" category-name=\\\"{lowercase(category)}\\\">\\n    <div\\n        onclick=\\\"window.location='{href}'\\\"\\n        class=\\\"row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative featured-item-card\\\">\\n        <div class=\\\"col p-4 d-flex flex-column position-static\\\">\\n            <strong class=\\\"d-inline-block mb-2 text-success\\\">{category}</strong>\\n            <h3 class=\\\"mb-0\\\">{name}</h3>\\n            <hr />\\n            <p class=\\\"mb-auto\\\">{description}</p>\\n        </div>\\n        <div class=\\\"col-auto d-none d-lg-block\\\">\\n            <img src={image} width=\\\"150px\\\" height=\\\"100%\\\" alt={name} />\\n        </div>\\n    </div>\\n</div>\\n\"],\"names\":[],\"mappings\":\"AAeI,GAAG,cAAC,CAAC,AACD,UAAU,CAAE,KAAK,AACrB,CAAC,AACD,EAAE,cAAC,CAAC,AACA,WAAW,CAAE,kBAAkB,CAC/B,SAAS,CAAE,IAAI,AACnB,CAAC,AACD,EAAE,cAAC,CAAC,AACA,MAAM,CAAE,CAAC,CACT,KAAK,CAAE,IAAI,CACX,OAAO,CAAE,KAAK,CACd,KAAK,CAAE,GAAG,CACV,gBAAgB,CAAE,KAAK,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,GAAG,CAAC,CACpC,MAAM,CAAE,GAAG,AACf,CAAC\"}"
+	map: "{\"version\":3,\"file\":\"featured_item.svelte\",\"sources\":[\"featured_item.svelte\"],\"sourcesContent\":[\"<script>\\n    export let name;\\n    export let category;\\n    export let image;\\n    export let description;\\n    export let href;\\n\\n    function lowercase(x) {\\n        x = x.toLowerCase();\\n        x = x.split(' ').join('-');\\n        return x;\\n    }\\n</script>\\n\\n<style>\\n    img {\\n        object-fit: cover;\\n    }\\n    h3 {\\n        font-family: \\\"Playfair Display\\\";\\n        font-size: 150%;\\n    }\\n    hr {\\n        border: 0;\\n        clear: both;\\n        display: block;\\n        width: 96%;\\n        background-color: rgba(0, 0, 0, 0.1);\\n        height: 1px;\\n    }\\n</style>\\n\\n<div class=\\\"col-md-6\\\" item-name=\\\"{lowercase(name)}\\\" category-name=\\\"{lowercase(category)}\\\">\\n    <div\\n        onclick=\\\"window.location='{href}'\\\"\\n        class=\\\"row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative featured-item-card\\\">\\n        <div class=\\\"col p-4 d-flex flex-column position-static\\\">\\n            <strong class=\\\"d-inline-block mb-2 text-primary\\\">{category}</strong>\\n            <h3 class=\\\"mb-0\\\">{name}</h3>\\n            <hr />\\n            <p class=\\\"mb-auto\\\">{description}</p>\\n        </div>\\n        <div class=\\\"col-auto d-none d-lg-block\\\">\\n            <img src={image} width=\\\"150px\\\" height=\\\"100%\\\" alt={name} />\\n        </div>\\n    </div>\\n</div>\\n\"],\"names\":[],\"mappings\":\"AAeI,GAAG,cAAC,CAAC,AACD,UAAU,CAAE,KAAK,AACrB,CAAC,AACD,EAAE,cAAC,CAAC,AACA,WAAW,CAAE,kBAAkB,CAC/B,SAAS,CAAE,IAAI,AACnB,CAAC,AACD,EAAE,cAAC,CAAC,AACA,MAAM,CAAE,CAAC,CACT,KAAK,CAAE,IAAI,CACX,OAAO,CAAE,KAAK,CACd,KAAK,CAAE,GAAG,CACV,gBAAgB,CAAE,KAAK,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,GAAG,CAAC,CACpC,MAAM,CAAE,GAAG,AACf,CAAC\"}"
 };
 
 function lowercase$1(x) {
@@ -323,7 +323,7 @@ const Featured_item = create_ssr_component(($$result, $$props, $$bindings, slots
 	if ($$props.href === void 0 && $$bindings.href && href !== void 0) $$bindings.href(href);
 	$$result.css.add(css$1);
 
-	return `<div class="${"col-md-6"}"${add_attribute("item-name", lowercase$1(name), 0)}${add_attribute("category-name", lowercase$1(category), 0)}><div onclick="${"window.location='" + escape(href) + "'"}" class="${"row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative featured-item-card"}"><div class="${"col p-4 d-flex flex-column position-static"}"><strong class="${"d-inline-block mb-2 text-success"}">${escape(category)}</strong>
+	return `<div class="${"col-md-6"}"${add_attribute("item-name", lowercase$1(name), 0)}${add_attribute("category-name", lowercase$1(category), 0)}><div onclick="${"window.location='" + escape(href) + "'"}" class="${"row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative featured-item-card"}"><div class="${"col p-4 d-flex flex-column position-static"}"><strong class="${"d-inline-block mb-2 text-primary"}">${escape(category)}</strong>
             <h3 class="${"mb-0 svelte-9xt3pv"}">${escape(name)}</h3>
             <hr class="${"svelte-9xt3pv"}">
             <p class="${"mb-auto"}">${escape(description)}</p></div>
@@ -419,11 +419,26 @@ var component_0 = /*#__PURE__*/Object.freeze({
 	'default': Routes
 });
 
+/* src/routes/saved_items.svelte generated by Svelte v3.29.0 */
+
+const Saved_items = create_ssr_component(($$result, $$props, $$bindings, slots) => {
+	return `${($$result.head += `${($$result.title = `<title>Saved Items</title>`, "")}`, "")}
+
+<h1>View Your Saved Recipes</h1>
+
+<p>There&#39;s not much here.</p>`;
+});
+
+var component_1 = /*#__PURE__*/Object.freeze({
+	__proto__: null,
+	'default': Saved_items
+});
+
 /* src/components/recipe_page.svelte generated by Svelte v3.29.0 */
 
 const css$2 = {
-	code: "img.svelte-lhyy1c{object-fit:cover}h3.svelte-lhyy1c{font-family:\"Playfair Display\";font-size:150%}hr.svelte-lhyy1c{border:0;clear:both;display:block;width:96%;background-color:rgba(0, 0, 0, 0.1);height:1px}.badge.svelte-lhyy1c{margin:5px}.badge-1491a2.svelte-lhyy1c{background-color:#1491a2}",
-	map: "{\"version\":3,\"file\":\"recipe_page.svelte\",\"sources\":[\"recipe_page.svelte\"],\"sourcesContent\":[\"<script>\\n    export let name;\\n    export let image;\\n    export let ingredients;\\n    export let steps;\\n    export let tips;\\n    export let preparation_time;\\n    export let cook_time;\\n    export let total_time;\\n</script>\\n\\n<style>\\n    img {\\n        object-fit: cover;\\n    } \\n    h3 {\\n        font-family: \\\"Playfair Display\\\";\\n        font-size: 150%;\\n    }\\n    hr {\\n        border: 0;\\n        clear: both;\\n        display: block;\\n        width: 96%;\\n        background-color: rgba(0, 0, 0, 0.1);\\n        height: 1px;\\n    }\\n    .badge {\\n        margin: 5px;\\n    }\\n    .badge-1491a2 {\\n        background-color: #1491a2;\\n    }\\n</style>\\n\\n\\n<div class=\\\"container-fluid\\\">\\n    <div class=\\\"row no-gutters border rounded overflow-hidden flex-md-row mb-4 position-relative\\\">\\n        <div class=\\\"col-auto d-none d-lg-block\\\">\\n            <img src={image} width=\\\"150px\\\" height=\\\"100%\\\" alt={name} />\\n        </div>\\n        <div class=\\\"col p-4 d-flex flex-column position-static\\\">\\n            <h3 class=\\\"mb-0\\\">{name}</h3>\\n            <hr />\\n            <div class=\\\"row\\\">\\n                <span class=\\\"col badge badge-pill badge-primary\\\">Preparation Time: {preparation_time}</span>\\n                <span class=\\\"col badge badge-pill badge-primary badge-1491a2\\\">Cook Time: {cook_time}</span>\\n                <span class=\\\"col badge badge-pill badge-success\\\">Total Time: {total_time}</span>\\n            </div>\\n        </div>\\n    </div>\\n    <div class=\\\"row\\\">\\n        <div class=\\\"col\\\">\\n            <h5>Tips & Hints</h5>\\n            <ul>\\n                {#each tips as tip}\\n                    <li>{tip}</li>\\n                {/each}\\n            </ul>\\n        </div>\\n        <div class=\\\"col\\\">\\n            <h5>Ingredients</h5>\\n            <ul>\\n                {#each ingredients as item}\\n                    <li>{item}</li>\\n                {/each}\\n            </ul>\\n        </div>\\n    </div>\\n    <hr />\\n    <div class=\\\"row\\\">\\n        <div class=\\\"col\\\">\\n            <h5>Method</h5>\\n            <ol>\\n                {#each steps as step}\\n                    <li>{step}</li>\\n                {/each}\\n            </ol>\\n        </div>\\n    </div>\\n</div>\\n\"],\"names\":[],\"mappings\":\"AAYI,GAAG,cAAC,CAAC,AACD,UAAU,CAAE,KAAK,AACrB,CAAC,AACD,EAAE,cAAC,CAAC,AACA,WAAW,CAAE,kBAAkB,CAC/B,SAAS,CAAE,IAAI,AACnB,CAAC,AACD,EAAE,cAAC,CAAC,AACA,MAAM,CAAE,CAAC,CACT,KAAK,CAAE,IAAI,CACX,OAAO,CAAE,KAAK,CACd,KAAK,CAAE,GAAG,CACV,gBAAgB,CAAE,KAAK,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,GAAG,CAAC,CACpC,MAAM,CAAE,GAAG,AACf,CAAC,AACD,MAAM,cAAC,CAAC,AACJ,MAAM,CAAE,GAAG,AACf,CAAC,AACD,aAAa,cAAC,CAAC,AACX,gBAAgB,CAAE,OAAO,AAC7B,CAAC\"}"
+	code: "img.svelte-1mj7xa1{object-fit:cover}h3.svelte-1mj7xa1,h5.svelte-1mj7xa1{font-family:\"Playfair Display\";font-size:150%}hr.svelte-1mj7xa1{border:0;clear:both;display:block;width:96%;background-color:rgba(0, 0, 0, 0.1);height:1px}.badge.svelte-1mj7xa1{margin:5px}",
+	map: "{\"version\":3,\"file\":\"recipe_page.svelte\",\"sources\":[\"recipe_page.svelte\"],\"sourcesContent\":[\"<script>\\n    export let name;\\n    export let image;\\n    export let ingredients;\\n    export let steps;\\n    export let tips;\\n    export let preparation_time;\\n    export let cook_time;\\n    export let total_time;\\n</script>\\n\\n<style>\\n    img {\\n        object-fit: cover;\\n    }\\n    h3, h5 {\\n        font-family: \\\"Playfair Display\\\";\\n        font-size: 150%;\\n    }\\n    hr {\\n        border: 0;\\n        clear: both;\\n        display: block;\\n        width: 96%;\\n        background-color: rgba(0, 0, 0, 0.1);\\n        height: 1px;\\n    }\\n    .badge {\\n        margin: 5px;\\n    }\\n</style>\\n\\n<div class=\\\"container-fluid\\\">\\n    <div\\n        class=\\\"row no-gutters border rounded overflow-hidden flex-md-row mb-4 position-relative\\\">\\n        <div class=\\\"col-auto d-none d-lg-block\\\">\\n            <img src={image} width=\\\"150px\\\" height=\\\"100%\\\" alt={name} />\\n        </div>\\n        <div class=\\\"col p-4 d-flex flex-column position-static\\\">\\n            <div class=\\\"row\\\">\\n                <h3 class=\\\"mb-0\\\">{name}</h3>\\n                <!-- <h3>Save</h3> -->\\n            </div>\\n            <hr />\\n            <div class=\\\"row\\\">\\n                <span class=\\\"col badge badge-pill badge-secondary\\\">Preparation\\n                    Time:\\n                    {preparation_time}</span>\\n                <span\\n                    class=\\\"col badge badge-pill badge-secondary\\\">Cook\\n                    Time:\\n                    {cook_time}</span>\\n                <span class=\\\"col badge badge-pill badge-primary\\\">Total Time:\\n                    {total_time}</span>\\n            </div>\\n        </div>\\n    </div>\\n    <div>\\n        <div class=\\\"col\\\" />\\n        <h5>Ingredients</h5>\\n        {#each ingredients as item}\\n            <div class=\\\"custom-control custom-checkbox\\\">\\n            <input type=\\\"checkbox\\\" class=\\\"custom-control-input\\\" id=\\\"checkbox-{item}\\\">\\n            <label class=\\\"custom-control-label\\\" for=\\\"checkbox-{item}\\\">{item}</label>\\n          </div>\\n        {/each}\\n    </div>\\n</div>\\n<hr />\\n<div>\\n    <div class=\\\"col\\\">\\n        <h5>Method</h5>\\n        <ol>\\n            {#each steps as step}\\n                <li>{step}</li>\\n            {/each}\\n        </ol>\\n    </div>\\n</div>\\n<hr />\\n<div>\\n    <div class=\\\"col\\\">\\n        <h5>Tips</h5>\\n        <ul>\\n            {#each tips as tip}\\n                <li>{tip}</li>\\n            {/each}\\n        </ul>\\n    </div>\\n</div>\\n\"],\"names\":[],\"mappings\":\"AAYI,GAAG,eAAC,CAAC,AACD,UAAU,CAAE,KAAK,AACrB,CAAC,AACD,iBAAE,CAAE,EAAE,eAAC,CAAC,AACJ,WAAW,CAAE,kBAAkB,CAC/B,SAAS,CAAE,IAAI,AACnB,CAAC,AACD,EAAE,eAAC,CAAC,AACA,MAAM,CAAE,CAAC,CACT,KAAK,CAAE,IAAI,CACX,OAAO,CAAE,KAAK,CACd,KAAK,CAAE,GAAG,CACV,gBAAgB,CAAE,KAAK,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,GAAG,CAAC,CACpC,MAAM,CAAE,GAAG,AACf,CAAC,AACD,MAAM,eAAC,CAAC,AACJ,MAAM,CAAE,GAAG,AACf,CAAC\"}"
 };
 
 const Recipe_page = create_ssr_component(($$result, $$props, $$bindings, slots) => {
@@ -445,19 +460,29 @@ const Recipe_page = create_ssr_component(($$result, $$props, $$bindings, slots) 
 	if ($$props.total_time === void 0 && $$bindings.total_time && total_time !== void 0) $$bindings.total_time(total_time);
 	$$result.css.add(css$2);
 
-	return `<div class="${"container-fluid"}"><div class="${"row no-gutters border rounded overflow-hidden flex-md-row mb-4 position-relative"}"><div class="${"col-auto d-none d-lg-block"}"><img${add_attribute("src", image, 0)} width="${"150px"}" height="${"100%"}"${add_attribute("alt", name, 0)} class="${"svelte-lhyy1c"}"></div>
-        <div class="${"col p-4 d-flex flex-column position-static"}"><h3 class="${"mb-0 svelte-lhyy1c"}">${escape(name)}</h3>
-            <hr class="${"svelte-lhyy1c"}">
-            <div class="${"row"}"><span class="${"col badge badge-pill badge-primary svelte-lhyy1c"}">Preparation Time: ${escape(preparation_time)}</span>
-                <span class="${"col badge badge-pill badge-primary badge-1491a2 svelte-lhyy1c"}">Cook Time: ${escape(cook_time)}</span>
-                <span class="${"col badge badge-pill badge-success svelte-lhyy1c"}">Total Time: ${escape(total_time)}</span></div></div></div>
-    <div class="${"row"}"><div class="${"col"}"><h5>Tips &amp; Hints</h5>
-            <ul>${each(tips, tip => `<li>${escape(tip)}</li>`)}</ul></div>
-        <div class="${"col"}"><h5>Ingredients</h5>
-            <ul>${each(ingredients, item => `<li>${escape(item)}</li>`)}</ul></div></div>
-    <hr class="${"svelte-lhyy1c"}">
-    <div class="${"row"}"><div class="${"col"}"><h5>Method</h5>
-            <ol>${each(steps, step => `<li>${escape(step)}</li>`)}</ol></div></div></div>`;
+	return `<div class="${"container-fluid"}"><div class="${"row no-gutters border rounded overflow-hidden flex-md-row mb-4 position-relative"}"><div class="${"col-auto d-none d-lg-block"}"><img${add_attribute("src", image, 0)} width="${"150px"}" height="${"100%"}"${add_attribute("alt", name, 0)} class="${"svelte-1mj7xa1"}"></div>
+        <div class="${"col p-4 d-flex flex-column position-static"}"><div class="${"row"}"><h3 class="${"mb-0 svelte-1mj7xa1"}">${escape(name)}</h3>
+                </div>
+            <hr class="${"svelte-1mj7xa1"}">
+            <div class="${"row"}"><span class="${"col badge badge-pill badge-secondary svelte-1mj7xa1"}">Preparation
+                    Time:
+                    ${escape(preparation_time)}</span>
+                <span class="${"col badge badge-pill badge-secondary svelte-1mj7xa1"}">Cook
+                    Time:
+                    ${escape(cook_time)}</span>
+                <span class="${"col badge badge-pill badge-primary svelte-1mj7xa1"}">Total Time:
+                    ${escape(total_time)}</span></div></div></div>
+    <div><div class="${"col"}"></div>
+        <h5 class="${"svelte-1mj7xa1"}">Ingredients</h5>
+        ${each(ingredients, item => `<div class="${"custom-control custom-checkbox"}"><input type="${"checkbox"}" class="${"custom-control-input"}" id="${"checkbox-" + escape(item)}">
+            <label class="${"custom-control-label"}" for="${"checkbox-" + escape(item)}">${escape(item)}</label>
+          </div>`)}</div></div>
+<hr class="${"svelte-1mj7xa1"}">
+<div><div class="${"col"}"><h5 class="${"svelte-1mj7xa1"}">Method</h5>
+        <ol>${each(steps, step => `<li>${escape(step)}</li>`)}</ol></div></div>
+<hr class="${"svelte-1mj7xa1"}">
+<div><div class="${"col"}"><h5 class="${"svelte-1mj7xa1"}">Tips</h5>
+        <ul>${each(tips, tip => `<li>${escape(tip)}</li>`)}</ul></div></div>`;
 });
 
 /* src/routes/recipe.svelte generated by Svelte v3.29.0 */
@@ -469,9 +494,32 @@ const Recipe = create_ssr_component(($$result, $$props, $$bindings, slots) => {
 			name: "Hot Cross Bun",
 			description: "A perfect Easter snack for the whole family.",
 			image: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/Hot_cross_buns_-_fig_and_pecan.jpg/1200px-Hot_cross_buns_-_fig_and_pecan.jpg",
-			ingredients: ["Chocolate", "hello"],
-			steps: ["Mash the chocolate", "enjoy"],
-			tips: ["Have fun"],
+			ingredients: [
+				"3 ¼ Cups Plain Flour",
+				" 1 Cup Sultanas",
+				" 2 Tbs Orange Peel*",
+				" 2 Tbs Caster Sugar",
+				" 1 Tsp Dried Yeast",
+				" 1 Tsp Mixed Spice",
+				" 1 Tsp Ground Cinnamon",
+				" 1 Tsp Ground Nutmeg",
+				" 1 Tsp Salt",
+				" 1 Cup Warm Milk",
+				" 50g Butter, Melted",
+				" 1 Egg, Wisked"
+			],
+			steps: [
+				"Line baking tray with baking paper",
+				"In a large bowl combine Flour, Sultanas, Orange Peel, Sugar, Yeast, Spices, Nutmeg and salt.",
+				"Make a well in the center ad mix in Milk, Butter and Egg. Use your hands to bring the dough together in the bowl.",
+				"Turn the dough onto a floured surface and knead for 10-15 minutes or until smooth.",
+				"Coat with Melted Butter and leave to rise for 1 ½ hours.",
+				"Preheat oven to 180°C. knead dough for 3-5 minutes, until smooth.",
+				"Divide into 12 balls, Place onto prepared tray. Set aside for 30 minutes.",
+				"For the Cross Paste, mix ¼ Cup Flour and 2 Tbs water. Transfer into piping bag and make Crosses",
+				"Bake for 20-25 minutes, Leave to cool."
+			],
+			tips: ["You can use any cirus peel instead of Orange Peel"],
 			preparation_time: "35 Minutes",
 			cook_time: "20 Minutes",
 			total_time: "6 Hours, 5 Minutes"
@@ -481,24 +529,9 @@ const Recipe = create_ssr_component(($$result, $$props, $$bindings, slots) => {
 	)}</div></div>`;
 });
 
-var component_1 = /*#__PURE__*/Object.freeze({
-	__proto__: null,
-	'default': Recipe
-});
-
-/* src/routes/about.svelte generated by Svelte v3.29.0 */
-
-const About = create_ssr_component(($$result, $$props, $$bindings, slots) => {
-	return `${($$result.head += `${($$result.title = `<title>About</title>`, "")}`, "")}
-
-<h1>About this site</h1>
-
-<p>This is the &#39;about&#39; page. There&#39;s not much here.</p>`;
-});
-
 var component_2 = /*#__PURE__*/Object.freeze({
 	__proto__: null,
-	'default': About
+	'default': Recipe
 });
 
 /* src/routes/blog/index.svelte generated by Svelte v3.29.0 */
@@ -575,8 +608,8 @@ var component_4 = /*#__PURE__*/Object.freeze({
 /* src/components/nav.svelte generated by Svelte v3.29.0 */
 
 const css$5 = {
-	code: "nav.svelte-m9lwtn{border-bottom:1px solid rgba(255,62,0,0.1);font-weight:300;padding:0 1em}[aria-current].svelte-m9lwtn{position:relative;display:inline-block}[aria-current].svelte-m9lwtn::after{position:absolute;content:'';width:calc(100% - 1em);height:2px;background-color:rgb(255,62,0);display:block;bottom:-1px}a.svelte-m9lwtn{color:#ffffff !important;text-decoration:none !important;padding:1em 0.5em !important;display:block !important}@media screen and (max-width: 768px){nav.svelte-m9lwtn{padding:0.7em}}",
-	map: "{\"version\":3,\"file\":\"nav.svelte\",\"sources\":[\"nav.svelte\"],\"sourcesContent\":[\"<script>\\n\\texport let segment;\\n</script>\\n\\n<style>\\n\\tnav {\\n\\t\\tborder-bottom: 1px solid rgba(255,62,0,0.1);\\n\\t\\tfont-weight: 300;\\n\\t\\tpadding: 0 1em;\\n\\t}\\n\\n\\t[aria-current] {\\n\\t\\tposition: relative;\\n\\t\\tdisplay: inline-block;\\n\\t}\\n\\n\\t[aria-current]::after {\\n\\t\\tposition: absolute;\\n\\t\\tcontent: '';\\n\\t\\twidth: calc(100% - 1em);\\n\\t\\theight: 2px;\\n\\t\\tbackground-color: rgb(255,62,0);\\n\\t\\tdisplay: block;\\n\\t\\tbottom: -1px;\\n\\t}\\n\\n\\ta {\\n\\t\\tcolor: #ffffff !important;\\n\\t\\ttext-decoration: none !important;\\n\\t\\tpadding: 1em 0.5em !important;\\n\\t\\tdisplay: block !important;\\n\\t}\\n\\n    @media screen and (max-width: 768px) {\\n        nav {\\n\\t\\t    padding: 0.7em;\\n\\t    }\\n    }\\n</style>\\n\\n<nav class=\\\"navbar navbar-expand-md navbar-dark bg-dark fixed-top\\\">\\n    <button\\n        class=\\\"navbar-toggler\\\"\\n        type=\\\"button\\\"\\n        data-toggle=\\\"collapse\\\"\\n        data-target=\\\"#navbarsExampleDefault\\\"\\n        aria-controls=\\\"navbarsExampleDefault\\\"\\n        aria-expanded=\\\"false\\\"\\n        aria-label=\\\"Toggle navigation\\\">\\n        <span class=\\\"navbar-toggler-icon\\\" />\\n    </button>\\n\\n    <div class=\\\"collapse navbar-collapse\\\" id=\\\"navbarsExampleDefault\\\">\\n        <ul class=\\\"navbar-nav mr-auto\\\">\\n\\t\\t\\t<li><a aria-current=\\\"{segment === undefined ? 'page' : undefined}\\\" href=\\\".\\\">Home</a></li>\\n\\t\\t\\t<li><a aria-current=\\\"{segment === 'about' ? 'page' : undefined}\\\" href=\\\"about\\\">About</a></li>\\n\\n\\t\\t\\t<li><a rel=prefetch aria-current=\\\"{segment === 'blog' ? 'page' : undefined}\\\" href=\\\"blog\\\">Blog</a></li>\\n\\t\\t</ul>\\n\\t\\t<form class=\\\"form-inline my-2 my-lg-0\\\" id=\\\"search-bar\\\">\\n\\t\\t\\t<input\\n\\t\\t\\t\\tclass=\\\"form-control mr-sm-2\\\"\\n\\t\\t\\t\\ttype=\\\"text\\\"\\n\\t\\t\\t\\tplaceholder=\\\"Search\\\"\\n\\t\\t\\t\\taria-label=\\\"Search\\\" />\\n\\t\\t\\t<button class=\\\"btn btn-secondary my-2 my-sm-0\\\" type=\\\"submit\\\" id=\\\"search-bar-submit\\\">Search</button>\\n\\t\\t</form>\\n    </div>\\n</nav>\"],\"names\":[],\"mappings\":\"AAKC,GAAG,cAAC,CAAC,AACJ,aAAa,CAAE,GAAG,CAAC,KAAK,CAAC,KAAK,GAAG,CAAC,EAAE,CAAC,CAAC,CAAC,GAAG,CAAC,CAC3C,WAAW,CAAE,GAAG,CAChB,OAAO,CAAE,CAAC,CAAC,GAAG,AACf,CAAC,AAED,CAAC,YAAY,CAAC,cAAC,CAAC,AACf,QAAQ,CAAE,QAAQ,CAClB,OAAO,CAAE,YAAY,AACtB,CAAC,AAED,CAAC,YAAY,eAAC,OAAO,AAAC,CAAC,AACtB,QAAQ,CAAE,QAAQ,CAClB,OAAO,CAAE,EAAE,CACX,KAAK,CAAE,KAAK,IAAI,CAAC,CAAC,CAAC,GAAG,CAAC,CACvB,MAAM,CAAE,GAAG,CACX,gBAAgB,CAAE,IAAI,GAAG,CAAC,EAAE,CAAC,CAAC,CAAC,CAC/B,OAAO,CAAE,KAAK,CACd,MAAM,CAAE,IAAI,AACb,CAAC,AAED,CAAC,cAAC,CAAC,AACF,KAAK,CAAE,OAAO,CAAC,UAAU,CACzB,eAAe,CAAE,IAAI,CAAC,UAAU,CAChC,OAAO,CAAE,GAAG,CAAC,KAAK,CAAC,UAAU,CAC7B,OAAO,CAAE,KAAK,CAAC,UAAU,AAC1B,CAAC,AAEE,OAAO,MAAM,CAAC,GAAG,CAAC,YAAY,KAAK,CAAC,AAAC,CAAC,AAClC,GAAG,cAAC,CAAC,AACP,OAAO,CAAE,KAAK,AACf,CAAC,AACF,CAAC\"}"
+	code: "nav.svelte-1rjdfut{border-bottom:1px solid rgba(255,62,0,0.1);font-weight:300;padding:0 1em}[aria-current].svelte-1rjdfut{position:relative;display:inline-block}[aria-current].svelte-1rjdfut::after{position:absolute;content:'';width:calc(100% - 1em);height:2px;background-color:rgb(255,62,0);display:block;bottom:-1px}a.svelte-1rjdfut{color:#ffffff !important;text-decoration:none !important;padding:1em 0.5em !important;display:block !important}@media screen and (max-width: 768px){nav.svelte-1rjdfut{padding:0.7em}}.kitchefs-brand.svelte-1rjdfut{font-family:\"Playfair Display\";font-size:1.4em;padding-top:0 !important;padding-bottom:0 !important;margin:0 !important;padding-left:0.4em !important;padding-right:0.6em !important}",
+	map: "{\"version\":3,\"file\":\"nav.svelte\",\"sources\":[\"nav.svelte\"],\"sourcesContent\":[\"<script>\\n\\texport let segment;\\n</script>\\n\\n<style>\\n\\tnav {\\n\\t\\tborder-bottom: 1px solid rgba(255,62,0,0.1);\\n\\t\\tfont-weight: 300;\\n\\t\\tpadding: 0 1em;\\n\\t}\\n\\t[aria-current] {\\n\\t\\tposition: relative;\\n\\t\\tdisplay: inline-block;\\n\\t}\\n\\t[aria-current]::after {\\n\\t\\tposition: absolute;\\n\\t\\tcontent: '';\\n\\t\\twidth: calc(100% - 1em);\\n\\t\\theight: 2px;\\n\\t\\tbackground-color: rgb(255,62,0);\\n\\t\\tdisplay: block;\\n\\t\\tbottom: -1px;\\n\\t}\\n\\ta {\\n\\t\\tcolor: #ffffff !important;\\n\\t\\ttext-decoration: none !important;\\n\\t\\tpadding: 1em 0.5em !important;\\n\\t\\tdisplay: block !important;\\n\\t}\\n    @media screen and (max-width: 768px) {\\n        nav {\\n\\t\\t    padding: 0.7em;\\n\\t    }\\n    }\\n    .kitchefs-brand {\\n        font-family: \\\"Playfair Display\\\";\\n        font-size: 1.4em;\\n        padding-top: 0 !important;\\n        padding-bottom: 0 !important;\\n        margin: 0 !important;\\n        padding-left: 0.4em !important;\\n        padding-right: 0.6em !important;\\n    }\\n</style>\\n\\n<nav class=\\\"navbar navbar-expand-md navbar-dark bg-dark fixed-top\\\">\\n    <button\\n        class=\\\"navbar-toggler\\\"\\n        type=\\\"button\\\"\\n        data-toggle=\\\"collapse\\\"\\n        data-target=\\\"#navbarsExampleDefault\\\"\\n        aria-controls=\\\"navbarsExampleDefault\\\"\\n        aria-expanded=\\\"false\\\"\\n        aria-label=\\\"Toggle navigation\\\">\\n        <span class=\\\"navbar-toggler-icon\\\" />\\n    </button>\\n\\n    <div class=\\\"collapse navbar-collapse\\\" id=\\\"navbarsExampleDefault\\\">\\n        <a class=\\\"kitchefs-brand\\\" href=\\\".\\\">K</a>\\n        <ul class=\\\"navbar-nav mr-auto\\\">\\n\\t\\t\\t<li><a aria-current=\\\"{segment === undefined ? 'page' : undefined}\\\" href=\\\".\\\">Home</a></li>\\n\\t\\t\\t<li><a aria-current=\\\"{segment === 'about' ? 'page' : undefined}\\\" href=\\\"about\\\">About</a></li>\\n\\n\\t\\t\\t<li><a rel=prefetch aria-current=\\\"{segment === 'blog' ? 'page' : undefined}\\\" href=\\\"blog\\\">Blog</a></li>\\n\\t\\t</ul>\\n\\t\\t<form class=\\\"form-inline my-2 my-lg-0\\\" id=\\\"search-bar\\\">\\n\\t\\t\\t<input\\n\\t\\t\\t\\tclass=\\\"form-control mr-sm-2\\\"\\n\\t\\t\\t\\ttype=\\\"text\\\"\\n\\t\\t\\t\\tplaceholder=\\\"Search\\\"\\n\\t\\t\\t\\taria-label=\\\"Search\\\" />\\n\\t\\t\\t<button class=\\\"btn btn-secondary my-2 my-sm-0\\\" type=\\\"submit\\\" id=\\\"search-bar-submit\\\">Search</button>\\n\\t\\t</form>\\n    </div>\\n</nav>\"],\"names\":[],\"mappings\":\"AAKC,GAAG,eAAC,CAAC,AACJ,aAAa,CAAE,GAAG,CAAC,KAAK,CAAC,KAAK,GAAG,CAAC,EAAE,CAAC,CAAC,CAAC,GAAG,CAAC,CAC3C,WAAW,CAAE,GAAG,CAChB,OAAO,CAAE,CAAC,CAAC,GAAG,AACf,CAAC,AACD,CAAC,YAAY,CAAC,eAAC,CAAC,AACf,QAAQ,CAAE,QAAQ,CAClB,OAAO,CAAE,YAAY,AACtB,CAAC,AACD,CAAC,YAAY,gBAAC,OAAO,AAAC,CAAC,AACtB,QAAQ,CAAE,QAAQ,CAClB,OAAO,CAAE,EAAE,CACX,KAAK,CAAE,KAAK,IAAI,CAAC,CAAC,CAAC,GAAG,CAAC,CACvB,MAAM,CAAE,GAAG,CACX,gBAAgB,CAAE,IAAI,GAAG,CAAC,EAAE,CAAC,CAAC,CAAC,CAC/B,OAAO,CAAE,KAAK,CACd,MAAM,CAAE,IAAI,AACb,CAAC,AACD,CAAC,eAAC,CAAC,AACF,KAAK,CAAE,OAAO,CAAC,UAAU,CACzB,eAAe,CAAE,IAAI,CAAC,UAAU,CAChC,OAAO,CAAE,GAAG,CAAC,KAAK,CAAC,UAAU,CAC7B,OAAO,CAAE,KAAK,CAAC,UAAU,AAC1B,CAAC,AACE,OAAO,MAAM,CAAC,GAAG,CAAC,YAAY,KAAK,CAAC,AAAC,CAAC,AAClC,GAAG,eAAC,CAAC,AACP,OAAO,CAAE,KAAK,AACf,CAAC,AACF,CAAC,AACD,eAAe,eAAC,CAAC,AACb,WAAW,CAAE,kBAAkB,CAC/B,SAAS,CAAE,KAAK,CAChB,WAAW,CAAE,CAAC,CAAC,UAAU,CACzB,cAAc,CAAE,CAAC,CAAC,UAAU,CAC5B,MAAM,CAAE,CAAC,CAAC,UAAU,CACpB,YAAY,CAAE,KAAK,CAAC,UAAU,CAC9B,aAAa,CAAE,KAAK,CAAC,UAAU,AACnC,CAAC\"}"
 };
 
 const Nav = create_ssr_component(($$result, $$props, $$bindings, slots) => {
@@ -584,12 +617,13 @@ const Nav = create_ssr_component(($$result, $$props, $$bindings, slots) => {
 	if ($$props.segment === void 0 && $$bindings.segment && segment !== void 0) $$bindings.segment(segment);
 	$$result.css.add(css$5);
 
-	return `<nav class="${"navbar navbar-expand-md navbar-dark bg-dark fixed-top svelte-m9lwtn"}"><button class="${"navbar-toggler"}" type="${"button"}" data-toggle="${"collapse"}" data-target="${"#navbarsExampleDefault"}" aria-controls="${"navbarsExampleDefault"}" aria-expanded="${"false"}" aria-label="${"Toggle navigation"}"><span class="${"navbar-toggler-icon"}"></span></button>
+	return `<nav class="${"navbar navbar-expand-md navbar-dark bg-dark fixed-top svelte-1rjdfut"}"><button class="${"navbar-toggler"}" type="${"button"}" data-toggle="${"collapse"}" data-target="${"#navbarsExampleDefault"}" aria-controls="${"navbarsExampleDefault"}" aria-expanded="${"false"}" aria-label="${"Toggle navigation"}"><span class="${"navbar-toggler-icon"}"></span></button>
 
-    <div class="${"collapse navbar-collapse"}" id="${"navbarsExampleDefault"}"><ul class="${"navbar-nav mr-auto"}"><li><a${add_attribute("aria-current", segment === undefined ? "page" : undefined, 0)} href="${"."}" class="${"svelte-m9lwtn"}">Home</a></li>
-			<li><a${add_attribute("aria-current", segment === "about" ? "page" : undefined, 0)} href="${"about"}" class="${"svelte-m9lwtn"}">About</a></li>
+    <div class="${"collapse navbar-collapse"}" id="${"navbarsExampleDefault"}"><a class="${"kitchefs-brand svelte-1rjdfut"}" href="${"."}">K</a>
+        <ul class="${"navbar-nav mr-auto"}"><li><a${add_attribute("aria-current", segment === undefined ? "page" : undefined, 0)} href="${"."}" class="${"svelte-1rjdfut"}">Home</a></li>
+			<li><a${add_attribute("aria-current", segment === "about" ? "page" : undefined, 0)} href="${"about"}" class="${"svelte-1rjdfut"}">About</a></li>
 
-			<li><a rel="${"prefetch"}"${add_attribute("aria-current", segment === "blog" ? "page" : undefined, 0)} href="${"blog"}" class="${"svelte-m9lwtn"}">Blog</a></li></ul>
+			<li><a rel="${"prefetch"}"${add_attribute("aria-current", segment === "blog" ? "page" : undefined, 0)} href="${"blog"}" class="${"svelte-1rjdfut"}">Blog</a></li></ul>
 		<form class="${"form-inline my-2 my-lg-0"}" id="${"search-bar"}"><input class="${"form-control mr-sm-2"}" type="${"text"}" placeholder="${"Search"}" aria-label="${"Search"}">
 			<button class="${"btn btn-secondary my-2 my-sm-0"}" type="${"submit"}" id="${"search-bar-submit"}">Search</button></form></div></nav>`;
 });
@@ -670,18 +704,18 @@ const manifest = {
 		},
 
 		{
-			// recipe.svelte
-			pattern: /^\/recipe\/?$/,
+			// saved_items.svelte
+			pattern: /^\/saved_items\/?$/,
 			parts: [
-				{ name: "recipe", file: "recipe.svelte", component: component_1 }
+				{ name: "saved_items", file: "saved_items.svelte", component: component_1 }
 			]
 		},
 
 		{
-			// about.svelte
-			pattern: /^\/about\/?$/,
+			// recipe.svelte
+			pattern: /^\/recipe\/?$/,
 			parts: [
-				{ name: "about", file: "about.svelte", component: component_2 }
+				{ name: "recipe", file: "recipe.svelte", component: component_2 }
 			]
 		},
 

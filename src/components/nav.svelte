@@ -8,12 +8,10 @@
 		font-weight: 300;
 		padding: 0 1em;
 	}
-
 	[aria-current] {
 		position: relative;
 		display: inline-block;
 	}
-
 	[aria-current]::after {
 		position: absolute;
 		content: '';
@@ -23,22 +21,29 @@
 		display: block;
 		bottom: -1px;
 	}
-
 	a {
 		color: #ffffff !important;
 		text-decoration: none !important;
 		padding: 1em 0.5em !important;
 		display: block !important;
 	}
-
     @media screen and (max-width: 768px) {
         nav {
 		    padding: 0.7em;
 	    }
     }
+    .kitchefs-brand {
+        font-family: "Playfair Display";
+        font-size: 1.4em;
+        padding-top: 0 !important;
+        padding-bottom: 0 !important;
+        margin: 0 !important;
+        padding-left: 0.4em !important;
+        padding-right: 0.6em !important;
+    }
 </style>
 
-<nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top" style="height: 60px; padding-left: 0px;">
+<nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
     <button
         class="navbar-toggler"
         type="button"
@@ -48,18 +53,15 @@
         aria-expanded="false"
         aria-label="Toggle navigation">
         <span class="navbar-toggler-icon" />
-	</button>
+    </button>
 
     <div class="collapse navbar-collapse" id="navbarsExampleDefault">
-		<a class="navbar-brand" style="margin-right: 0px; padding-right: 0px;" href=".">
-		  <img src="kitchefs_icon.png" width="30" height="30" class="d-inline-block align-top" alt="">
-		  Kitchefs
-		</a>
+        <a class="kitchefs-brand" href=".">K</a>
         <ul class="navbar-nav mr-auto">
 			<li><a aria-current="{segment === undefined ? 'page' : undefined}" href=".">Home</a></li>
-			<li><a aria-current="{segment === 'saved_items' ? 'page' : undefined}" href="saved_items">Saved</a></li>
+			<li><a aria-current="{segment === 'about' ? 'page' : undefined}" href="about">About</a></li>
 
-			<li><a rel=prefetch aria-current="{segment === 'recipes' ? 'page' : undefined}" href="recipes">Recipes</a></li>
+			<li><a rel=prefetch aria-current="{segment === 'blog' ? 'page' : undefined}" href="blog">Blog</a></li>
 		</ul>
 		<form class="form-inline my-2 my-lg-0" id="search-bar">
 			<input
