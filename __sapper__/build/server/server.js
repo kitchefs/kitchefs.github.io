@@ -24,35 +24,51 @@ var Url__default = /*#__PURE__*/_interopDefaultLegacy(Url);
 var https__default = /*#__PURE__*/_interopDefaultLegacy(https);
 var zlib__default = /*#__PURE__*/_interopDefaultLegacy(zlib);
 
-// Ordinarily, you'd generate this data from markdown files in your
-// repo, or fetch them from a database of some kind. But in order to
-// avoid unnecessary dependencies in the starter template, and in the
-// service of obviousness, we're just going to leave it here.
-
-// This file is called `_posts.js` rather than `posts.js`, because
-// we don't want to create an `/blog/posts` route — the leading
-// underscore tells Sapper not to do that.
-
-const posts = [
+const recipes = [
 	{
-		title: 'What is Kitchefs?',
-		slug: 'what-is-kitchefs',
-		html: `
-			<p>Kitchefs is a new cooking website with verified recipes.</p>
-
-			<p>Kitchefs is free and will always remain free, with no ads. None.</p>
-		`
+		name: 'Hot Cross Buns',
+		slug: 'hot-cross-buns',
+		description: 'A perfect Easter snack for the whole family.',
+		category: 'Festive',
+		image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/Hot_cross_buns_-_fig_and_pecan.jpg/1200px-Hot_cross_buns_-_fig_and_pecan.jpg',
+		ingredients: ['3 ¼ Cups Plain Flour',' 1 Cup Sultanas',' 2 Tbs Orange Peel',' 2 Tbs Caster Sugar',' 1 Tsp Dried Yeast',' 1 Tsp Mixed Spice',' 1 Tsp Ground Cinnamon',' 1 Tsp Ground Nutmeg',' 1 Tsp Salt',' 1 Cup Warm Milk',' 50g Butter, Melted',' 1 Egg, Whisked'],
+		steps: ['Line baking tray with baking paper','In a large bowl combine Flour, Sultanas, Orange Peel, Sugar, Yeast, Spices, Nutmeg and salt.','Make a well in the center ad mix in Milk, Butter and Egg. Use your hands to bring the dough together in the bowl.','Turn the dough onto a floured surface and knead for 10-15 minutes or until smooth.','Coat with Melted Butter and leave to rise for 1 ½ hours.','Preheat oven to 180°C. knead dough for 3-5 minutes, until smooth.','Divide into 12 balls, Place onto prepared tray. Set aside for 30 minutes.','For the Cross Paste, mix ¼ Cup Flour and 2 Tbs water. Transfer into piping bag and make Crosses','Bake for 20-25 minutes, Leave to cool.'],   
+		tips: ['You can use any citrus peel instead of Orange Peel'],
+   		preparation_time: '35 Minutes',
+   		cook_time: '20 Minutes',
+		total_time: '6 Hours, 5 Minutes',
+		featured: true
+	},
+	{
+		name: 'Example',
+		slug: 'example',
+		description: 'Example..',
+		category: 'Example',
+		image: 'https://image.shutterstock.com/image-vector/example-red-square-grunge-stamp-260nw-327662909.jpg',
+		ingredients: ['1 Example', '1/4 Liquid Example'],
+		steps: ['Enjoy'],   
+		tips: ['This is an example.'],
+   		preparation_time: '42 Minutes',
+   		cook_time: '69 Minutes',
+		total_time: '1 Hour, 5 Minutes',
+		featured: true
 	}
 ];
 
-posts.forEach(post => {
-	post.html = post.html.replace(/^\t{3}/gm, '');
-});
-
-const contents = JSON.stringify(posts.map(post => {
+const contents = JSON.stringify(recipes.map(recipe => {
 	return {
-		title: post.title,
-		slug: post.slug
+		name: recipe.name,
+		slug: recipe.slug,
+		description: recipe.description,
+		category: recipe.category,
+		image: recipe.image,
+		ingredients: recipe.ingredients,
+		steps: recipe.steps,
+		tips: recipe.tips,
+   		preparation_time: recipe.preparation_time,
+   		cook_time: recipe.cook_time,
+		total_time: recipe.total_time,
+		featured: recipe.featured
 	};
 }));
 
@@ -70,8 +86,8 @@ var route_0 = /*#__PURE__*/Object.freeze({
 });
 
 const lookup = new Map();
-posts.forEach(post => {
-	lookup.set(post.slug, JSON.stringify(post));
+recipes.forEach(recipe => {
+	lookup.set(recipe.slug, JSON.stringify(recipe));
 });
 
 function get$1(req, res, next) {
@@ -99,6 +115,83 @@ function get$1(req, res, next) {
 var route_1 = /*#__PURE__*/Object.freeze({
 	__proto__: null,
 	get: get$1
+});
+
+// Ordinarily, you'd generate this data from markdown files in your
+// repo, or fetch them from a database of some kind. But in order to
+// avoid unnecessary dependencies in the starter template, and in the
+// service of obviousness, we're just going to leave it here.
+
+// This file is called `_posts.js` rather than `posts.js`, because
+// we don't want to create an `/blog/posts` route — the leading
+// underscore tells Sapper not to do that.
+
+const posts = [
+	{
+		title: 'What is Kitchefs?',
+		slug: 'what-is-kitchefs',
+		html: `
+			<p>Kitchefs is a new cooking website with verified recipes.</p>
+
+			<p>Kitchefs is free and will always remain free, with no ads. None.</p>
+		`
+	}
+];
+
+posts.forEach(post => {
+	post.html = post.html.replace(/^\t{3}/gm, '');
+});
+
+const contents$1 = JSON.stringify(posts.map(post => {
+	return {
+		title: post.title,
+		slug: post.slug
+	};
+}));
+
+function get$2(req, res) {
+	res.writeHead(200, {
+		'Content-Type': 'application/json'
+	});
+
+	res.end(contents$1);
+}
+
+var route_2 = /*#__PURE__*/Object.freeze({
+	__proto__: null,
+	get: get$2
+});
+
+const lookup$1 = new Map();
+posts.forEach(post => {
+	lookup$1.set(post.slug, JSON.stringify(post));
+});
+
+function get$3(req, res, next) {
+	// the `slug` parameter is available because
+	// this file is called [slug].json.js
+	const { slug } = req.params;
+
+	if (lookup$1.has(slug)) {
+		res.writeHead(200, {
+			'Content-Type': 'application/json'
+		});
+
+		res.end(lookup$1.get(slug));
+	} else {
+		res.writeHead(404, {
+			'Content-Type': 'application/json'
+		});
+
+		res.end(JSON.stringify({
+			message: `Not found`
+		}));
+	}
+}
+
+var route_3 = /*#__PURE__*/Object.freeze({
+	__proto__: null,
+	get: get$3
 });
 
 function noop() { }
@@ -266,91 +359,49 @@ const Featured_item = create_ssr_component(($$result, $$props, $$bindings, slots
 
 /* src/routes/index.svelte generated by Svelte v3.29.0 */
 
+function preload() {
+	return this.fetch(`recipes.json`).then(r => r.json()).then(recipes => {
+		return { recipes };
+	});
+}
+
 const Routes = create_ssr_component(($$result, $$props, $$bindings, slots) => {
+	let { recipes } = $$props;
+	if ($$props.recipes === void 0 && $$bindings.recipes && recipes !== void 0) $$bindings.recipes(recipes);
+
 	return `${($$result.head += `${($$result.title = `<title>Kitchefs</title>`, "")}`, "")}
 
-<div class="${"container"}"><div class="${"row"}">${validate_component(Featured_item, "FeaturedItem").$$render(
-		$$result,
-		{
-			name: "Hot Cross Buns",
-			category: "Festive",
-			image: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/Hot_cross_buns_-_fig_and_pecan.jpg/1200px-Hot_cross_buns_-_fig_and_pecan.jpg",
-			description: "A perfect Easter snack for the whole family.",
-			href: "recipe"
-		},
-		{},
-		{}
-	)}
-
-        ${validate_component(Featured_item, "FeaturedItem").$$render(
-		$$result,
-		{
-			name: "Blueberry Muffins",
-			category: "Sweet",
-			image: "https://i2.wp.com/smittenkitchen.com/wp-content/uploads//2010/08/perfect-blueberry-muffins.jpg",
-			description: "A sweet treat famous for its aroma.",
-			href: "#"
-		},
-		{},
-		{}
-	)}
-
-        ${validate_component(Item, "Item").$$render(
-		$$result,
-		{
-			name: "Caramel Slice",
-			category: "Sweet",
-			image: "https://www.sweetestmenu.com/wp-content/uploads/2020/04/caramelslice2a.jpg",
-			description: "Perfect for any sweet-tooth, this Caramel Slice is bound to turn a few heads!",
-			href: "#"
-		},
-		{},
-		{}
-	)}
-
-            ${validate_component(Item, "Item").$$render(
-		$$result,
-		{
-			name: "Caramel Slice",
-			category: "Sweet",
-			image: "https://www.sweetestmenu.com/wp-content/uploads/2020/04/caramelslice2a.jpg",
-			description: "Perfect for any sweet-tooth, this Caramel Slice is bound to turn a few heads!",
-			href: "#"
-		},
-		{},
-		{}
-	)}
-
-            ${validate_component(Item, "Item").$$render(
-		$$result,
-		{
-			name: "Caramel Slice",
-			category: "Sweet",
-			image: "https://www.sweetestmenu.com/wp-content/uploads/2020/04/caramelslice2a.jpg",
-			description: "Perfect for any sweet-tooth, this Caramel Slice is bound to turn a few heads!",
-			href: "#"
-		},
-		{},
-		{}
-	)}
-
-            ${validate_component(Item, "Item").$$render(
-		$$result,
-		{
-			name: "Caramel Slice",
-			category: "Sweet",
-			image: "https://www.sweetestmenu.com/wp-content/uploads/2020/04/caramelslice2a.jpg",
-			description: "Perfect for any sweet-tooth, this Caramel Slice is bound to turn a few heads!",
-			href: "#"
-		},
-		{},
-		{}
-	)}</div></div>`;
+<div class="${"container"}"><div class="${"row"}">${each(recipes, recipe => `${recipe.featured
+	? `${validate_component(Featured_item, "FeaturedItem").$$render(
+			$$result,
+			{
+				name: recipe.name,
+				category: recipe.category,
+				image: recipe.image,
+				description: recipe.description,
+				href: "recipes/" + recipe.slug
+			},
+			{},
+			{}
+		)}`
+	: `${validate_component(Item, "Item").$$render(
+			$$result,
+			{
+				name: recipe.name,
+				category: recipe.category,
+				image: recipe.image,
+				description: recipe.description,
+				href: "recipes/" + recipe.slug
+			},
+			{},
+			{}
+		)}`}`)}</div></div>`;
 });
 
 var component_0 = /*#__PURE__*/Object.freeze({
 	__proto__: null,
-	'default': Routes
+	'default': Routes,
+	preload: preload
 });
 
 /* src/routes/saved_items.svelte generated by Svelte v3.29.0 */
@@ -419,44 +470,40 @@ const Recipe_page = create_ssr_component(($$result, $$props, $$bindings, slots) 
         <ul>${each(tips, tip => `<li>${escape(tip)}</li>`)}</ul></div></div>`;
 });
 
-/* src/routes/recipe.svelte generated by Svelte v3.29.0 */
+/* src/routes/recipes/[slug].svelte generated by Svelte v3.29.0 */
 
-const Recipe = create_ssr_component(($$result, $$props, $$bindings, slots) => {
-	return `<div class="${"container"}"><div class="${"row"}">${validate_component(Recipe_page, "RecipePage").$$render(
+async function preload$1({ params }) {
+	// the `slug` parameter is available because
+	// this file is called [slug].svelte
+	const res = await this.fetch(`recipes/${params.slug}.json`);
+
+	const data = await res.json();
+
+	if (res.status === 200) {
+		return { recipe: data };
+	} else {
+		this.error(res.status, data.message);
+	}
+}
+
+const U5Bslugu5D = create_ssr_component(($$result, $$props, $$bindings, slots) => {
+	let { recipe } = $$props;
+	if ($$props.recipe === void 0 && $$bindings.recipe && recipe !== void 0) $$bindings.recipe(recipe);
+
+	return `${($$result.head += `${($$result.title = `<title>Kitchefs | ${escape(recipe.name)}</title>`, "")}`, "")}
+
+<div class="${"container"}"><div class="${"row"}">${validate_component(Recipe_page, "RecipePage").$$render(
 		$$result,
 		{
-			name: "Hot Cross Bun",
-			description: "A perfect Easter snack for the whole family.",
-			image: "https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/Hot_cross_buns_-_fig_and_pecan.jpg/1200px-Hot_cross_buns_-_fig_and_pecan.jpg",
-			ingredients: [
-				"3 ¼ Cups Plain Flour",
-				" 1 Cup Sultanas",
-				" 2 Tbs Orange Peel*",
-				" 2 Tbs Caster Sugar",
-				" 1 Tsp Dried Yeast",
-				" 1 Tsp Mixed Spice",
-				" 1 Tsp Ground Cinnamon",
-				" 1 Tsp Ground Nutmeg",
-				" 1 Tsp Salt",
-				" 1 Cup Warm Milk",
-				" 50g Butter, Melted",
-				" 1 Egg, Wisked"
-			],
-			steps: [
-				"Line baking tray with baking paper",
-				"In a large bowl combine Flour, Sultanas, Orange Peel, Sugar, Yeast, Spices, Nutmeg and salt.",
-				"Make a well in the center ad mix in Milk, Butter and Egg. Use your hands to bring the dough together in the bowl.",
-				"Turn the dough onto a floured surface and knead for 10-15 minutes or until smooth.",
-				"Coat with Melted Butter and leave to rise for 1 ½ hours.",
-				"Preheat oven to 180°C. knead dough for 3-5 minutes, until smooth.",
-				"Divide into 12 balls, Place onto prepared tray. Set aside for 30 minutes.",
-				"For the Cross Paste, mix ¼ Cup Flour and 2 Tbs water. Transfer into piping bag and make Crosses",
-				"Bake for 20-25 minutes, Leave to cool."
-			],
-			tips: ["You can use any cirus peel instead of Orange Peel"],
-			preparation_time: "35 Minutes",
-			cook_time: "20 Minutes",
-			total_time: "6 Hours, 5 Minutes"
+			name: recipe.name,
+			description: recipe.description,
+			image: recipe.image,
+			ingredients: recipe.ingredients,
+			steps: recipe.steps,
+			tips: recipe.tips,
+			preparation_time: recipe.preparation_time,
+			cook_time: recipe.cook_time,
+			total_time: recipe.total_time
 		},
 		{},
 		{}
@@ -465,7 +512,8 @@ const Recipe = create_ssr_component(($$result, $$props, $$bindings, slots) => {
 
 var component_2 = /*#__PURE__*/Object.freeze({
 	__proto__: null,
-	'default': Recipe
+	'default': U5Bslugu5D,
+	preload: preload$1
 });
 
 /* src/routes/blog/index.svelte generated by Svelte v3.29.0 */
@@ -475,7 +523,7 @@ const css$3 = {
 	map: "{\"version\":3,\"file\":\"index.svelte\",\"sources\":[\"index.svelte\"],\"sourcesContent\":[\"<script context=\\\"module\\\">\\n\\texport function preload() {\\n\\t\\treturn this.fetch(`blog.json`).then(r => r.json()).then(posts => {\\n\\t\\t\\treturn { posts };\\n\\t\\t});\\n\\t}\\n</script>\\n\\n<script>\\n\\texport let posts;\\n</script>\\n\\n<style>\\n\\tul {\\n\\t\\tmargin: 0 0 1em 0;\\n\\t\\tline-height: 1.5;\\n\\t}\\n</style>\\n\\n<svelte:head>\\n\\t<title>Blog</title>\\n</svelte:head>\\n\\n<h1>Recent posts</h1>\\n\\n<ul>\\n\\t{#each posts as post}\\n\\t\\t<!-- we're using the non-standard `rel=prefetch` attribute to\\n\\t\\t\\t\\ttell Sapper to load the data for the page as soon as\\n\\t\\t\\t\\tthe user hovers over the link or taps it, instead of\\n\\t\\t\\t\\twaiting for the 'click' event -->\\n\\t\\t<li><a rel=\\\"prefetch\\\" href=\\\"blog/{post.slug}\\\">{post.title}</a></li>\\n\\t{/each}\\n</ul>\\n\"],\"names\":[],\"mappings\":\"AAaC,EAAE,eAAC,CAAC,AACH,MAAM,CAAE,CAAC,CAAC,CAAC,CAAC,GAAG,CAAC,CAAC,CACjB,WAAW,CAAE,GAAG,AACjB,CAAC\"}"
 };
 
-function preload() {
+function preload$2() {
 	return this.fetch(`blog.json`).then(r => r.json()).then(posts => {
 		return { posts };
 	});
@@ -497,7 +545,7 @@ const Blog = create_ssr_component(($$result, $$props, $$bindings, slots) => {
 var component_3 = /*#__PURE__*/Object.freeze({
 	__proto__: null,
 	'default': Blog,
-	preload: preload
+	preload: preload$2
 });
 
 /* src/routes/blog/[slug].svelte generated by Svelte v3.29.0 */
@@ -507,7 +555,7 @@ const css$4 = {
 	map: "{\"version\":3,\"file\":\"[slug].svelte\",\"sources\":[\"[slug].svelte\"],\"sourcesContent\":[\"<script context=\\\"module\\\">\\n\\texport async function preload({ params }) {\\n\\t\\t// the `slug` parameter is available because\\n\\t\\t// this file is called [slug].svelte\\n\\t\\tconst res = await this.fetch(`blog/${params.slug}.json`);\\n\\t\\tconst data = await res.json();\\n\\n\\t\\tif (res.status === 200) {\\n\\t\\t\\treturn { post: data };\\n\\t\\t} else {\\n\\t\\t\\tthis.error(res.status, data.message);\\n\\t\\t}\\n\\t}\\n</script>\\n\\n<script>\\n\\texport let post;\\n</script>\\n\\n<style>\\n\\t/*\\n\\t\\tBy default, CSS is locally scoped to the component,\\n\\t\\tand any unused styles are dead-code-eliminated.\\n\\t\\tIn this page, Svelte can't know which elements are\\n\\t\\tgoing to appear inside the {{{post.html}}} block,\\n\\t\\tso we have to use the :global(...) modifier to target\\n\\t\\tall elements inside .content\\n\\t*/\\n\\t.content :global(h2) {\\n\\t\\tfont-size: 1.4em;\\n\\t\\tfont-weight: 500;\\n\\t}\\n\\n\\t.content :global(pre) {\\n\\t\\tbackground-color: #f9f9f9;\\n\\t\\tbox-shadow: inset 1px 1px 5px rgba(0, 0, 0, 0.05);\\n\\t\\tpadding: 0.5em;\\n\\t\\tborder-radius: 2px;\\n\\t\\toverflow-x: auto;\\n\\t}\\n\\n\\t.content :global(pre) :global(code) {\\n\\t\\tbackground-color: transparent;\\n\\t\\tpadding: 0;\\n\\t}\\n\\n\\t.content :global(ul) {\\n\\t\\tline-height: 1.5;\\n\\t}\\n\\n\\t.content :global(li) {\\n\\t\\tmargin: 0 0 0.5em 0;\\n\\t}\\n</style>\\n\\n<svelte:head>\\n\\t<title>{post.title}</title>\\n</svelte:head>\\n\\n<h1>{post.title}</h1>\\n\\n<div class=\\\"content\\\">\\n\\t{@html post.html}\\n</div>\\n\"],\"names\":[],\"mappings\":\"AA4BC,sBAAQ,CAAC,AAAQ,EAAE,AAAE,CAAC,AACrB,SAAS,CAAE,KAAK,CAChB,WAAW,CAAE,GAAG,AACjB,CAAC,AAED,sBAAQ,CAAC,AAAQ,GAAG,AAAE,CAAC,AACtB,gBAAgB,CAAE,OAAO,CACzB,UAAU,CAAE,KAAK,CAAC,GAAG,CAAC,GAAG,CAAC,GAAG,CAAC,KAAK,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,IAAI,CAAC,CACjD,OAAO,CAAE,KAAK,CACd,aAAa,CAAE,GAAG,CAClB,UAAU,CAAE,IAAI,AACjB,CAAC,AAED,sBAAQ,CAAC,AAAQ,GAAG,AAAC,CAAC,AAAQ,IAAI,AAAE,CAAC,AACpC,gBAAgB,CAAE,WAAW,CAC7B,OAAO,CAAE,CAAC,AACX,CAAC,AAED,sBAAQ,CAAC,AAAQ,EAAE,AAAE,CAAC,AACrB,WAAW,CAAE,GAAG,AACjB,CAAC,AAED,sBAAQ,CAAC,AAAQ,EAAE,AAAE,CAAC,AACrB,MAAM,CAAE,CAAC,CAAC,CAAC,CAAC,KAAK,CAAC,CAAC,AACpB,CAAC\"}"
 };
 
-async function preload$1({ params }) {
+async function preload$3({ params }) {
 	// the `slug` parameter is available because
 	// this file is called [slug].svelte
 	const res = await this.fetch(`blog/${params.slug}.json`);
@@ -521,7 +569,7 @@ async function preload$1({ params }) {
 	}
 }
 
-const U5Bslugu5D = create_ssr_component(($$result, $$props, $$bindings, slots) => {
+const U5Bslugu5D$1 = create_ssr_component(($$result, $$props, $$bindings, slots) => {
 	let { post } = $$props;
 	if ($$props.post === void 0 && $$bindings.post && post !== void 0) $$bindings.post(post);
 	$$result.css.add(css$4);
@@ -535,15 +583,15 @@ const U5Bslugu5D = create_ssr_component(($$result, $$props, $$bindings, slots) =
 
 var component_4 = /*#__PURE__*/Object.freeze({
 	__proto__: null,
-	'default': U5Bslugu5D,
-	preload: preload$1
+	'default': U5Bslugu5D$1,
+	preload: preload$3
 });
 
 /* src/components/nav.svelte generated by Svelte v3.29.0 */
 
 const css$5 = {
 	code: "nav.svelte-8ibhtf{border-bottom:1px solid rgba(255,62,0,0.1);font-weight:300;padding:0 1em}[aria-current].svelte-8ibhtf{position:relative;display:inline-block}[aria-current].svelte-8ibhtf::after{position:absolute;content:'';width:calc(100% - 1em);height:2px;background-color:rgb(255,62,0);display:block;bottom:-1px}a.svelte-8ibhtf{color:#ffffff !important;text-decoration:none !important;padding:1em 0.5em !important;display:block !important}@media screen and (max-width: 768px){nav.svelte-8ibhtf{padding:0.7em}}.kitchefs-brand.svelte-8ibhtf{font-family:\"Playfair Display\";font-size:1.2em;padding-top:0 !important;padding-bottom:0 !important;margin:0 !important;padding-left:0.4em !important;padding-right:0.6em !important}",
-	map: "{\"version\":3,\"file\":\"nav.svelte\",\"sources\":[\"nav.svelte\"],\"sourcesContent\":[\"<script>\\n\\texport let segment;\\n</script>\\n\\n<style>\\n\\tnav {\\n\\t\\tborder-bottom: 1px solid rgba(255,62,0,0.1);\\n\\t\\tfont-weight: 300;\\n\\t\\tpadding: 0 1em;\\n\\t}\\n\\t[aria-current] {\\n\\t\\tposition: relative;\\n\\t\\tdisplay: inline-block;\\n\\t}\\n\\t[aria-current]::after {\\n\\t\\tposition: absolute;\\n\\t\\tcontent: '';\\n\\t\\twidth: calc(100% - 1em);\\n\\t\\theight: 2px;\\n\\t\\tbackground-color: rgb(255,62,0);\\n\\t\\tdisplay: block;\\n\\t\\tbottom: -1px;\\n\\t}\\n\\ta {\\n\\t\\tcolor: #ffffff !important;\\n\\t\\ttext-decoration: none !important;\\n\\t\\tpadding: 1em 0.5em !important;\\n\\t\\tdisplay: block !important;\\n\\t}\\n    @media screen and (max-width: 768px) {\\n        nav {\\n\\t\\t    padding: 0.7em;\\n\\t    }\\n    }\\n    .kitchefs-brand {\\n        font-family: \\\"Playfair Display\\\";\\n        font-size: 1.2em;\\n        padding-top: 0 !important;\\n        padding-bottom: 0 !important;\\n        margin: 0 !important;\\n        padding-left: 0.4em !important;\\n        padding-right: 0.6em !important;\\n    }\\n</style>\\n\\n<nav class=\\\"navbar navbar-expand-md navbar-dark bg-dark fixed-top\\\">\\n    <button\\n        class=\\\"navbar-toggler\\\"\\n        type=\\\"button\\\"\\n        data-toggle=\\\"collapse\\\"\\n        data-target=\\\"#navbarsExampleDefault\\\"\\n        aria-controls=\\\"navbarsExampleDefault\\\"\\n        aria-expanded=\\\"false\\\"\\n        aria-label=\\\"Toggle navigation\\\">\\n        <span class=\\\"navbar-toggler-icon\\\" />\\n    </button>\\n\\n    <div class=\\\"collapse navbar-collapse\\\" id=\\\"navbarsExampleDefault\\\">\\n        <a class=\\\"kitchefs-brand\\\" href=\\\".\\\">Kitchefs</a>\\n        <ul class=\\\"navbar-nav mr-auto\\\">\\n\\t\\t\\t<li><a aria-current=\\\"{segment === undefined ? 'page' : undefined}\\\" href=\\\".\\\">Home</a></li>\\n\\t\\t\\t<li><a aria-current=\\\"{segment === 'saved_items' ? 'page' : undefined}\\\" href=\\\"saved_items\\\">Saved</a></li>\\n\\n\\t\\t\\t<li><a rel=prefetch aria-current=\\\"{segment === 'blog' ? 'page' : undefined}\\\" href=\\\"blog\\\">Blog</a></li>\\n\\t\\t</ul>\\n\\t\\t<form class=\\\"form-inline my-2 my-lg-0\\\" id=\\\"search-bar\\\">\\n\\t\\t\\t<input\\n\\t\\t\\t\\tclass=\\\"form-control mr-sm-2\\\"\\n\\t\\t\\t\\ttype=\\\"text\\\"\\n\\t\\t\\t\\tplaceholder=\\\"Search\\\"\\n\\t\\t\\t\\taria-label=\\\"Search\\\" />\\n\\t\\t\\t<button class=\\\"btn btn-secondary my-2 my-sm-0\\\" type=\\\"submit\\\" id=\\\"search-bar-submit\\\">Search</button>\\n\\t\\t</form>\\n    </div>\\n</nav>\"],\"names\":[],\"mappings\":\"AAKC,GAAG,cAAC,CAAC,AACJ,aAAa,CAAE,GAAG,CAAC,KAAK,CAAC,KAAK,GAAG,CAAC,EAAE,CAAC,CAAC,CAAC,GAAG,CAAC,CAC3C,WAAW,CAAE,GAAG,CAChB,OAAO,CAAE,CAAC,CAAC,GAAG,AACf,CAAC,AACD,CAAC,YAAY,CAAC,cAAC,CAAC,AACf,QAAQ,CAAE,QAAQ,CAClB,OAAO,CAAE,YAAY,AACtB,CAAC,AACD,CAAC,YAAY,eAAC,OAAO,AAAC,CAAC,AACtB,QAAQ,CAAE,QAAQ,CAClB,OAAO,CAAE,EAAE,CACX,KAAK,CAAE,KAAK,IAAI,CAAC,CAAC,CAAC,GAAG,CAAC,CACvB,MAAM,CAAE,GAAG,CACX,gBAAgB,CAAE,IAAI,GAAG,CAAC,EAAE,CAAC,CAAC,CAAC,CAC/B,OAAO,CAAE,KAAK,CACd,MAAM,CAAE,IAAI,AACb,CAAC,AACD,CAAC,cAAC,CAAC,AACF,KAAK,CAAE,OAAO,CAAC,UAAU,CACzB,eAAe,CAAE,IAAI,CAAC,UAAU,CAChC,OAAO,CAAE,GAAG,CAAC,KAAK,CAAC,UAAU,CAC7B,OAAO,CAAE,KAAK,CAAC,UAAU,AAC1B,CAAC,AACE,OAAO,MAAM,CAAC,GAAG,CAAC,YAAY,KAAK,CAAC,AAAC,CAAC,AAClC,GAAG,cAAC,CAAC,AACP,OAAO,CAAE,KAAK,AACf,CAAC,AACF,CAAC,AACD,eAAe,cAAC,CAAC,AACb,WAAW,CAAE,kBAAkB,CAC/B,SAAS,CAAE,KAAK,CAChB,WAAW,CAAE,CAAC,CAAC,UAAU,CACzB,cAAc,CAAE,CAAC,CAAC,UAAU,CAC5B,MAAM,CAAE,CAAC,CAAC,UAAU,CACpB,YAAY,CAAE,KAAK,CAAC,UAAU,CAC9B,aAAa,CAAE,KAAK,CAAC,UAAU,AACnC,CAAC\"}"
+	map: "{\"version\":3,\"file\":\"nav.svelte\",\"sources\":[\"nav.svelte\"],\"sourcesContent\":[\"<script>\\n\\texport let segment;\\n</script>\\n\\n<style>\\n\\tnav {\\n\\t\\tborder-bottom: 1px solid rgba(255,62,0,0.1);\\n\\t\\tfont-weight: 300;\\n\\t\\tpadding: 0 1em;\\n\\t}\\n\\t[aria-current] {\\n\\t\\tposition: relative;\\n\\t\\tdisplay: inline-block;\\n\\t}\\n\\t[aria-current]::after {\\n\\t\\tposition: absolute;\\n\\t\\tcontent: '';\\n\\t\\twidth: calc(100% - 1em);\\n\\t\\theight: 2px;\\n\\t\\tbackground-color: rgb(255,62,0);\\n\\t\\tdisplay: block;\\n\\t\\tbottom: -1px;\\n\\t}\\n\\ta {\\n\\t\\tcolor: #ffffff !important;\\n\\t\\ttext-decoration: none !important;\\n\\t\\tpadding: 1em 0.5em !important;\\n\\t\\tdisplay: block !important;\\n\\t}\\n    @media screen and (max-width: 768px) {\\n        nav {\\n\\t\\t    padding: 0.7em;\\n\\t    }\\n    }\\n    .kitchefs-brand {\\n        font-family: \\\"Playfair Display\\\";\\n        font-size: 1.2em;\\n        padding-top: 0 !important;\\n        padding-bottom: 0 !important;\\n        margin: 0 !important;\\n        padding-left: 0.4em !important;\\n        padding-right: 0.6em !important;\\n    }\\n</style>\\n\\n<nav class=\\\"navbar navbar-expand-md navbar-dark bg-dark fixed-top\\\">\\n    <button\\n        class=\\\"navbar-toggler\\\"\\n        type=\\\"button\\\"\\n        data-toggle=\\\"collapse\\\"\\n        data-target=\\\"#navbarsExampleDefault\\\"\\n        aria-controls=\\\"navbarsExampleDefault\\\"\\n        aria-expanded=\\\"false\\\"\\n        aria-label=\\\"Toggle navigation\\\">\\n        <span class=\\\"navbar-toggler-icon\\\" />\\n    </button>\\n\\n    <div class=\\\"collapse navbar-collapse\\\" id=\\\"navbarsExampleDefault\\\">\\n        <a class=\\\"kitchefs-brand\\\" href=\\\".\\\">Kitchefs</a>\\n        <ul class=\\\"navbar-nav mr-auto\\\">\\n\\t\\t\\t<li><a aria-current=\\\"{segment === undefined ? 'page' : undefined}\\\" href=\\\".\\\">Home</a></li>\\n\\t\\t\\t<li><a aria-current=\\\"{segment === 'saved_items' ? 'page' : undefined}\\\" href=\\\"saved_items\\\">Saved</a></li>\\n\\t\\t\\t<li><a rel=prefetch aria-current=\\\"{segment === 'blog' ? 'page' : undefined}\\\" href=\\\"blog\\\">Blog</a></li>\\n\\t\\t</ul>\\n\\t\\t<form class=\\\"form-inline my-2 my-lg-0\\\" id=\\\"search-bar\\\">\\n\\t\\t\\t<input\\n\\t\\t\\t\\tclass=\\\"form-control mr-sm-2\\\"\\n\\t\\t\\t\\ttype=\\\"text\\\"\\n\\t\\t\\t\\tplaceholder=\\\"Search\\\"\\n\\t\\t\\t\\taria-label=\\\"Search\\\" />\\n\\t\\t\\t<button class=\\\"btn btn-secondary my-2 my-sm-0\\\" type=\\\"submit\\\" id=\\\"search-bar-submit\\\">Search</button>\\n\\t\\t</form>\\n    </div>\\n</nav>\"],\"names\":[],\"mappings\":\"AAKC,GAAG,cAAC,CAAC,AACJ,aAAa,CAAE,GAAG,CAAC,KAAK,CAAC,KAAK,GAAG,CAAC,EAAE,CAAC,CAAC,CAAC,GAAG,CAAC,CAC3C,WAAW,CAAE,GAAG,CAChB,OAAO,CAAE,CAAC,CAAC,GAAG,AACf,CAAC,AACD,CAAC,YAAY,CAAC,cAAC,CAAC,AACf,QAAQ,CAAE,QAAQ,CAClB,OAAO,CAAE,YAAY,AACtB,CAAC,AACD,CAAC,YAAY,eAAC,OAAO,AAAC,CAAC,AACtB,QAAQ,CAAE,QAAQ,CAClB,OAAO,CAAE,EAAE,CACX,KAAK,CAAE,KAAK,IAAI,CAAC,CAAC,CAAC,GAAG,CAAC,CACvB,MAAM,CAAE,GAAG,CACX,gBAAgB,CAAE,IAAI,GAAG,CAAC,EAAE,CAAC,CAAC,CAAC,CAC/B,OAAO,CAAE,KAAK,CACd,MAAM,CAAE,IAAI,AACb,CAAC,AACD,CAAC,cAAC,CAAC,AACF,KAAK,CAAE,OAAO,CAAC,UAAU,CACzB,eAAe,CAAE,IAAI,CAAC,UAAU,CAChC,OAAO,CAAE,GAAG,CAAC,KAAK,CAAC,UAAU,CAC7B,OAAO,CAAE,KAAK,CAAC,UAAU,AAC1B,CAAC,AACE,OAAO,MAAM,CAAC,GAAG,CAAC,YAAY,KAAK,CAAC,AAAC,CAAC,AAClC,GAAG,cAAC,CAAC,AACP,OAAO,CAAE,KAAK,AACf,CAAC,AACF,CAAC,AACD,eAAe,cAAC,CAAC,AACb,WAAW,CAAE,kBAAkB,CAC/B,SAAS,CAAE,KAAK,CAChB,WAAW,CAAE,CAAC,CAAC,UAAU,CACzB,cAAc,CAAE,CAAC,CAAC,UAAU,CAC5B,MAAM,CAAE,CAAC,CAAC,UAAU,CACpB,YAAY,CAAE,KAAK,CAAC,UAAU,CAC9B,aAAa,CAAE,KAAK,CAAC,UAAU,AACnC,CAAC\"}"
 };
 
 const Nav = create_ssr_component(($$result, $$props, $$bindings, slots) => {
@@ -556,7 +604,6 @@ const Nav = create_ssr_component(($$result, $$props, $$bindings, slots) => {
     <div class="${"collapse navbar-collapse"}" id="${"navbarsExampleDefault"}"><a class="${"kitchefs-brand svelte-8ibhtf"}" href="${"."}">Kitchefs</a>
         <ul class="${"navbar-nav mr-auto"}"><li><a${add_attribute("aria-current", segment === undefined ? "page" : undefined, 0)} href="${"."}" class="${"svelte-8ibhtf"}">Home</a></li>
 			<li><a${add_attribute("aria-current", segment === "saved_items" ? "page" : undefined, 0)} href="${"saved_items"}" class="${"svelte-8ibhtf"}">Saved</a></li>
-
 			<li><a rel="${"prefetch"}"${add_attribute("aria-current", segment === "blog" ? "page" : undefined, 0)} href="${"blog"}" class="${"svelte-8ibhtf"}">Blog</a></li></ul>
 		<form class="${"form-inline my-2 my-lg-0"}" id="${"search-bar"}"><input class="${"form-control mr-sm-2"}" type="${"text"}" placeholder="${"Search"}" aria-label="${"Search"}">
 			<button class="${"btn btn-secondary my-2 my-sm-0"}" type="${"submit"}" id="${"search-bar-submit"}">Search</button></form></div></nav>`;
@@ -614,16 +661,30 @@ const d = decodeURIComponent;
 const manifest = {
 	server_routes: [
 		{
+			// recipes/index.json.js
+			pattern: /^\/recipes\.json$/,
+			handlers: route_0,
+			params: () => ({})
+		},
+
+		{
+			// recipes/[slug].json.js
+			pattern: /^\/recipes\/([^/]+?)\.json$/,
+			handlers: route_1,
+			params: match => ({ slug: d(match[1]) })
+		},
+
+		{
 			// blog/index.json.js
 			pattern: /^\/blog\.json$/,
-			handlers: route_0,
+			handlers: route_2,
 			params: () => ({})
 		},
 
 		{
 			// blog/[slug].json.js
 			pattern: /^\/blog\/([^/]+?)\.json$/,
-			handlers: route_1,
+			handlers: route_3,
 			params: match => ({ slug: d(match[1]) })
 		}
 	],
@@ -646,10 +707,11 @@ const manifest = {
 		},
 
 		{
-			// recipe.svelte
-			pattern: /^\/recipe\/?$/,
+			// recipes/[slug].svelte
+			pattern: /^\/recipes\/([^/]+?)\/?$/,
 			parts: [
-				{ name: "recipe", file: "recipe.svelte", component: component_2 }
+				null,
+				{ name: "recipes_$slug", file: "recipes/[slug].svelte", component: component_2, params: match => ({ slug: d(match[1]) }) }
 			]
 		},
 
