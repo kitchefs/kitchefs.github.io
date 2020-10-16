@@ -34,7 +34,7 @@
     }
     .kitchefs-brand {
         font-family: "Playfair Display";
-        font-size: 1.4em;
+        font-size: 1.2em;
         padding-top: 0 !important;
         padding-bottom: 0 !important;
         margin: 0 !important;
@@ -56,10 +56,10 @@
     </button>
 
     <div class="collapse navbar-collapse" id="navbarsExampleDefault">
-        <a class="kitchefs-brand" href=".">K</a>
+        <a class="kitchefs-brand" href=".">Kitchefs</a>
         <ul class="navbar-nav mr-auto">
 			<li><a aria-current="{segment === undefined ? 'page' : undefined}" href=".">Home</a></li>
-			<li><a aria-current="{segment === 'about' ? 'page' : undefined}" href="about">About</a></li>
+			<li><a aria-current="{segment === 'saved_items' ? 'page' : undefined}" href="saved_items">Saved</a></li>
 
 			<li><a rel=prefetch aria-current="{segment === 'blog' ? 'page' : undefined}" href="blog">Blog</a></li>
 		</ul>

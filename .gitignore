@@ -1,5 +1,5 @@
 .DS_Store
 /node_modules
 /.vscode
-/__sapper__/dev
-/__sappper/build
+__sapper__/dev
+__sappper/build
