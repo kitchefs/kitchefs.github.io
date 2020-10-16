@@ -28,20 +28,24 @@
         background-color: rgba(0, 0, 0, 0.1);
         height: 1px;
     }
+    a {
+        text-decoration: none;
+        color: inherit;
+    }
 </style>
 
 <div class="col-md-6" item-name="{lowercase(name)}" category-name="{lowercase(category)}">
-    <div
-        onclick="window.location='{href}'"
-        class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative featured-item-card">
-        <div class="col p-4 d-flex flex-column position-static">
-            <strong class="d-inline-block mb-2 text-primary">{category}</strong>
-            <h3 class="mb-0">{name}</h3>
-            <hr />
-            <p class="mb-auto">{description}</p>
+    <a href="{href}">
+        <div class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative featured-item-card">
+            <div class="col p-4 d-flex flex-column position-static">
+                <strong class="d-inline-block mb-2 text-primary">{category}</strong>
+                <h3 class="mb-0">{name}</h3>
+                <hr />
+                <p class="mb-auto">{description}</p>
+            </div>
+            <div class="col-auto d-none d-lg-block">
+                <img src={image} width="150px" height="100%" alt={name} />
+            </div>
         </div>
-        <div class="col-auto d-none d-lg-block">
-            <img src={image} width="150px" height="100%" alt={name} />
-        </div>
-    </div>
+    </a>
 </div>
