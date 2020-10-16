@@ -51,6 +51,9 @@
 	.content :global(li) {
 		margin: 0 0 0.5em 0;
 	}
+	h1 {
+		font-family: "Playfair Display";
+	}
 </style>
 
 <svelte:head>

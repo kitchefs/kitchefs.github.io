@@ -28,6 +28,9 @@
     .badge {
         margin: 5px;
     }
+    .badge-ff3e00 {
+        background-color: #ff3e00 !important;
+    }
 </style>
 
 <div class="container-fluid">
@@ -50,7 +53,7 @@
                     class="col badge badge-pill badge-secondary">Cook
                     Time:
                     {cook_time}</span>
-                <span class="col badge badge-pill badge-primary">Total Time:
+                <span class="col badge badge-pill badge-primary badge-ff3e00">Total Time:
                     {total_time}</span>
             </div>
         </div>

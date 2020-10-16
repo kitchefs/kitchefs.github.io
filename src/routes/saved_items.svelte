@@ -2,6 +2,12 @@
 	<title>Saved Items</title>
 </svelte:head>
 
-<h1>View Your Saved Recipes</h1>
+<style>
+	h1 {
+		font-family: "Playfair Display";
+	}
+</style>
+
+<h1>Saved Recipes</h1>
 
 <p>There's not much here.</p>
