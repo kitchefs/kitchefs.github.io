@@ -40,7 +40,20 @@
         margin: 0 !important;
         padding-left: 0.4em !important;
         padding-right: 0.6em !important;
-    }
+	}
+	.active-orange input.form-control[type=text]:focus:not([readonly]) {
+		border-bottom: 1px solid #ff3e00;
+		box-shadow: 0 1px 0 0 #ff3e00;
+	}
+	.active-orange input.form-control[type=text] {
+		border-bottom: 1px solid #6c757d;
+		box-shadow: 0 1px 0 0 #6c757d;
+		border-radius: 0;
+		background-color: inherit;
+		border: 0;
+		outline: 0;
+		color: #fff;
+	}
 </style>
 
 <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
@@ -62,13 +75,12 @@
 			<li><a aria-current="{segment === 'saved_items' ? 'page' : undefined}" href="saved_items">Saved</a></li>
 			<li><a rel=prefetch aria-current="{segment === 'blog' ? 'page' : undefined}" href="blog">Blog</a></li>
 		</ul>
-		<form class="form-inline my-2 my-lg-0" id="search-bar">
+		<form class="form-inline active-orange" id="search-bar">
 			<input
 				class="form-control mr-sm-2"
 				type="text"
 				placeholder="Search"
 				aria-label="Search" />
-			<button class="btn btn-secondary my-2 my-sm-0" type="submit" id="search-bar-submit">Search</button>
 		</form>
     </div>
 </nav>

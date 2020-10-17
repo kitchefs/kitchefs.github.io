@@ -13,8 +13,12 @@
 </script>
 
 <style>
+    .col-md-4 {
+        padding-bottom: 30px;
+    }
     img {
         object-fit: cover;
+        border-radius: 2px 2px 0 0;
     } 
     h3 {
         font-family: "Playfair Display";
@@ -28,7 +32,7 @@
 
 <div class="col-md-4" item-name="{lowercase(name)}" category-name="{lowercase(category)}">
     <a href="{href}">
-        <div class="card mb-4 shadow-sm item-card">
+        <div class="card mb-4 shadow-sm item-card h-100">
             <img src={image} width="100%" height="200px" alt={name} />
             <div class="card-body">
                 <h3 class="card-text">{name}</h3>
