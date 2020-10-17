@@ -37,7 +37,7 @@
     }
 </style>
 
-<div class="col-md-6" item-name="{lowercase(name)}" category-name="{lowercase(category)}">
+<div class="col-md-6" item-name="{lowercase(name)}" category-name="{lowercase(category)}" >
     <a href="{href}">
         <div class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative featured-item-card">
             <div class="col p-4 d-flex flex-column position-static">
@@ -47,7 +47,7 @@
                 <p class="mb-auto">{description}</p>
             </div>
             <div class="col-auto d-none d-lg-block">
-                <img src={image} width="150px" height="100%" alt={name} />
+                <img src={image} width="150px" height="190px" alt={name} />
             </div>
         </div>
     </a>
