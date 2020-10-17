@@ -1,33 +1,5 @@
 const recipes = [
 	{
-		name: 'Hot Cross Buns',
-		slug: 'hot-cross-buns',
-		description: 'A perfect Easter snack for the whole family.',
-		category: 'Festive',
-		image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/Hot_cross_buns_-_fig_and_pecan.jpg/1200px-Hot_cross_buns_-_fig_and_pecan.jpg',
-		ingredients: ['3 ¼ cups plain flour',' 1 cup sultanas',' 2 tbsp orange peel',' 2 tbsp caster sugar',' 1 tsp dried yeast',' 1 tsp mixed spice',' 1 tsp ground cinnamon',' 1 tsp ground nutmeg',' 1 tsp Salt',' 1 cup Warm Milk',' 50g Butter, Melted',' 1 Egg, Whisked'],
-		steps: ['Line baking tray with baking paper','In a large bowl combine Flour, Sultanas, Orange Peel, Sugar, Yeast, Spices, Nutmeg and salt.','Make a well in the center ad mix in Milk, Butter and Egg. Use your hands to bring the dough together in the bowl.','Turn the dough onto a floured surface and knead for 10-15 minutes or until smooth.','Coat with Melted Butter and leave to rise for 1 ½ hours.','Preheat oven to 180°C. knead dough for 3-5 minutes, until smooth.','Divide into 12 balls, Place onto prepared tray. Set aside for 30 minutes.','For the Cross Paste, mix ¼ cup Flour and 2 tbsp water. Transfer into piping bag and make Crosses','Bake for 20-25 minutes, Leave to cool.'],   
-		tips: ['You can use any citrus peel instead of Orange Peel'],
-   		preparation_time: '30 Minutes',
-   		cook_time: '25 Minutes',
-		total_time: '2 Hours, 55 Minutes',
-		featured: true
-	},
-	{
-		name: 'Guacamole',
-		slug: 'guacamole',
-		description: 'Great with Nachos or Corn Chips.',
-		category: 'Sides/Dips',
-		image: 'media/guacamole.jpg',
-		ingredients: ['2 avocados','¼ cup onion, Finely Chopped','¼ cup Tomato, Seeds Removed','1 tsp Pepper','1 tsp Salt','2 tsp Fresh Lemon Juice'],
-		steps: ['In a small bowl mash avocados well.','Add in onion, tomato, pepper, salt and lemon juice and mix well.'],   
-		tips: [],
-   		preparation_time: '5 Minutes',
-   		cook_time: '0 Minutes',
-		total_time: '5 Minutes',
-		featured: true
-	},	
-	{
 		name: 'Chocolate Caramel Slice',
 		slug: 'chocolate-caramel-slice',
 		description: 'Awesome for a tasty dessert treat.',
@@ -39,7 +11,6 @@ const recipes = [
    		preparation_time: '30 Minutes',
    		cook_time: '45 Minutes',
 		total_time: '6 Hours, 15 Minutes',
-		featured: false
 	},
 	{
 		name: 'Anzac Biscuits',
@@ -53,7 +24,32 @@ const recipes = [
    		preparation_time: '20 Minutes',
    		cook_time: '20 Minutes',
 		total_time: '45 Hours,  Minutes',
-		featured: false
+	},
+	{
+		name: 'Hot Cross Buns',
+		slug: 'hot-cross-buns',
+		description: 'A perfect Easter snack for the whole family.',
+		category: 'Festive',
+		image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/Hot_cross_buns_-_fig_and_pecan.jpg/1200px-Hot_cross_buns_-_fig_and_pecan.jpg',
+		ingredients: ['3 ¼ cups plain flour',' 1 cup sultanas',' 2 tbsp orange peel',' 2 tbsp caster sugar',' 1 tsp dried yeast',' 1 tsp mixed spice',' 1 tsp ground cinnamon',' 1 tsp ground nutmeg',' 1 tsp Salt',' 1 cup Warm Milk',' 50g Butter, Melted',' 1 Egg, Whisked'],
+		steps: ['Line baking tray with baking paper','In a large bowl combine Flour, Sultanas, Orange Peel, Sugar, Yeast, Spices, Nutmeg and salt.','Make a well in the center ad mix in Milk, Butter and Egg. Use your hands to bring the dough together in the bowl.','Turn the dough onto a floured surface and knead for 10-15 minutes or until smooth.','Coat with Melted Butter and leave to rise for 1 ½ hours.','Preheat oven to 180°C. knead dough for 3-5 minutes, until smooth.','Divide into 12 balls, Place onto prepared tray. Set aside for 30 minutes.','For the Cross Paste, mix ¼ cup Flour and 2 tbsp water. Transfer into piping bag and make Crosses','Bake for 20-25 minutes, Leave to cool.'],   
+		tips: ['You can use any citrus peel instead of Orange Peel'],
+   		preparation_time: '30 Minutes',
+   		cook_time: '25 Minutes',
+		total_time: '2 Hours, 55 Minutes',
+	},
+	{
+		name: 'Guacamole',
+		slug: 'guacamole',
+		description: 'Great with Nachos or Corn Chips.',
+		category: 'Sides/Dips',
+		image: 'media/guacamole.jpg',
+		ingredients: ['2 avocados','¼ cup onion, Finely Chopped','¼ cup Tomato, Seeds Removed','1 tsp Pepper','1 tsp Salt','2 tsp Fresh Lemon Juice'],
+		steps: ['In a small bowl mash avocados well.','Add in onion, tomato, pepper, salt and lemon juice and mix well.'],   
+		tips: [],
+   		preparation_time: '5 Minutes',
+   		cook_time: '0 Minutes',
+		total_time: '5 Minutes',
 	}
 ];
 

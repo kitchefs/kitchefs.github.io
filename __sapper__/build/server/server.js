@@ -26,34 +26,6 @@ var zlib__default = /*#__PURE__*/_interopDefaultLegacy(zlib);
 
 const recipes = [
 	{
-		name: 'Hot Cross Buns',
-		slug: 'hot-cross-buns',
-		description: 'A perfect Easter snack for the whole family.',
-		category: 'Festive',
-		image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/Hot_cross_buns_-_fig_and_pecan.jpg/1200px-Hot_cross_buns_-_fig_and_pecan.jpg',
-		ingredients: ['3 ¼ cups plain flour',' 1 cup sultanas',' 2 tbsp orange peel',' 2 tbsp caster sugar',' 1 tsp dried yeast',' 1 tsp mixed spice',' 1 tsp ground cinnamon',' 1 tsp ground nutmeg',' 1 tsp Salt',' 1 cup Warm Milk',' 50g Butter, Melted',' 1 Egg, Whisked'],
-		steps: ['Line baking tray with baking paper','In a large bowl combine Flour, Sultanas, Orange Peel, Sugar, Yeast, Spices, Nutmeg and salt.','Make a well in the center ad mix in Milk, Butter and Egg. Use your hands to bring the dough together in the bowl.','Turn the dough onto a floured surface and knead for 10-15 minutes or until smooth.','Coat with Melted Butter and leave to rise for 1 ½ hours.','Preheat oven to 180°C. knead dough for 3-5 minutes, until smooth.','Divide into 12 balls, Place onto prepared tray. Set aside for 30 minutes.','For the Cross Paste, mix ¼ cup Flour and 2 tbsp water. Transfer into piping bag and make Crosses','Bake for 20-25 minutes, Leave to cool.'],   
-		tips: ['You can use any citrus peel instead of Orange Peel'],
-   		preparation_time: '30 Minutes',
-   		cook_time: '25 Minutes',
-		total_time: '2 Hours, 55 Minutes',
-		featured: true
-	},
-	{
-		name: 'Guacamole',
-		slug: 'guacamole',
-		description: 'Great with Nachos or Corn Chips.',
-		category: 'Sides/Dips',
-		image: 'media/guacamole.jpg',
-		ingredients: ['2 avocados','¼ cup onion, Finely Chopped','¼ cup Tomato, Seeds Removed','1 tsp Pepper','1 tsp Salt','2 tsp Fresh Lemon Juice'],
-		steps: ['In a small bowl mash avocados well.','Add in onion, tomato, pepper, salt and lemon juice and mix well.'],   
-		tips: [],
-   		preparation_time: '5 Minutes',
-   		cook_time: '0 Minutes',
-		total_time: '5 Minutes',
-		featured: true
-	},	
-	{
 		name: 'Chocolate Caramel Slice',
 		slug: 'chocolate-caramel-slice',
 		description: 'Awesome for a tasty dessert treat.',
@@ -65,7 +37,6 @@ const recipes = [
    		preparation_time: '30 Minutes',
    		cook_time: '45 Minutes',
 		total_time: '6 Hours, 15 Minutes',
-		featured: false
 	},
 	{
 		name: 'Anzac Biscuits',
@@ -79,7 +50,32 @@ const recipes = [
    		preparation_time: '20 Minutes',
    		cook_time: '20 Minutes',
 		total_time: '45 Hours,  Minutes',
-		featured: false
+	},
+	{
+		name: 'Hot Cross Buns',
+		slug: 'hot-cross-buns',
+		description: 'A perfect Easter snack for the whole family.',
+		category: 'Festive',
+		image: 'https://upload.wikimedia.org/wikipedia/commons/thumb/a/ac/Hot_cross_buns_-_fig_and_pecan.jpg/1200px-Hot_cross_buns_-_fig_and_pecan.jpg',
+		ingredients: ['3 ¼ cups plain flour',' 1 cup sultanas',' 2 tbsp orange peel',' 2 tbsp caster sugar',' 1 tsp dried yeast',' 1 tsp mixed spice',' 1 tsp ground cinnamon',' 1 tsp ground nutmeg',' 1 tsp Salt',' 1 cup Warm Milk',' 50g Butter, Melted',' 1 Egg, Whisked'],
+		steps: ['Line baking tray with baking paper','In a large bowl combine Flour, Sultanas, Orange Peel, Sugar, Yeast, Spices, Nutmeg and salt.','Make a well in the center ad mix in Milk, Butter and Egg. Use your hands to bring the dough together in the bowl.','Turn the dough onto a floured surface and knead for 10-15 minutes or until smooth.','Coat with Melted Butter and leave to rise for 1 ½ hours.','Preheat oven to 180°C. knead dough for 3-5 minutes, until smooth.','Divide into 12 balls, Place onto prepared tray. Set aside for 30 minutes.','For the Cross Paste, mix ¼ cup Flour and 2 tbsp water. Transfer into piping bag and make Crosses','Bake for 20-25 minutes, Leave to cool.'],   
+		tips: ['You can use any citrus peel instead of Orange Peel'],
+   		preparation_time: '30 Minutes',
+   		cook_time: '25 Minutes',
+		total_time: '2 Hours, 55 Minutes',
+	},
+	{
+		name: 'Guacamole',
+		slug: 'guacamole',
+		description: 'Great with Nachos or Corn Chips.',
+		category: 'Sides/Dips',
+		image: 'media/guacamole.jpg',
+		ingredients: ['2 avocados','¼ cup onion, Finely Chopped','¼ cup Tomato, Seeds Removed','1 tsp Pepper','1 tsp Salt','2 tsp Fresh Lemon Juice'],
+		steps: ['In a small bowl mash avocados well.','Add in onion, tomato, pepper, salt and lemon juice and mix well.'],   
+		tips: [],
+   		preparation_time: '5 Minutes',
+   		cook_time: '0 Minutes',
+		total_time: '5 Minutes',
 	}
 ];
 
@@ -95,8 +91,7 @@ const contents = JSON.stringify(recipes.map(recipe => {
 		tips: recipe.tips,
    		preparation_time: recipe.preparation_time,
    		cook_time: recipe.cook_time,
-		total_time: recipe.total_time,
-		featured: recipe.featured
+		total_time: recipe.total_time
 	};
 }));
 
@@ -245,6 +240,9 @@ function get_current_component() {
         throw new Error(`Function called outside component initialization`);
     return current_component;
 }
+function onMount(fn) {
+    get_current_component().$$.on_mount.push(fn);
+}
 function afterUpdate(fn) {
     get_current_component().$$.after_update.push(fn);
 }
@@ -321,11 +319,13 @@ function add_attribute(name, value, boolean) {
     return ` ${name}${value === true ? '' : `=${typeof value === 'string' ? JSON.stringify(escape(value)) : `"${value}"`}`}`;
 }
 
+const featured_recipes = ['hot-cross-buns', 'guacamole'];
+
 /* src/components/item.svelte generated by Svelte v3.29.0 */
 
 const css = {
 	code: ".col-md-4.svelte-18ecqrr{padding-bottom:30px}img.svelte-18ecqrr{object-fit:cover;border-radius:2px 2px 0 0}h3.svelte-18ecqrr{font-family:\"Playfair Display\";font-size:150%}a.svelte-18ecqrr{text-decoration:none;color:inherit}",
-	map: "{\"version\":3,\"file\":\"item.svelte\",\"sources\":[\"item.svelte\"],\"sourcesContent\":[\"<script>\\n    export let name;\\n    export let category;\\n    export let image;\\n    export let description;\\n    export let href;\\n\\n    function lowercase(x) {\\n        x = x.toLowerCase();\\n        x = x.split(' ').join('-');\\n        return x;\\n    }\\n</script>\\n\\n<style>\\n    .col-md-4 {\\n        padding-bottom: 30px;\\n    }\\n    img {\\n        object-fit: cover;\\n        border-radius: 2px 2px 0 0;\\n    } \\n    h3 {\\n        font-family: \\\"Playfair Display\\\";\\n        font-size: 150%;\\n    }\\n    a {\\n        text-decoration: none;\\n        color: inherit;\\n    }\\n</style>\\n\\n<div class=\\\"col-md-4\\\" item-name=\\\"{lowercase(name)}\\\" category-name=\\\"{lowercase(category)}\\\">\\n    <a href=\\\"{href}\\\">\\n        <div class=\\\"card mb-4 shadow-sm item-card h-100\\\">\\n            <img src={image} width=\\\"100%\\\" height=\\\"200px\\\" alt={name} />\\n            <div class=\\\"card-body\\\">\\n                <h3 class=\\\"card-text\\\">{name}</h3>\\n                <p class=\\\"card-text\\\">{description}</p>\\n            </div>\\n        </div>\\n    </a>\\n</div>\\n\"],\"names\":[],\"mappings\":\"AAeI,SAAS,eAAC,CAAC,AACP,cAAc,CAAE,IAAI,AACxB,CAAC,AACD,GAAG,eAAC,CAAC,AACD,UAAU,CAAE,KAAK,CACjB,aAAa,CAAE,GAAG,CAAC,GAAG,CAAC,CAAC,CAAC,CAAC,AAC9B,CAAC,AACD,EAAE,eAAC,CAAC,AACA,WAAW,CAAE,kBAAkB,CAC/B,SAAS,CAAE,IAAI,AACnB,CAAC,AACD,CAAC,eAAC,CAAC,AACC,eAAe,CAAE,IAAI,CACrB,KAAK,CAAE,OAAO,AAClB,CAAC\"}"
+	map: "{\"version\":3,\"file\":\"item.svelte\",\"sources\":[\"item.svelte\"],\"sourcesContent\":[\"<script>\\n    export let name;\\n    export let category;\\n    export let image;\\n    export let description;\\n    export let href;\\n\\n    function lowercase(x) {\\n        x = x.toLowerCase();\\n        x = x.split(' ').join('-');\\n        return x;\\n    }\\n</script>\\n\\n<style>\\n    .col-md-4 {\\n        padding-bottom: 30px;\\n    }\\n    img {\\n        object-fit: cover;\\n        border-radius: 2px 2px 0 0;\\n    } \\n    h3 {\\n        font-family: \\\"Playfair Display\\\";\\n        font-size: 150%;\\n    }\\n    a {\\n        text-decoration: none;\\n        color: inherit;\\n    }\\n</style>\\n\\n<div class=\\\"col-md-4 item\\\" item-name=\\\"{lowercase(name)}\\\" category-name=\\\"{lowercase(category)}\\\">\\n    <a href=\\\"{href}\\\">\\n        <div class=\\\"card mb-4 shadow-sm item-card h-100\\\">\\n            <img src={image} width=\\\"100%\\\" height=\\\"200px\\\" alt={name} />\\n            <div class=\\\"card-body\\\">\\n                <h3 class=\\\"card-text\\\">{name}</h3>\\n                <p class=\\\"card-text\\\">{description}</p>\\n            </div>\\n        </div>\\n    </a>\\n</div>\\n\"],\"names\":[],\"mappings\":\"AAeI,SAAS,eAAC,CAAC,AACP,cAAc,CAAE,IAAI,AACxB,CAAC,AACD,GAAG,eAAC,CAAC,AACD,UAAU,CAAE,KAAK,CACjB,aAAa,CAAE,GAAG,CAAC,GAAG,CAAC,CAAC,CAAC,CAAC,AAC9B,CAAC,AACD,EAAE,eAAC,CAAC,AACA,WAAW,CAAE,kBAAkB,CAC/B,SAAS,CAAE,IAAI,AACnB,CAAC,AACD,CAAC,eAAC,CAAC,AACC,eAAe,CAAE,IAAI,CACrB,KAAK,CAAE,OAAO,AAClB,CAAC\"}"
 };
 
 function lowercase(x) {
@@ -347,7 +347,7 @@ const Item = create_ssr_component(($$result, $$props, $$bindings, slots) => {
 	if ($$props.href === void 0 && $$bindings.href && href !== void 0) $$bindings.href(href);
 	$$result.css.add(css);
 
-	return `<div class="${"col-md-4 svelte-18ecqrr"}"${add_attribute("item-name", lowercase(name), 0)}${add_attribute("category-name", lowercase(category), 0)}><a${add_attribute("href", href, 0)} class="${"svelte-18ecqrr"}"><div class="${"card mb-4 shadow-sm item-card h-100"}"><img${add_attribute("src", image, 0)} width="${"100%"}" height="${"200px"}"${add_attribute("alt", name, 0)} class="${"svelte-18ecqrr"}">
+	return `<div class="${"col-md-4 item svelte-18ecqrr"}"${add_attribute("item-name", lowercase(name), 0)}${add_attribute("category-name", lowercase(category), 0)}><a${add_attribute("href", href, 0)} class="${"svelte-18ecqrr"}"><div class="${"card mb-4 shadow-sm item-card h-100"}"><img${add_attribute("src", image, 0)} width="${"100%"}" height="${"200px"}"${add_attribute("alt", name, 0)} class="${"svelte-18ecqrr"}">
             <div class="${"card-body"}"><h3 class="${"card-text svelte-18ecqrr"}">${escape(name)}</h3>
                 <p class="${"card-text"}">${escape(description)}</p></div></div></a></div>`;
 });
@@ -356,14 +356,8 @@ const Item = create_ssr_component(($$result, $$props, $$bindings, slots) => {
 
 const css$1 = {
 	code: ".col-md-6.svelte-1ofz26t{padding-bottom:30px}img.svelte-1ofz26t{object-fit:cover}h3.svelte-1ofz26t{font-family:\"Playfair Display\";font-size:150%}hr.svelte-1ofz26t{border:0;clear:both;display:block;width:96%;background-color:rgba(0, 0, 0, 0.1);height:1px}a.svelte-1ofz26t{text-decoration:none;color:inherit}.text-ff3e00.svelte-1ofz26t{color:#ff3e00}",
-	map: "{\"version\":3,\"file\":\"featured_item.svelte\",\"sources\":[\"featured_item.svelte\"],\"sourcesContent\":[\"<script>\\n    export let name;\\n    export let category;\\n    export let image;\\n    export let description;\\n    export let href;\\n\\n    function lowercase(x) {\\n        x = x.toLowerCase();\\n        x = x.split(' ').join('-');\\n        return x;\\n    }\\n</script>\\n\\n<style>\\n    .col-md-6 {\\n        padding-bottom: 30px;\\n    }\\n    img {\\n        object-fit: cover;\\n    }\\n    h3 {\\n        font-family: \\\"Playfair Display\\\";\\n        font-size: 150%;\\n    }\\n    hr {\\n        border: 0;\\n        clear: both;\\n        display: block;\\n        width: 96%;\\n        background-color: rgba(0, 0, 0, 0.1);\\n        height: 1px;\\n    }\\n    a {\\n        text-decoration: none;\\n        color: inherit;\\n    }\\n    .text-ff3e00 {\\n        color: #ff3e00;\\n    }\\n</style>\\n\\n<div class=\\\"col-md-6\\\" item-name=\\\"{lowercase(name)}\\\" category-name=\\\"{lowercase(category)}\\\" >\\n    <a href=\\\"{href}\\\">\\n        <div class=\\\"row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-100 position-relative\\\">\\n            <div class=\\\"col h-100 p-4 d-flex flex-column position-static\\\">\\n                <strong class=\\\"d-inline-block mb-2 text-ff3e00\\\">{category}</strong>\\n                <h3 class=\\\"mb-0\\\">{name}</h3>\\n                <hr />\\n                <p class=\\\"mb-auto\\\">{description}</p>\\n            </div>\\n            <div class=\\\"col-auto h-100 d-none d-lg-block\\\">\\n                <img src={image} width=\\\"150px\\\" height=\\\"100%\\\" alt={name} />\\n            </div>\\n        </div>\\n    </a>\\n</div>\\n\"],\"names\":[],\"mappings\":\"AAeI,SAAS,eAAC,CAAC,AACP,cAAc,CAAE,IAAI,AACxB,CAAC,AACD,GAAG,eAAC,CAAC,AACD,UAAU,CAAE,KAAK,AACrB,CAAC,AACD,EAAE,eAAC,CAAC,AACA,WAAW,CAAE,kBAAkB,CAC/B,SAAS,CAAE,IAAI,AACnB,CAAC,AACD,EAAE,eAAC,CAAC,AACA,MAAM,CAAE,CAAC,CACT,KAAK,CAAE,IAAI,CACX,OAAO,CAAE,KAAK,CACd,KAAK,CAAE,GAAG,CACV,gBAAgB,CAAE,KAAK,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,GAAG,CAAC,CACpC,MAAM,CAAE,GAAG,AACf,CAAC,AACD,CAAC,eAAC,CAAC,AACC,eAAe,CAAE,IAAI,CACrB,KAAK,CAAE,OAAO,AAClB,CAAC,AACD,YAAY,eAAC,CAAC,AACV,KAAK,CAAE,OAAO,AAClB,CAAC\"}"
+	map: "{\"version\":3,\"file\":\"featured_item.svelte\",\"sources\":[\"featured_item.svelte\"],\"sourcesContent\":[\"<script>\\n    export let name;\\n    export let category;\\n    export let image;\\n    export let description;\\n    export let href;\\n\\n    function lowercase(x) {\\n        x = x.toLowerCase();\\n        x = x.split(' ').join('-');\\n        return x;\\n    }\\n</script>\\n\\n<style>\\n    .col-md-6 {\\n        padding-bottom: 30px;\\n    }\\n    img {\\n        object-fit: cover;\\n    }\\n    h3 {\\n        font-family: \\\"Playfair Display\\\";\\n        font-size: 150%;\\n    }\\n    hr {\\n        border: 0;\\n        clear: both;\\n        display: block;\\n        width: 96%;\\n        background-color: rgba(0, 0, 0, 0.1);\\n        height: 1px;\\n    }\\n    a {\\n        text-decoration: none;\\n        color: inherit;\\n    }\\n    .text-ff3e00 {\\n        color: #ff3e00;\\n    }\\n</style>\\n\\n<div class=\\\"col-md-6 item\\\" item-name=\\\"﻿\\\" category-name=\\\"﻿\\\" >\\n    <a href=\\\"{href}\\\">\\n        <div class=\\\"row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-100 position-relative\\\">\\n            <div class=\\\"col h-100 p-4 d-flex flex-column position-static\\\">\\n                <strong class=\\\"d-inline-block mb-2 text-ff3e00\\\">{category}</strong>\\n                <h3 class=\\\"mb-0\\\">{name}</h3>\\n                <hr />\\n                <p class=\\\"mb-auto\\\">{description}</p>\\n            </div>\\n            <div class=\\\"col-auto h-100 d-none d-lg-block\\\">\\n                <img src={image} width=\\\"150px\\\" height=\\\"100%\\\" alt={name} />\\n            </div>\\n        </div>\\n    </a>\\n</div>\\n\"],\"names\":[],\"mappings\":\"AAeI,SAAS,eAAC,CAAC,AACP,cAAc,CAAE,IAAI,AACxB,CAAC,AACD,GAAG,eAAC,CAAC,AACD,UAAU,CAAE,KAAK,AACrB,CAAC,AACD,EAAE,eAAC,CAAC,AACA,WAAW,CAAE,kBAAkB,CAC/B,SAAS,CAAE,IAAI,AACnB,CAAC,AACD,EAAE,eAAC,CAAC,AACA,MAAM,CAAE,CAAC,CACT,KAAK,CAAE,IAAI,CACX,OAAO,CAAE,KAAK,CACd,KAAK,CAAE,GAAG,CACV,gBAAgB,CAAE,KAAK,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,CAAC,GAAG,CAAC,CACpC,MAAM,CAAE,GAAG,AACf,CAAC,AACD,CAAC,eAAC,CAAC,AACC,eAAe,CAAE,IAAI,CACrB,KAAK,CAAE,OAAO,AAClB,CAAC,AACD,YAAY,eAAC,CAAC,AACV,KAAK,CAAE,OAAO,AAClB,CAAC\"}"
 };
-
-function lowercase$1(x) {
-	x = x.toLowerCase();
-	x = x.split(" ").join("-");
-	return x;
-}
 
 const Featured_item = create_ssr_component(($$result, $$props, $$bindings, slots) => {
 	let { name } = $$props;
@@ -378,7 +372,7 @@ const Featured_item = create_ssr_component(($$result, $$props, $$bindings, slots
 	if ($$props.href === void 0 && $$bindings.href && href !== void 0) $$bindings.href(href);
 	$$result.css.add(css$1);
 
-	return `<div class="${"col-md-6 svelte-1ofz26t"}"${add_attribute("item-name", lowercase$1(name), 0)}${add_attribute("category-name", lowercase$1(category), 0)}><a${add_attribute("href", href, 0)} class="${"svelte-1ofz26t"}"><div class="${"row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-100 position-relative"}"><div class="${"col h-100 p-4 d-flex flex-column position-static"}"><strong class="${"d-inline-block mb-2 text-ff3e00 svelte-1ofz26t"}">${escape(category)}</strong>
+	return `<div class="${"col-md-6 item svelte-1ofz26t"}" item-name="${"﻿"}" category-name="${"﻿"}"><a${add_attribute("href", href, 0)} class="${"svelte-1ofz26t"}"><div class="${"row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-100 position-relative"}"><div class="${"col h-100 p-4 d-flex flex-column position-static"}"><strong class="${"d-inline-block mb-2 text-ff3e00 svelte-1ofz26t"}">${escape(category)}</strong>
                 <h3 class="${"mb-0 svelte-1ofz26t"}">${escape(name)}</h3>
                 <hr class="${"svelte-1ofz26t"}">
                 <p class="${"mb-auto"}">${escape(description)}</p></div>
@@ -399,7 +393,7 @@ const Routes = create_ssr_component(($$result, $$props, $$bindings, slots) => {
 
 	return `${($$result.head += `${($$result.title = `<title>Kitchefs</title>`, "")}`, "")}
 
-<div class="${"container"}"><div class="${"row"}">${each(recipes, recipe => `${recipe.featured
+<div class="${"container"}"><div class="${"row"}">${each(featured_recipes, featured_recipe => `${each(recipes, recipe => `${featured_recipe == recipe.slug
 	? `${validate_component(Featured_item, "FeaturedItem").$$render(
 			$$result,
 			{
@@ -412,18 +406,19 @@ const Routes = create_ssr_component(($$result, $$props, $$bindings, slots) => {
 			{},
 			{}
 		)}`
-	: `${validate_component(Item, "Item").$$render(
-			$$result,
-			{
-				name: recipe.name,
-				category: recipe.category,
-				image: recipe.image,
-				description: recipe.description,
-				href: "recipes/" + recipe.slug
-			},
-			{},
-			{}
-		)}`}`)}</div></div>`;
+	: ``}`)}`)}
+        ${each(recipes, recipe => `${validate_component(Item, "Item").$$render(
+		$$result,
+		{
+			name: recipe.name,
+			category: recipe.category,
+			image: recipe.image,
+			description: recipe.description,
+			href: "recipes/" + recipe.slug
+		},
+		{},
+		{}
+	)}`)}</div></div>`;
 });
 
 var component_0 = /*#__PURE__*/Object.freeze({
@@ -628,11 +623,41 @@ var component_4 = /*#__PURE__*/Object.freeze({
 
 const css$6 = {
 	code: "nav.svelte-13w22sh.svelte-13w22sh{border-bottom:1px solid rgba(255,62,0,0.1);font-weight:300;padding:0 1em}[aria-current].svelte-13w22sh.svelte-13w22sh{position:relative;display:inline-block}[aria-current].svelte-13w22sh.svelte-13w22sh::after{position:absolute;content:'';width:calc(100% - 1em);height:2px;background-color:rgb(255,62,0);display:block;bottom:-1px}a.svelte-13w22sh.svelte-13w22sh{color:#ffffff !important;text-decoration:none !important;padding:1em 0.5em !important;display:block !important}@media screen and (max-width: 768px){nav.svelte-13w22sh.svelte-13w22sh{padding:0.7em}}.kitchefs-brand.svelte-13w22sh.svelte-13w22sh{font-family:\"Playfair Display\";font-size:1.2em;padding-top:0 !important;padding-bottom:0 !important;margin:0 !important;padding-left:0.4em !important;padding-right:0.6em !important}.active-orange.svelte-13w22sh input.form-control[type=text].svelte-13w22sh:focus:not([readonly]){border-bottom:1px solid #ff3e00;box-shadow:0 1px 0 0 #ff3e00}.active-orange.svelte-13w22sh input.form-control[type=text].svelte-13w22sh{border-bottom:1px solid #6c757d;box-shadow:0 1px 0 0 #6c757d;border-radius:0;background-color:inherit;border:0;outline:0;color:#fff}",
-	map: "{\"version\":3,\"file\":\"nav.svelte\",\"sources\":[\"nav.svelte\"],\"sourcesContent\":[\"<script>\\n\\texport let segment;\\n</script>\\n\\n<style>\\n\\tnav {\\n\\t\\tborder-bottom: 1px solid rgba(255,62,0,0.1);\\n\\t\\tfont-weight: 300;\\n\\t\\tpadding: 0 1em;\\n\\t}\\n\\t[aria-current] {\\n\\t\\tposition: relative;\\n\\t\\tdisplay: inline-block;\\n\\t}\\n\\t[aria-current]::after {\\n\\t\\tposition: absolute;\\n\\t\\tcontent: '';\\n\\t\\twidth: calc(100% - 1em);\\n\\t\\theight: 2px;\\n\\t\\tbackground-color: rgb(255,62,0);\\n\\t\\tdisplay: block;\\n\\t\\tbottom: -1px;\\n\\t}\\n\\ta {\\n\\t\\tcolor: #ffffff !important;\\n\\t\\ttext-decoration: none !important;\\n\\t\\tpadding: 1em 0.5em !important;\\n\\t\\tdisplay: block !important;\\n\\t}\\n    @media screen and (max-width: 768px) {\\n        nav {\\n\\t\\t    padding: 0.7em;\\n\\t    }\\n    }\\n    .kitchefs-brand {\\n        font-family: \\\"Playfair Display\\\";\\n        font-size: 1.2em;\\n        padding-top: 0 !important;\\n        padding-bottom: 0 !important;\\n        margin: 0 !important;\\n        padding-left: 0.4em !important;\\n        padding-right: 0.6em !important;\\n\\t}\\n\\t.active-orange input.form-control[type=text]:focus:not([readonly]) {\\n\\t\\tborder-bottom: 1px solid #ff3e00;\\n\\t\\tbox-shadow: 0 1px 0 0 #ff3e00;\\n\\t}\\n\\t.active-orange input.form-control[type=text] {\\n\\t\\tborder-bottom: 1px solid #6c757d;\\n\\t\\tbox-shadow: 0 1px 0 0 #6c757d;\\n\\t\\tborder-radius: 0;\\n\\t\\tbackground-color: inherit;\\n\\t\\tborder: 0;\\n\\t\\toutline: 0;\\n\\t\\tcolor: #fff;\\n\\t}\\n</style>\\n\\n<nav class=\\\"navbar navbar-expand-md navbar-dark bg-dark fixed-top\\\">\\n    <button\\n        class=\\\"navbar-toggler\\\"\\n        type=\\\"button\\\"\\n        data-toggle=\\\"collapse\\\"\\n        data-target=\\\"#navbarsExampleDefault\\\"\\n        aria-controls=\\\"navbarsExampleDefault\\\"\\n        aria-expanded=\\\"false\\\"\\n        aria-label=\\\"Toggle navigation\\\">\\n        <span class=\\\"navbar-toggler-icon\\\" />\\n    </button>\\n\\n    <div class=\\\"collapse navbar-collapse\\\" id=\\\"navbarsExampleDefault\\\">\\n        <a class=\\\"kitchefs-brand\\\" href=\\\".\\\">Kitchefs</a>\\n        <ul class=\\\"navbar-nav mr-auto\\\">\\n\\t\\t\\t<li><a aria-current=\\\"{segment === undefined ? 'page' : undefined}\\\" href=\\\".\\\">Home</a></li>\\n\\t\\t\\t<li><a aria-current=\\\"{segment === 'saved_items' ? 'page' : undefined}\\\" href=\\\"saved_items\\\">Saved</a></li>\\n\\t\\t\\t<li><a rel=prefetch aria-current=\\\"{segment === 'blog' ? 'page' : undefined}\\\" href=\\\"blog\\\">Blog</a></li>\\n\\t\\t</ul>\\n\\t\\t<form class=\\\"form-inline active-orange\\\" id=\\\"search-bar\\\">\\n\\t\\t\\t<input\\n\\t\\t\\t\\tclass=\\\"form-control mr-sm-2\\\"\\n\\t\\t\\t\\ttype=\\\"text\\\"\\n\\t\\t\\t\\tplaceholder=\\\"Search\\\"\\n\\t\\t\\t\\taria-label=\\\"Search\\\" />\\n\\t\\t</form>\\n    </div>\\n</nav>\"],\"names\":[],\"mappings\":\"AAKC,GAAG,8BAAC,CAAC,AACJ,aAAa,CAAE,GAAG,CAAC,KAAK,CAAC,KAAK,GAAG,CAAC,EAAE,CAAC,CAAC,CAAC,GAAG,CAAC,CAC3C,WAAW,CAAE,GAAG,CAChB,OAAO,CAAE,CAAC,CAAC,GAAG,AACf,CAAC,AACD,CAAC,YAAY,CAAC,8BAAC,CAAC,AACf,QAAQ,CAAE,QAAQ,CAClB,OAAO,CAAE,YAAY,AACtB,CAAC,AACD,CAAC,YAAY,+BAAC,OAAO,AAAC,CAAC,AACtB,QAAQ,CAAE,QAAQ,CAClB,OAAO,CAAE,EAAE,CACX,KAAK,CAAE,KAAK,IAAI,CAAC,CAAC,CAAC,GAAG,CAAC,CACvB,MAAM,CAAE,GAAG,CACX,gBAAgB,CAAE,IAAI,GAAG,CAAC,EAAE,CAAC,CAAC,CAAC,CAC/B,OAAO,CAAE,KAAK,CACd,MAAM,CAAE,IAAI,AACb,CAAC,AACD,CAAC,8BAAC,CAAC,AACF,KAAK,CAAE,OAAO,CAAC,UAAU,CACzB,eAAe,CAAE,IAAI,CAAC,UAAU,CAChC,OAAO,CAAE,GAAG,CAAC,KAAK,CAAC,UAAU,CAC7B,OAAO,CAAE,KAAK,CAAC,UAAU,AAC1B,CAAC,AACE,OAAO,MAAM,CAAC,GAAG,CAAC,YAAY,KAAK,CAAC,AAAC,CAAC,AAClC,GAAG,8BAAC,CAAC,AACP,OAAO,CAAE,KAAK,AACf,CAAC,AACF,CAAC,AACD,eAAe,8BAAC,CAAC,AACb,WAAW,CAAE,kBAAkB,CAC/B,SAAS,CAAE,KAAK,CAChB,WAAW,CAAE,CAAC,CAAC,UAAU,CACzB,cAAc,CAAE,CAAC,CAAC,UAAU,CAC5B,MAAM,CAAE,CAAC,CAAC,UAAU,CACpB,YAAY,CAAE,KAAK,CAAC,UAAU,CAC9B,aAAa,CAAE,KAAK,CAAC,UAAU,AACtC,CAAC,AACD,6BAAc,CAAC,KAAK,aAAa,CAAC,IAAI,CAAC,IAAI,gBAAC,MAAM,KAAK,CAAC,QAAQ,CAAC,CAAC,AAAC,CAAC,AACnE,aAAa,CAAE,GAAG,CAAC,KAAK,CAAC,OAAO,CAChC,UAAU,CAAE,CAAC,CAAC,GAAG,CAAC,CAAC,CAAC,CAAC,CAAC,OAAO,AAC9B,CAAC,AACD,6BAAc,CAAC,KAAK,aAAa,CAAC,IAAI,CAAC,IAAI,CAAC,eAAC,CAAC,AAC7C,aAAa,CAAE,GAAG,CAAC,KAAK,CAAC,OAAO,CAChC,UAAU,CAAE,CAAC,CAAC,GAAG,CAAC,CAAC,CAAC,CAAC,CAAC,OAAO,CAC7B,aAAa,CAAE,CAAC,CAChB,gBAAgB,CAAE,OAAO,CACzB,MAAM,CAAE,CAAC,CACT,OAAO,CAAE,CAAC,CACV,KAAK,CAAE,IAAI,AACZ,CAAC\"}"
+	map: "{\"version\":3,\"file\":\"nav.svelte\",\"sources\":[\"nav.svelte\"],\"sourcesContent\":[\"<script>\\n\\timport { onMount }  from 'svelte';\\nimport { element } from 'svelte/internal';\\nimport recipes from '../routes/recipes/_recipes';\\n\\n\\texport let segment;\\n\\n\\tonMount(() => {\\n\\t\\tlet query;\\n\\t\\tlet all_items;\\n\\t\\tlet item_name;\\n\\t\\tlet category_name;\\n\\n\\t\\tfunction test_equality(x, y) {\\n\\t\\t\\tx = x.split(' ').join('');\\n\\t\\t\\ty = y.split(' ').join('');\\n\\n\\t\\t\\treturn (x.includes(y) || y.includes(x));\\n\\t\\t}\\n\\n        document.getElementById(\\\"search-bar\\\").addEventListener(\\\"keyup\\\", () => {\\n\\t\\t\\tquery = document.getElementById(\\\"search-bar\\\").value.toLowerCase();\\n\\t\\t\\tall_items = document.querySelectorAll(\\\".item\\\");\\n\\n\\t\\t\\tall_items.forEach((element, index, array) => {\\n\\t\\t\\t\\titem_name = element.getAttribute(\\\"item-name\\\").split('-').join(' ');\\n\\t\\t\\t\\tcategory_name = element.getAttribute(\\\"category-name\\\").split('-').join(' ');\\n\\n\\t\\t\\t\\tif (test_equality(query, item_name) || test_equality(query, category_name) || query === \\\"\\\") {\\n\\t\\t\\t\\t\\telement.style.display = \\\"block\\\";\\n\\t\\t\\t\\t} else {\\n\\t\\t\\t\\t\\telement.style.display = \\\"none\\\";\\n\\t\\t\\t\\t}\\n\\t\\t\\t});\\n\\t\\t});\\n    });\\n</script>\\n\\n<style>\\n\\tnav {\\n\\t\\tborder-bottom: 1px solid rgba(255,62,0,0.1);\\n\\t\\tfont-weight: 300;\\n\\t\\tpadding: 0 1em;\\n\\t}\\n\\t[aria-current] {\\n\\t\\tposition: relative;\\n\\t\\tdisplay: inline-block;\\n\\t}\\n\\t[aria-current]::after {\\n\\t\\tposition: absolute;\\n\\t\\tcontent: '';\\n\\t\\twidth: calc(100% - 1em);\\n\\t\\theight: 2px;\\n\\t\\tbackground-color: rgb(255,62,0);\\n\\t\\tdisplay: block;\\n\\t\\tbottom: -1px;\\n\\t}\\n\\ta {\\n\\t\\tcolor: #ffffff !important;\\n\\t\\ttext-decoration: none !important;\\n\\t\\tpadding: 1em 0.5em !important;\\n\\t\\tdisplay: block !important;\\n\\t}\\n    @media screen and (max-width: 768px) {\\n        nav {\\n\\t\\t    padding: 0.7em;\\n\\t    }\\n    }\\n    .kitchefs-brand {\\n        font-family: \\\"Playfair Display\\\";\\n        font-size: 1.2em;\\n        padding-top: 0 !important;\\n        padding-bottom: 0 !important;\\n        margin: 0 !important;\\n        padding-left: 0.4em !important;\\n        padding-right: 0.6em !important;\\n\\t}\\n\\t.active-orange input.form-control[type=text]:focus:not([readonly]) {\\n\\t\\tborder-bottom: 1px solid #ff3e00;\\n\\t\\tbox-shadow: 0 1px 0 0 #ff3e00;\\n\\t}\\n\\t.active-orange input.form-control[type=text] {\\n\\t\\tborder-bottom: 1px solid #6c757d;\\n\\t\\tbox-shadow: 0 1px 0 0 #6c757d;\\n\\t\\tborder-radius: 0;\\n\\t\\tbackground-color: inherit;\\n\\t\\tborder: 0;\\n\\t\\toutline: 0;\\n\\t\\tcolor: #fff;\\n\\t}\\n</style>\\n\\n<nav class=\\\"navbar navbar-expand-md navbar-dark bg-dark fixed-top\\\">\\n    <button\\n        class=\\\"navbar-toggler\\\"\\n        type=\\\"button\\\"\\n        data-toggle=\\\"collapse\\\"\\n        data-target=\\\"#navbarsExampleDefault\\\"\\n        aria-controls=\\\"navbarsExampleDefault\\\"\\n        aria-expanded=\\\"false\\\"\\n        aria-label=\\\"Toggle navigation\\\">\\n        <span class=\\\"navbar-toggler-icon\\\" />\\n    </button>\\n\\n    <div class=\\\"collapse navbar-collapse\\\" id=\\\"navbarsExampleDefault\\\">\\n        <a class=\\\"kitchefs-brand\\\" href=\\\".\\\">Kitchefs</a>\\n        <ul class=\\\"navbar-nav mr-auto\\\">\\n\\t\\t\\t<li><a aria-current=\\\"{segment === undefined ? 'page' : undefined}\\\" href=\\\".\\\">Home</a></li>\\n\\t\\t\\t<li><a aria-current=\\\"{segment === 'saved_items' ? 'page' : undefined}\\\" href=\\\"saved_items\\\">Saved</a></li>\\n\\t\\t\\t<li><a rel=prefetch aria-current=\\\"{segment === 'blog' ? 'page' : undefined}\\\" href=\\\"blog\\\">Blog</a></li>\\n\\t\\t</ul>\\n\\t\\t<form class=\\\"form-inline active-orange\\\">\\n\\t\\t\\t<input\\n\\t\\t\\t\\tclass=\\\"form-control mr-sm-2\\\"\\n\\t\\t\\t\\ttype=\\\"text\\\"\\n\\t\\t\\t\\tplaceholder=\\\"Search\\\"\\n\\t\\t\\t\\taria-label=\\\"Search\\\"\\n\\t\\t\\t\\tid=\\\"search-bar\\\" />\\n\\t\\t</form>\\n    </div>\\n</nav>\"],\"names\":[],\"mappings\":\"AAuCC,GAAG,8BAAC,CAAC,AACJ,aAAa,CAAE,GAAG,CAAC,KAAK,CAAC,KAAK,GAAG,CAAC,EAAE,CAAC,CAAC,CAAC,GAAG,CAAC,CAC3C,WAAW,CAAE,GAAG,CAChB,OAAO,CAAE,CAAC,CAAC,GAAG,AACf,CAAC,AACD,CAAC,YAAY,CAAC,8BAAC,CAAC,AACf,QAAQ,CAAE,QAAQ,CAClB,OAAO,CAAE,YAAY,AACtB,CAAC,AACD,CAAC,YAAY,+BAAC,OAAO,AAAC,CAAC,AACtB,QAAQ,CAAE,QAAQ,CAClB,OAAO,CAAE,EAAE,CACX,KAAK,CAAE,KAAK,IAAI,CAAC,CAAC,CAAC,GAAG,CAAC,CACvB,MAAM,CAAE,GAAG,CACX,gBAAgB,CAAE,IAAI,GAAG,CAAC,EAAE,CAAC,CAAC,CAAC,CAC/B,OAAO,CAAE,KAAK,CACd,MAAM,CAAE,IAAI,AACb,CAAC,AACD,CAAC,8BAAC,CAAC,AACF,KAAK,CAAE,OAAO,CAAC,UAAU,CACzB,eAAe,CAAE,IAAI,CAAC,UAAU,CAChC,OAAO,CAAE,GAAG,CAAC,KAAK,CAAC,UAAU,CAC7B,OAAO,CAAE,KAAK,CAAC,UAAU,AAC1B,CAAC,AACE,OAAO,MAAM,CAAC,GAAG,CAAC,YAAY,KAAK,CAAC,AAAC,CAAC,AAClC,GAAG,8BAAC,CAAC,AACP,OAAO,CAAE,KAAK,AACf,CAAC,AACF,CAAC,AACD,eAAe,8BAAC,CAAC,AACb,WAAW,CAAE,kBAAkB,CAC/B,SAAS,CAAE,KAAK,CAChB,WAAW,CAAE,CAAC,CAAC,UAAU,CACzB,cAAc,CAAE,CAAC,CAAC,UAAU,CAC5B,MAAM,CAAE,CAAC,CAAC,UAAU,CACpB,YAAY,CAAE,KAAK,CAAC,UAAU,CAC9B,aAAa,CAAE,KAAK,CAAC,UAAU,AACtC,CAAC,AACD,6BAAc,CAAC,KAAK,aAAa,CAAC,IAAI,CAAC,IAAI,gBAAC,MAAM,KAAK,CAAC,QAAQ,CAAC,CAAC,AAAC,CAAC,AACnE,aAAa,CAAE,GAAG,CAAC,KAAK,CAAC,OAAO,CAChC,UAAU,CAAE,CAAC,CAAC,GAAG,CAAC,CAAC,CAAC,CAAC,CAAC,OAAO,AAC9B,CAAC,AACD,6BAAc,CAAC,KAAK,aAAa,CAAC,IAAI,CAAC,IAAI,CAAC,eAAC,CAAC,AAC7C,aAAa,CAAE,GAAG,CAAC,KAAK,CAAC,OAAO,CAChC,UAAU,CAAE,CAAC,CAAC,GAAG,CAAC,CAAC,CAAC,CAAC,CAAC,OAAO,CAC7B,aAAa,CAAE,CAAC,CAChB,gBAAgB,CAAE,OAAO,CACzB,MAAM,CAAE,CAAC,CACT,OAAO,CAAE,CAAC,CACV,KAAK,CAAE,IAAI,AACZ,CAAC\"}"
 };
 
 const Nav = create_ssr_component(($$result, $$props, $$bindings, slots) => {
 	let { segment } = $$props;
+
+	onMount(() => {
+		let query;
+		let all_items;
+		let item_name;
+		let category_name;
+
+		function test_equality(x, y) {
+			x = x.split(" ").join("");
+			y = y.split(" ").join("");
+			return x.includes(y) || y.includes(x);
+		}
+
+		document.getElementById("search-bar").addEventListener("keyup", () => {
+			query = document.getElementById("search-bar").value.toLowerCase();
+			all_items = document.querySelectorAll(".item");
+
+			all_items.forEach((element, index, array) => {
+				item_name = element.getAttribute("item-name").split("-").join(" ");
+				category_name = element.getAttribute("category-name").split("-").join(" ");
+
+				if (test_equality(query, item_name) || test_equality(query, category_name) || query === "") {
+					element.style.display = "block";
+				} else {
+					element.style.display = "none";
+				}
+			});
+		});
+	});
+
 	if ($$props.segment === void 0 && $$bindings.segment && segment !== void 0) $$bindings.segment(segment);
 	$$result.css.add(css$6);
 
@@ -642,7 +667,7 @@ const Nav = create_ssr_component(($$result, $$props, $$bindings, slots) => {
         <ul class="${"navbar-nav mr-auto"}"><li><a${add_attribute("aria-current", segment === undefined ? "page" : undefined, 0)} href="${"."}" class="${"svelte-13w22sh"}">Home</a></li>
 			<li><a${add_attribute("aria-current", segment === "saved_items" ? "page" : undefined, 0)} href="${"saved_items"}" class="${"svelte-13w22sh"}">Saved</a></li>
 			<li><a rel="${"prefetch"}"${add_attribute("aria-current", segment === "blog" ? "page" : undefined, 0)} href="${"blog"}" class="${"svelte-13w22sh"}">Blog</a></li></ul>
-		<form class="${"form-inline active-orange svelte-13w22sh"}" id="${"search-bar"}"><input class="${"form-control mr-sm-2 svelte-13w22sh"}" type="${"text"}" placeholder="${"Search"}" aria-label="${"Search"}"></form></div></nav>`;
+		<form class="${"form-inline active-orange svelte-13w22sh"}"><input class="${"form-control mr-sm-2 svelte-13w22sh"}" type="${"text"}" placeholder="${"Search"}" aria-label="${"Search"}" id="${"search-bar"}"></form></div></nav>`;
 });
 
 /* src/routes/_layout.svelte generated by Svelte v3.29.0 */

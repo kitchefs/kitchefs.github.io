@@ -30,7 +30,7 @@
     }
 </style>
 
-<div class="col-md-4" item-name="{lowercase(name)}" category-name="{lowercase(category)}">
+<div class="col-md-4 item" item-name="{lowercase(name)}" category-name="{lowercase(category)}">
     <a href="{href}">
         <div class="card mb-4 shadow-sm item-card h-100">
             <img src={image} width="100%" height="200px" alt={name} />

@@ -12,8 +12,7 @@ const contents = JSON.stringify(recipes.map(recipe => {
 		tips: recipe.tips,
    		preparation_time: recipe.preparation_time,
    		cook_time: recipe.cook_time,
-		total_time: recipe.total_time,
-		featured: recipe.featured
+		total_time: recipe.total_time
 	};
 }));
 

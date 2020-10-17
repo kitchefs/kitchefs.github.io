@@ -40,7 +40,7 @@
     }
 </style>
 
-<div class="col-md-6" item-name="{lowercase(name)}" category-name="{lowercase(category)}" >
+<div class="col-md-6 item" item-name="﻿" category-name="﻿" >
     <a href="{href}">
         <div class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-100 position-relative">
             <div class="col h-100 p-4 d-flex flex-column position-static">
