@@ -1,7 +1,5 @@
 <script>
 	import { onMount }  from 'svelte';
-import { element } from 'svelte/internal';
-import recipes from '../routes/recipes/_recipes';
 
 	export let segment;
 

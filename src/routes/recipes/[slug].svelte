@@ -27,7 +27,6 @@
 	<div class="row">
 		<RecipePage
 			name={recipe.name}
-			description={recipe.description}
 			image={recipe.image}
 			ingredients={recipe.ingredients}
 			steps={recipe.steps}
