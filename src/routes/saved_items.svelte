@@ -1,5 +1,4 @@
 <script context="module">
-	import { onMount }  from 'svelte';
     import Item         from "../components/item.svelte";
 
 	export function preload() {
@@ -10,20 +9,20 @@
 </script>
 
 <script>
+    import {writable} from "svelte/store";
+
     export let recipes;
     
 	let saved_items = [];
-	
-	function set_saved_items(x) {
-		saved_items = x;
-	}
-    
-    onMount(() => {
-		if (localStorage.hasOwnProperty("kitchefs_saved_items")) {
-			set_saved_items(localStorage.getItem("kitchefs_saved_items"));
-		}
-	});
 
+    if (typeof window !== "undefined") {
+        if (localStorage.hasOwnProperty("kitchefs_saved_items")) {
+            saved_items = localStorage.getItem("kitchefs_saved_items");
+            saved_items = JSON.parse(saved_items);
+        }
+    }
+
+    console.log(saved_items);
 </script>
 
 <svelte:head>
