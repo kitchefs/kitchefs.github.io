@@ -9,8 +9,6 @@
 </script>
 
 <script>
-    import {writable} from "svelte/store";
-
     export let recipes;
     
 	let saved_items = [];

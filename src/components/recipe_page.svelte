@@ -21,28 +21,24 @@
     let saved_items;
 
     onMount(() => {
-        document.getElementById("save-button").addEventListener("click", () => {
-            saved = !saved;
+        async () => {
+            saved_items = await localStorage.getItem("kitchefs_saved_item") === null ? [] : JSON.parse(localStorage.getItem("kitchefs_saved_item"));
 
-            if (saved) {
-                if (localStorage.hasOwnProperty("kitchefs_saved_items")) {
-                    saved_items = localStorage.getItem("kitchefs_saved_item");
-                    saved_items = JSON.parse(saved_items);
-                    console.log(saved_items);
+            console.log(saved_items);
+
+            document.getElementById("save-button").addEventListener("click", () => {
+                saved = !saved;
+
+                if (saved) {
                     saved_items.push(lowercase(name));
                     localStorage.setItem("kitchefs_saved_items", JSON.stringify(saved_items));
                 } else {
-                    saved_items = []
-                    saved_items.push(lowercase(name));
+                    saved_items = saved_items.filter(e => e !== lowercase(name));
                     localStorage.setItem("kitchefs_saved_items", JSON.stringify(saved_items));
                 }
-            } else {
-                saved_items = localStorage.getItem("kitchefs_saved_item");
-                saved_items = JSON.parse(saved_items);
-                saved_items = saved_items.filter(e => e !== lowercase(name));
-                localStorage.setItem("kitchefs_saved_items", JSON.stringify(saved_items));
-            }
-        });
+            }); 
+        } 
+        
     });
 </script>
 
