@@ -61,6 +61,14 @@
     .save-button {
         cursor: pointer;
     }
+    .custom-checkbox .custom-control-input:checked~.custom-control-label::before {
+        background-color: #ff3e00;
+        border-color: #ff3e00;
+    }
+    .custom-checkbox .custom-control-input:focus~.custom-control-label::before{
+        box-shadow: 0 0 0 1px #fff, 0 0 0 0.2rem rgba(255, 64, 0, 0.2); 
+        border-color: #ff3e00;
+    }
 </style>
 
 <div class="container-fluid">
