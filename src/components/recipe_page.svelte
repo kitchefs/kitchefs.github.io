@@ -39,7 +39,7 @@
     }
     h3, h5 {
         font-family: "Playfair Display";
-        font-size: 150%;
+        font-size: 140%;
     }
     hr {
         border: 0;

@@ -58,6 +58,7 @@
 		text-decoration: none !important;
 		padding: 1em 0.5em !important;
 		display: block !important;
+		text-align: center;
 	}
     @media screen and (max-width: 768px) {
         nav {
@@ -89,23 +90,24 @@
 </style>
 
 <nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
-    <button
+	<a class="kitchefs-brand" href=".">Kitchefs</a>
+
+	<button
         class="navbar-toggler"
         type="button"
         data-toggle="collapse"
-        data-target="#navbarsExampleDefault"
-        aria-controls="navbarsExampleDefault"
+        data-target="#kitchefs-navbar"
+        aria-controls="kitchefs-navbar"
         aria-expanded="false"
         aria-label="Toggle navigation">
         <span class="navbar-toggler-icon" />
     </button>
 
-    <div class="collapse navbar-collapse" id="navbarsExampleDefault">
-        <a class="kitchefs-brand" href=".">Kitchefs</a>
-        <ul class="navbar-nav mr-auto">
-			<li><a aria-current="{segment === undefined ? 'page' : undefined}" href=".">Home</a></li>
-			<li><a aria-current="{segment === 'saved_items' ? 'page' : undefined}" href="saved_items">Saved</a></li>
-			<li><a rel=prefetch aria-current="{segment === 'blog' ? 'page' : undefined}" href="blog">Blog</a></li>
+	<div class="collapse navbar-collapse" id="kitchefs-navbar">
+        <ul class="navbar-nav flex-row mr-auto">
+			<li class="col-md m-0 p-0"><a aria-current="{segment === undefined ? 'page' : undefined}" href=".">Home</a></li>
+			<li class="col-md m-0 p-0"><a aria-current="{segment === 'saved_items' ? 'page' : undefined}" href="saved_items">Saved</a></li>
+			<li class="col-md m-0 p-0"><a rel=prefetch aria-current="{segment === 'blog' ? 'page' : undefined}" href="blog">Blog</a></li>
 		</ul>
 		<form class="form-inline active-orange">
 			<input
@@ -115,5 +117,5 @@
 				aria-label="Search"
 				id="search-bar" />
 		</form>
-    </div>
+	</div>
 </nav>
