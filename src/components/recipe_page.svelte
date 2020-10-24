@@ -69,6 +69,10 @@
         box-shadow: 0 0 0 1px #fff, 0 0 0 0.2rem rgba(255, 64, 0, 0.2); 
         border-color: #ff3e00;
     }
+    .custom-control-input:active~.custom-control-label::before {
+        background-color: rgba(255, 64, 0, 0.2);
+        border-color: #ff3e00;
+    }
 </style>
 
 <div class="container-fluid">
@@ -118,14 +122,16 @@
         </ol>
     </div>
 </div>
-<hr />
-<div>
-    <div class="col">
-        <h5>Tips</h5>
-        <ul>
-            {#each tips as tip}
-                <li>{tip}</li>
-            {/each}
-        </ul>
+{#if tips.length !== 0}
+    <hr />
+    <div>
+        <div class="col">
+            <h5>Tips</h5>
+            <ul>
+                {#each tips as tip}
+                    <li>{tip}</li>
+                {/each}
+            </ul>
+        </div>
     </div>
-</div>
+{/if}
