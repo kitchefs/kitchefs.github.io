@@ -2,7 +2,7 @@
   "bundler": "rollup",
   "shimport": "2.0.4",
   "assets": {
-    "main": "client.b83f17ba.js"
+    "main": "client.2e3eddad.js"
   },
   "css": {
     "main": [
@@ -11,45 +11,45 @@
   },
   "dependencies": {
     "recipes/_featured_recipes.js": [
-      "index.f26f7b3c.js",
-      "item.a3661fc8.js",
+      "index.b353ee1a.js",
+      "item.b2f169f2.js",
       "inject_styles.5607aec6.js",
       "item-f24d2752.css",
       "index-1ce3394c.css"
     ],
     "index.svelte": [
-      "index.f26f7b3c.js",
-      "item.a3661fc8.js",
+      "index.b353ee1a.js",
+      "item.b2f169f2.js",
       "inject_styles.5607aec6.js",
       "item-f24d2752.css",
       "index-1ce3394c.css"
     ],
     "saved_items.svelte": [
-      "saved_items.60d841d0.js",
-      "item.a3661fc8.js",
-      "store.2340b62a.js",
+      "saved_items.5a4fcb14.js",
+      "item.b2f169f2.js",
+      "store.6b4adf1b.js",
       "inject_styles.5607aec6.js",
       "item-f24d2752.css",
       "saved_items-e471e6ec.css"
     ],
     "recipes/[slug].svelte": [
-      "[slug].24b9f9b7.js",
-      "store.2340b62a.js",
+      "[slug].896258e9.js",
+      "store.6b4adf1b.js",
       "inject_styles.5607aec6.js",
-      "[slug]-0ed2ebff.css"
+      "[slug]-87589b1e.css"
     ],
     "blog/index.svelte": [
-      "index.1c89ba07.js",
+      "index.8df81ccc.js",
       "inject_styles.5607aec6.js",
       "index-9d14055c.css"
     ],
     "blog/[slug].svelte": [
-      "[slug].b13a0626.js",
+      "[slug].1d2ccdff.js",
       "inject_styles.5607aec6.js",
       "[slug]-6c334b02.css"
     ]
   },
   "legacy_assets": {
-    "main": "client.f2ca24fa.js"
+    "main": "client.9eebf2ac.js"
   }
 }

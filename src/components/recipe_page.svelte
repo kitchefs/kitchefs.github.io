@@ -61,12 +61,15 @@
     .save-button {
         cursor: pointer;
     }
+    .custom-control-label:before {
+        background-color: inherit;
+    }
     .custom-checkbox .custom-control-input:checked~.custom-control-label::before {
         background-color: #ff3e00;
         border-color: #ff3e00;
     }
     .custom-checkbox .custom-control-input:focus~.custom-control-label::before{
-        box-shadow: 0 0 0 1px #fff, 0 0 0 0.2rem rgba(255, 64, 0, 0.2); 
+        box-shadow: 0 0 0 0.2rem rgba(255, 64, 0, 0.2); 
         border-color: #ff3e00;
     }
     .custom-control-input:active~.custom-control-label::before {
@@ -105,8 +108,8 @@
         <h5>Ingredients</h5>
         {#each ingredients as item}
             <div class="custom-control custom-checkbox">
-            <input type="checkbox" class="custom-control-input" id="checkbox-{item}">
-            <label class="custom-control-label" for="checkbox-{item}">{item}</label>
+            <input type="checkbox" class="custom-control-input" id="checkbox-{lowercase(item)}">
+            <label class="custom-control-label" for="checkbox-{lowercase(item)}">{item}</label>
           </div>
         {/each}
     </div>

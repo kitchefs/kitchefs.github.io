@@ -20,6 +20,10 @@ a {
 	color: inherit;
 }
 
+a:hover, a:active {
+	color: #ff3e00;
+}
+
 code {
 	font-family: menlo, inconsolata, monospace;
 	font-size: calc(1em - 2px);
@@ -34,3 +38,13 @@ code {
 		font-size: 16px;
 	}
 }
+
+@media (prefers-color-scheme: dark) {
+	body, .container, main, .row, .card {
+	  color: #eee;
+	  background: #17191b !important;
+	  border-color: #5e5e5e !important;
+	}
+  }
+  
+  
