@@ -1,0 +1,1 @@
+import{G as e}from"./client.f2ca24fa.js";var t=e([]);"undefined"!=typeof window&&(null===localStorage.getItem("kitchefs")&&localStorage.setItem("kitchefs",JSON.stringify([])),(t=e(JSON.parse(localStorage.getItem("kitchefs")))).subscribe((function(e){return localStorage.setItem("kitchefs",JSON.stringify(e))})));export{t as s};
