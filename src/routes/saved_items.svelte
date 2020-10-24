@@ -1,6 +1,4 @@
 <script context="module">
-    import Item         from "../components/item.svelte";
-
 	export function preload() {
 		return this.fetch(`recipes.json`).then(r => r.json()).then(recipes => {
 			return { recipes };
@@ -9,18 +7,10 @@
 </script>
 
 <script>
-    export let recipes;
-    
-	let saved_items = [];
+	import Item from "../components/item.svelte";
+	import {saved_items} from "../store.js";
 
-    if (typeof window !== "undefined") {
-        if (localStorage.hasOwnProperty("kitchefs_saved_items")) {
-            saved_items = localStorage.getItem("kitchefs_saved_items");
-            saved_items = JSON.parse(saved_items);
-        }
-    }
-
-    console.log(saved_items);
+	export let recipes;
 </script>
 
 <svelte:head>
@@ -33,11 +23,10 @@
 	}
 </style>
 
-<h1>Saved Items</h1>
-
 <div class="container">
+	<h1>Saved Items</h1>
     <div class="row">
-		{#each saved_items as saved_item}
+		{#each $saved_items as saved_item}
             {#each recipes as recipe}
 				{#if saved_item == recipe.slug}
 					<Item

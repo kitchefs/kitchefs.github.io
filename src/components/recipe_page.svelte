@@ -1,5 +1,6 @@
 <script>
-    import { onMount }  from 'svelte';
+    import {saved_items} from "../store.js";
+    import {onMount} from "svelte";
 
     export let name;
     export let image;
@@ -16,29 +17,19 @@
         return x;
     }
 
-    let saved = false;
-
-    let saved_items;
+    let saved = $saved_items.includes(lowercase(name));
 
     onMount(() => {
-        async () => {
-            saved_items = await localStorage.getItem("kitchefs_saved_item") === null ? [] : JSON.parse(localStorage.getItem("kitchefs_saved_item"));
+        document.getElementById("save-button").addEventListener("click", () => {
+            if ($saved_items.includes(lowercase(name))) {
+                $saved_items.splice($saved_items.indexOf(lowercase(name)), 1);
+                $saved_items = $saved_items;
+            } else {
+                $saved_items = [...$saved_items, lowercase(name)];
+            }
 
-            console.log(saved_items);
-
-            document.getElementById("save-button").addEventListener("click", () => {
-                saved = !saved;
-
-                if (saved) {
-                    saved_items.push(lowercase(name));
-                    localStorage.setItem("kitchefs_saved_items", JSON.stringify(saved_items));
-                } else {
-                    saved_items = saved_items.filter(e => e !== lowercase(name));
-                    localStorage.setItem("kitchefs_saved_items", JSON.stringify(saved_items));
-                }
-            }); 
-        } 
-        
+            saved = !saved;
+        })
     });
 </script>
 
@@ -64,6 +55,9 @@
     .badge-ff3e00 {
         background-color: #ff3e00 !important;
     }
+    .ff3e00 {
+        color: #ff3e00 !important;
+    }
     .save-button {
         cursor: pointer;
     }
@@ -78,7 +72,7 @@
         <div class="col p-4 d-flex flex-column position-static">
             <div class="d-flex justify-content-between row">
                 <h3 class="mb-0 pl-3">{name}</h3>
-                <h3 class="mb-0 pr-3 save-button" id="save-button"><span class="material-icons">{#if saved}favorite{:else}favorite_outline{/if}</span></h3>
+                <h3 class="mb-0 pr-3 save-button" id="save-button"><span class="material-icons {saved ? 'ff3e00' : undefined}">{#if saved}favorite{:else}favorite_outline{/if}</span></h3>
             </div>
             <hr />
             <div class="row">
