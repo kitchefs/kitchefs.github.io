@@ -1,0 +1,1 @@
+import{B as e}from"./client.2e3eddad.js";let t=e([]);"undefined"!=typeof window&&(null===localStorage.getItem("kitchefs")&&localStorage.setItem("kitchefs",JSON.stringify([])),t=e(JSON.parse(localStorage.getItem("kitchefs"))),t.subscribe((e=>localStorage.setItem("kitchefs",JSON.stringify(e)))));export{t as s};
