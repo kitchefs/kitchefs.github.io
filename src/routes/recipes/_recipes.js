@@ -10,7 +10,8 @@ const recipes = [
 		tips: [],
    		preparation_time: '30 Minutes',
    		cook_time: '45 Minutes',
-		total_time: '6 Hours, 15 Minutes',
+        total_time: '6 Hours, 15 Minutes',
+        serves: '20'
 	},
 	{
 		name: 'Anzac Biscuits',
@@ -23,7 +24,8 @@ const recipes = [
 		tips: [],
    		preparation_time: '20 Minutes',
    		cook_time: '20 Minutes',
-		total_time: '45 Hours,  Minutes',
+        total_time: '45 Hours,  Minutes',
+        serves: '20'
 	},
 	{
 		name: 'Hot Cross Buns',
@@ -36,7 +38,8 @@ const recipes = [
 		tips: ['You can use any citrus peel instead of Orange Peel'],
    		preparation_time: '30 Minutes',
    		cook_time: '25 Minutes',
-		total_time: '2 Hours, 55 Minutes',
+        total_time: '2 Hours, 55 Minutes',
+        serves: '8'
 	},
 	{
 		name: 'Guacamole',
@@ -49,7 +52,8 @@ const recipes = [
 		tips: [],
    		preparation_time: '5 Minutes',
    		cook_time: '0 Minutes',
-		total_time: '5 Minutes',
+        total_time: '5 Minutes',
+        serves: '8-10'
 	}
 ];
 

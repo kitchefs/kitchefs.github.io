@@ -30,13 +30,16 @@
 					element.style.display = "none";
 				}
 			});
-		});
+        });
+        
+        document.getElementById("search-form").addEventListener('submit', (e) => {
+            e.preventDefault();
+        });
     });
 </script>
 
 <style>
 	nav {
-		border-bottom: 1px solid rgba(255,62,0,0.1);
 		font-weight: 300;
 		padding: 0 1em;
 	}
@@ -108,14 +111,16 @@
 			<li class="col-md m-0 p-0"><a aria-current="{segment === undefined ? 'page' : undefined}" href=".">Home</a></li>
 			<li class="col-md m-0 p-0"><a aria-current="{segment === 'saved_items' ? 'page' : undefined}" href="saved_items">Saved</a></li>
 			<li class="col-md m-0 p-0"><a rel=prefetch aria-current="{segment === 'blog' ? 'page' : undefined}" href="blog">Blog</a></li>
-		</ul>
-		<form class="form-inline active-orange">
-			<input
-				class="form-control mr-sm-2"
-				type="text"
-				placeholder="Search"
-				aria-label="Search"
-				id="search-bar" />
-		</form>
+        </ul>
+        {#if segment === undefined || segment === 'saved_items'}
+            <form class="form-inline active-orange" id="search-form">
+                <input
+                    class="form-control mr-sm-2"
+                    type="text"
+                    placeholder="Search"
+                    aria-label="Search"
+                    id="search-bar" />
+            </form>
+        {/if}
 	</div>
 </nav>

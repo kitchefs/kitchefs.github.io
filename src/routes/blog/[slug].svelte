@@ -57,7 +57,7 @@
 </style>
 
 <svelte:head>
-	<title>{post.title}</title>
+	<title>Kitchefs | {post.title}</title>
 </svelte:head>
 
 <h1>{post.title}</h1>

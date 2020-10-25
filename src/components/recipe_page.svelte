@@ -10,6 +10,7 @@
     export let preparation_time;
     export let cook_time;
     export let total_time;
+    export let serves;
 
     function lowercase(x) {
         x = x.toLowerCase();
@@ -82,7 +83,7 @@
     <div
         class="row no-gutters border rounded overflow-hidden flex-md-row mb-4 position-relative">
         <div class="col-auto d-none d-lg-block">
-            <img src={image} width="150px" height="150px" alt={name} />
+            <img src={image} width="150px" height="100%" alt={name} />
         </div>
         <div class="col p-4 d-flex flex-column position-static">
             <div class="d-flex justify-content-between row">
@@ -91,15 +92,12 @@
             </div>
             <hr />
             <div class="row">
-                <span class="col badge badge-pill badge-secondary">Preparation
-                    Time:
-                    {preparation_time}</span>
-                <span
-                    class="col badge badge-pill badge-secondary">Cook
-                    Time:
-                    {cook_time}</span>
-                <span class="col badge badge-pill badge-primary badge-ff3e00">Total Time:
-                    {total_time}</span>
+                <span class="col badge badge-pill badge-secondary">Serves: {serves}</span>
+                <span class="col badge badge-pill badge-secondary">Preparation Time: {preparation_time}</span>
+                <span class="col badge badge-pill badge-secondary">Cook Time: {cook_time}</span>
+            </div>
+            <div class="row">
+                <span class="col badge badge-pill badge-primary badge-ff3e00">Total Time: {total_time}</span>
             </div>
         </div>
     </div>
