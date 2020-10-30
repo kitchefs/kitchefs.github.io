@@ -1,29 +1,22 @@
 <script>
 	import { onMount }  from 'svelte';
-
 	export let segment;
-
 	onMount(() => {
 		let query;
 		let all_items;
 		let item_name;
 		let category_name;
-
 		function test_equality(x, y) {
 			x = x.split(' ').join('');
 			y = y.split(' ').join('');
-
 			return (x.includes(y) || y.includes(x));
 		}
-
         document.getElementById("search-bar").addEventListener("keyup", () => {
 			query = document.getElementById("search-bar").value.toLowerCase();
 			all_items = document.querySelectorAll(".item");
-
 			all_items.forEach((element, index, array) => {
 				item_name = element.getAttribute("item-name").split('-').join(' ');
 				category_name = element.getAttribute("category-name").split('-').join(' ');
-
 				if (test_equality(query, item_name) || test_equality(query, category_name) || query === "") {
 					element.style.display = "block";
 				} else {

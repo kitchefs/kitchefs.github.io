@@ -2,7 +2,6 @@
 	import FeaturedItem     from "../components/featured_item.svelte";
     import Item             from "../components/item.svelte";
     import featured_recipes from './recipes/_featured_recipes.js';
-
 	export function preload() {
 		return this.fetch(`recipes.json`).then(r => r.json()).then(recipes => {
 			return { recipes };
