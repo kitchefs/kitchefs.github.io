@@ -58,7 +58,7 @@ const recipes = [
 	{
 		name: 'Banana Bread',
 		slug: 'banana-bread',
-		description: 'Great with Nachos or Corn Chips.',
+		description: 'A healthy afternoon snack for every occasion.',
 		category: 'Snack',
 		image: 'media/banana-bread.jpg',
 		ingredients: ['4 very ripe bananas','1/3 cup melted coconut oil , or olive oil','1/4 cup Greek yoghurt , or milk','1/4 cup honey , or maple syrup','2 eggs , beaten','1 tsp vanilla essence','1 tsp baking soda','Pinch of salt','1 3/4 cups wholewheat flour'],
