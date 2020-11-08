@@ -21,7 +21,15 @@
 					element.style.display = "block";
 				} else {
 					element.style.display = "none";
-				}
+                }
+
+                if (query != "" && segment === undefined) {
+                    document.getElementById("featured-recipes-title").style.display = "none";
+                    document.getElementById("featured-recipes-hr").style.display = "none";
+                } else {
+                    document.getElementById("featured-recipes-title").style.display = "block";
+                    document.getElementById("featured-recipes-hr").style.display = "block";
+                }
 			});
         });
         

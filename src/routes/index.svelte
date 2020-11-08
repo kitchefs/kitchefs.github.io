@@ -29,8 +29,8 @@
 </style>
 
 <div class="container">
-    <h1>Featured Recipes</h1>
-    <hr>
+    <h1 id="featured-recipes-title">Featured Recipes</h1>
+    <hr id="featured-recipes-hr">
     <div class="row">
         {#each featured_recipes as featured_recipe}
             {#each recipes as recipe}
