@@ -53,6 +53,41 @@ const recipes = [
 		'20'
 	),
 	new Recipe(
+		'Cinnamon Doughnuts',
+		'A doughnut flavoured to perfection with cinnamon.',
+		'Dessert',
+		[
+			'¾ Cup Milk, Lukewarm',
+			'3 Tsp Dried Yeast',
+			'2 Cups Plain Flour',
+			'2 Egg Yolks',
+			'25g Butter, Softened',
+			'Vegtable Oil, for deep-frying',
+			'1 Tsp Ground Cinnamon',
+			'½ Cup White Sugar'
+		],
+		[
+			'Mix together Milk, Yeast and 1 Tbs of white sugar in a small bowl and set aside for 10 minutes or until foamy.',
+			'In a seperate bowl mix together the remaining Sugar, Flour, Yolks and Butter.',
+			'Add in Yeast mixture and knead or use a dough hook attachment until dough is smooth (~4-5 minutes).',
+			'Place dough into a lightly greased bowl.',
+			'Cover with a damp cloth and set aside for 45 minutes or untill dough has doubled in size.',
+			'Turn on floured surface and knead for 5 minutes or until smooth.',
+			'Roll out the dough to 1cm thick and using an 8 cm circle cookie cutter cut the dough into even circles.',
+			'Using a 3cm cookie cutter cut a hole in the center of each circle.',
+			'Place on baking tray lined with baking paper and cover with cling wrap for 30 minutes.',
+			'For the cinnamon sugar stir the Cinnamon and Sugar in a small bowl until combined.',
+			'Half fill a small saucepan with oil and place on medium heat until temperature reaches 180°C.',
+			'Cook one at a time for 30 seccond on each side or until golden.',
+			'Use a teatowl to dry up extra oil and quickly drop into sugar mixture and flip over to coat both sides then place on tray or plate to serve.'
+		],
+		[],
+		'20 Minutes',
+		'30 Seconds',
+		'1 Hour, 35 Minutes',
+		'12'
+	),
+	new Recipe(
 		'Chocolate Caramel Slice',
 		'Awesome for a tasty dessert treat.',
 		'Dessert',
@@ -141,6 +176,36 @@ const recipes = [
 		'2 Hours, 55 Minutes',
 		'8'
 	),
+	new Recipe(
+		'Pavlova',
+		'There\'s no occasion a well-made pavlova can\'t improve',
+		'Dessert',
+		[
+			'4 Egg Whites',
+			'1 ¼ Cups Caster Sugar',
+			'1 Tsp White Vinegar',
+			'1 Tsp Cornflour',
+			'1 Tsp Vanilla Extract',
+			'350ml Whipping Cream and 2 Tbs Caster Sugar for Icing'
+		],
+		[
+			'Preheat Oven to 140°C.',
+			'Using a pencil, mark out the circumference of a dinner plate on baking papert.',
+			'Whisk egg whites with an eletric mixer until stiff peaks form, then whisk in caster sugar, 1 tbsp at a time, until the meringue looks glossy.',
+			'Wisk in vinegar, cornflour and vanilla.',
+			'Spread the meringue inside the circle, creating a crater by making the sides a little higher than the middle.',
+			'Bake for 1 hour, then turn off the heat and let the Pavlova cool completely inside the oven.',
+			'When Pavlova is cooled, whip together cream and sugar until fluffy and spead evenly.'
+		],
+		[
+			'Serve with fresh fruit for a sweet and sour experience'
+		],
+		'25 Minutes',
+		'1 Hour',
+		'1 Hour, 30 Minutes',
+		'8'
+
+	)
 ];
 
 export default recipes;
