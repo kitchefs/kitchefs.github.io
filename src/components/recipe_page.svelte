@@ -107,7 +107,7 @@
         {#each ingredients as item}
             <div class="custom-control custom-checkbox">
             <input type="checkbox" class="custom-control-input" id="checkbox-{lowercase(item)}">
-            <label class="custom-control-label" for="checkbox-{lowercase(item)}">{item}</label>
+            <label class="custom-control-label" for="checkbox-{lowercase(item)}">{@html item}</label>
           </div>
         {/each}
     </div>
@@ -118,7 +118,7 @@
         <h5>Method</h5>
         <ol>
             {#each steps as step}
-                <li>{step}</li>
+                <li>{@html step}</li>
             {/each}
         </ol>
     </div>
@@ -130,7 +130,7 @@
             <h5>Tips</h5>
             <ul>
                 {#each tips as tip}
-                    <li>{tip}</li>
+                    <li>{@html tip}</li>
                 {/each}
             </ul>
         </div>

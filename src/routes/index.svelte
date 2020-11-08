@@ -17,7 +17,20 @@
 	<title>Kitchefs</title>
 </svelte:head>
 
+<style>
+    hr {
+        border: 0;
+        clear: both;
+        display: block;
+        width: 96%;
+        background-color: rgba(0, 0, 0, 0.1);
+        height: 1px;
+    }
+</style>
+
 <div class="container">
+    <h1>Featured Recipes</h1>
+    <hr>
     <div class="row">
         {#each featured_recipes as featured_recipe}
             {#each recipes as recipe}
@@ -30,7 +43,11 @@
                         href={'recipes/' + recipe.slug} />
                 {/if}
             {/each}
-        {/each}
+        {/each}   
+    </div>
+    <h1>All Recipes</h1>
+    <hr>
+    <div class="row">
         {#each recipes as recipe}
             <Item
                 name={recipe.name}
@@ -39,6 +56,5 @@
                 description={recipe.description}
                 href={'recipes/' + recipe.slug} />
 		{/each}
-        
-	</div>
+    </div>
 </div>

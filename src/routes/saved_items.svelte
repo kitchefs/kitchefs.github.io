@@ -21,10 +21,19 @@
 	h1 {
 		font-family: "Playfair Display";
 	}
+	hr {
+        border: 0;
+        clear: both;
+        display: block;
+        width: 96%;
+        background-color: rgba(0, 0, 0, 0.1);
+        height: 1px;
+    }
 </style>
 
 <div class="container">
 	<h1>Saved Items</h1>
+	<hr>
     <div class="row">
 		{#each $saved_items as saved_item}
             {#each recipes as recipe}

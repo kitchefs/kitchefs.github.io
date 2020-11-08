@@ -104,7 +104,6 @@
 			<li class="col-md m-0 p-0"><a aria-current="{segment === undefined ? 'page' : undefined}" href=".">Home</a></li>
 			<li class="col-md m-0 p-0"><a aria-current="{segment === 'saved_items' ? 'page' : undefined}" href="saved_items">Saved</a></li>
             <li class="col-md m-0 p-0"><a rel=prefetch aria-current="{segment === 'blog' ? 'page' : undefined}" href="blog">Blog</a></li>
-            <li class="col-md m-0 p-0"><a href="https://mailchi.mp/5aaa86aeacdd/kitchefs-newsletter" target="_blank">Newsletter</a></li>
         </ul>
         {#if segment === undefined || segment === 'saved_items'}
             <form class="form-inline active-orange" id="search-form">

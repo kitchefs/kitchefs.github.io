@@ -18,20 +18,31 @@
 	h1 {
 		font-family: "Playfair Display";
 	}
+	hr {
+        border: 0;
+        clear: both;
+        display: block;
+        width: 96%;
+        background-color: rgba(0, 0, 0, 0.1);
+        height: 1px;
+    }
 </style>
 
 <svelte:head>
 	<title>Kitchefs | Blog</title>
 </svelte:head>
 
-<h1>Recent posts</h1>
+<div class="container">
+	<h1>Recent posts</h1>
+	<hr>
+	<ul>
+		{#each posts as post}
+			<!-- we're using the non-standard `rel=prefetch` attribute to
+					tell Sapper to load the data for the page as soon as
+					the user hovers over the link or taps it, instead of
+					waiting for the 'click' event -->
+			<li><a rel="prefetch" href="blog/{post.slug}">{post.title}</a></li>
+		{/each}
+	</ul>
+</div>
 
-<ul>
-	{#each posts as post}
-		<!-- we're using the non-standard `rel=prefetch` attribute to
-				tell Sapper to load the data for the page as soon as
-				the user hovers over the link or taps it, instead of
-				waiting for the 'click' event -->
-		<li><a rel="prefetch" href="blog/{post.slug}">{post.title}</a></li>
-	{/each}
-</ul>

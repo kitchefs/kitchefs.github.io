@@ -20,3 +20,9 @@
 <main>
 	<slot></slot>
 </main>
+
+<footer class="footer">
+	<div class="container">
+		<p style="text-align: center;"><a href="https://mailchi.mp/5aaa86aeacdd/kitchefs-newsletter">Subscribe to our Newsletter</a></p>
+	</div>
+</footer>
