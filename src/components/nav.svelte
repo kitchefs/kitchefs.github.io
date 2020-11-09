@@ -93,7 +93,7 @@
 	}
 </style>
 
-<nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top">
+<nav class="navbar navbar-expand-md navbar-dark bg-dark fixed-top hide-dl">
 	<a class="kitchefs-brand" href=".">Kitchefs</a>
 
 	<button

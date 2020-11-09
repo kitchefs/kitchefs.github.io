@@ -30,7 +30,14 @@
             }
 
             saved = !saved;
-        })
+        });
+
+        document.getElementById("dl-button").addEventListener("click", () => {
+            console.log("Yessum");
+            fetch("https://v2.convertapi.com/convert/web/to/pdf?Secret=TFb5PICUO2XoiL4O&StoreFile=true&HideElements=.hide-dl&FixedElements=hide&PageSize=a4&MarginTop=0&MarginRight=0&MarginBottom=0&MarginLeft=0&Url=https%3A%2F%2Fkitchefs.github.io%2Frecipes%2F" + lowercase(name))
+            .then(response => response.json())
+            .then(data => window.open(data.Files[0].Url));
+        });
     });
 </script>
 
@@ -61,6 +68,10 @@
     }
     .save-button {
         cursor: pointer;
+        margin-right: 10px;
+    }
+    .dl-button {
+        cursor: pointer;
     }
     .custom-control-label:before {
         background-color: inherit;
@@ -88,7 +99,11 @@
         <div class="col p-4 d-flex flex-column position-static">
             <div class="d-flex justify-content-between row">
                 <h3 class="mb-0 pl-3">{name}</h3>
-                <h3 class="mb-0 pr-3 save-button" id="save-button"><span class="material-icons {saved ? 'ff3e00' : undefined}">{#if saved}favorite{:else}favorite_outline{/if}</span></h3>
+                <div class="d-flex justify-content-between row">
+                    <h3 class="mb-0 pr-3 dl-button hide-dl" id="dl-button"><span class="material-icons">get_app</span></h3>
+                    <h3 class="mb-0 pr-3 save-button hide-dl" id="save-button"><span class="material-icons {saved ? 'ff3e00' : undefined}">{#if saved}favorite{:else}favorite_outline{/if}</span></h3>
+                </div>
+                
             </div>
             <hr />
             <div class="row">
