@@ -51,7 +51,37 @@ const recipes = [
 		'20 Minutes',
 		'45 Minutes',
 		'20'
-	),
+    ),
+    new Recipe(
+        'Banana Bread',
+		'A healthy afternoon snack for every occasion.',
+		'Snack',
+		[
+            '4 very ripe bananas',
+            '1/3 cup melted coconut oil , or olive oil',
+            '1/4 cup Greek yoghurt , or milk',
+            '1/4 cup honey , or maple syrup',
+            '2 eggs , beaten','1 tsp vanilla essence',
+            '1 tsp baking soda',
+            'Pinch of salt',
+            '1 3/4 cups wholewheat flour'
+        ],
+		[
+            'Preheat oven to 180°C, grease and lightly flour a loaf tin.',
+            'In a large mixing bowl, mash the bananas well with a fork, stir in the melted coconut oil and Greek yoghurt. Now stir in the honey, eggs, vanilla essence, baking soda and salt.',
+            'Gently stir in the flour until just combined, don’t over mix. Pour the batter into the loaf tin and level out by gently shaking the tin.',
+            'Bake in the centre of the oven for 40 to 45 minutes or until a toothpick inserted into the middle of the loaf comes out free of batter.',
+            'Remove from the oven and allow to cool completely in the loaf tin, on a wire rack. Turn the bread out onto the wire rack and allow the bottom of the loaf to cool before slicing.',
+            'Enjoy!'
+        ],   
+		[
+            'For the best experience, serve with tea or coffee.'
+        ],
+   		'10 Minutes',
+   		'40 Minutes',
+        '50 Minutes',
+        '10'
+    ),
 	new Recipe(
 		'Cinnamon Doughnuts',
 		'A doughnut flavoured to perfection with cinnamon.',
