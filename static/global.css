@@ -59,8 +59,8 @@ hr {
     clear: both !important;
     display: block;
     width: 96% !important;
-    background-color: #2a2a2a !important;
     height: 1px !important;
+    background-color: rgba(0, 0, 0, 0.1);
 }
 
 @media (min-width: 400px) {
@@ -75,6 +75,9 @@ hr {
 	  background: #17191b !important;
 	  border-color: #2a2a2a !important;
 	}
+    hr {
+        background-color: #2a2a2a !important;
+    }
 }
   
   
