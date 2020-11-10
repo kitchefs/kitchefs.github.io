@@ -54,6 +54,15 @@ code {
 	margin-bottom: 0 !important;
 }
 
+hr {
+    border: 0 !important;
+    clear: both !important;
+    display: block;
+    width: 96% !important;
+    background-color: #2a2a2a !important;
+    height: 1px !important;
+}
+
 @media (min-width: 400px) {
 	body {
 		font-size: 16px;
@@ -64,7 +73,7 @@ code {
 	body, .container, main, .row, .card {
 	  color: #eee;
 	  background: #17191b !important;
-	  border-color: #5e5e5e !important;
+	  border-color: #2a2a2a !important;
 	}
 }
   
