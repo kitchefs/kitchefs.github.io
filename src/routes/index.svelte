@@ -17,17 +17,6 @@
 	<title>Kitchefs</title>
 </svelte:head>
 
-<style>
-    hr {
-        border: 0;
-        clear: both;
-        display: block;
-        width: 96%;
-        background-color: rgba(0, 0, 0, 0.1);
-        height: 1px;
-    }
-</style>
-
 <div class="container">
     <h1 id="featured-recipes-title">Featured Recipes</h1>
     <hr id="featured-recipes-hr">

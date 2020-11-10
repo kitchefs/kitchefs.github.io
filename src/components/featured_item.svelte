@@ -23,14 +23,6 @@
         font-family: "Playfair Display";
         font-size: 150%;
     }
-    hr {
-        border: 0;
-        clear: both;
-        display: block;
-        width: 96%;
-        background-color: rgba(0, 0, 0, 0.1);
-        height: 1px;
-    }
     a {
         text-decoration: none;
         color: inherit;

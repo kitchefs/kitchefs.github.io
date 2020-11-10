@@ -31,13 +31,6 @@
 
             saved = !saved;
         });
-
-        document.getElementById("dl-button").addEventListener("click", () => {
-            console.log("Yessum");
-            fetch("https://v2.convertapi.com/convert/web/to/pdf?Secret=TFb5PICUO2XoiL4O&StoreFile=true&HideElements=.hide-dl&FixedElements=hide&PageSize=a4&MarginTop=0&MarginRight=0&MarginBottom=0&MarginLeft=0&Url=https%3A%2F%2Fkitchefs.github.io%2Frecipes%2F" + lowercase(name))
-            .then(response => response.json())
-            .then(data => window.open(data.Files[0].Url));
-        });
     });
 </script>
 
@@ -48,14 +41,6 @@
     h3, h5 {
         font-family: "Playfair Display";
         font-size: 140%;
-    }
-    hr {
-        border: 0;
-        clear: both;
-        display: block;
-        width: 96%;
-        background-color: rgba(0, 0, 0, 0.1);
-        height: 1px;
     }
     .badge {
         margin: 5px;
@@ -70,8 +55,16 @@
         cursor: pointer;
         margin-right: 10px;
     }
+    .save-button:hover {
+        color: #ff3e00 !important;
+    }
     .dl-button {
         cursor: pointer;
+        margin-left: 10px;
+    }
+    .dl-button, .save-button {
+        padding-right: 0.5rem !important;
+        padding-left: 0.5rem !important;
     }
     .custom-control-label:before {
         background-color: inherit;
@@ -97,10 +90,11 @@
             <img src={image} width="150px" height="100%" alt={name} />
         </div>
         <div class="col p-4 d-flex flex-column position-static">
-            <div class="d-flex justify-content-between row">
+            <div class="d-flex justify-content-md-between justify-content-center text-md-left text-center flex-md-row flex-column row">
                 <h3 class="mb-0 pl-3">{name}</h3>
-                <div class="d-flex justify-content-between row">
-                    <h3 class="mb-0 pr-3 dl-button hide-dl" id="dl-button"><span class="material-icons">get_app</span></h3>
+                <hr class="d-md-none">
+                <div class="d-flex justify-content-md-between justify-content-center row">
+                    <h3 class="mb-0 pr-3 dl-button hide-dl" id="dl-button"><a href="../pdf/{lowercase(name)}.pdf"><span class="material-icons">get_app</span></a></h3>
                     <h3 class="mb-0 pr-3 save-button hide-dl" id="save-button"><span class="material-icons {saved ? 'ff3e00' : undefined}">{#if saved}favorite{:else}favorite_outline{/if}</span></h3>
                 </div>
                 

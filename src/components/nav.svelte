@@ -5,37 +5,41 @@
 		let query;
 		let all_items;
 		let item_name;
-		let category_name;
+        let category_name;
+
 		function test_equality(x, y) {
 			x = x.split(' ').join('');
 			y = y.split(' ').join('');
 			return (x.includes(y) || y.includes(x));
-		}
-        document.getElementById("search-bar").addEventListener("keyup", () => {
-			query = document.getElementById("search-bar").value.toLowerCase();
-			all_items = document.querySelectorAll(".item");
-			all_items.forEach((element, index, array) => {
-				item_name = element.getAttribute("item-name").split('-').join(' ');
-				category_name = element.getAttribute("category-name").split('-').join(' ');
-				if (test_equality(query, item_name) || test_equality(query, category_name) || query === "") {
-					element.style.display = "block";
-				} else {
-					element.style.display = "none";
-                }
-
-                if (query != "" && segment === undefined) {
-                    document.getElementById("featured-recipes-title").style.display = "none";
-                    document.getElementById("featured-recipes-hr").style.display = "none";
-                } else {
-                    document.getElementById("featured-recipes-title").style.display = "block";
-                    document.getElementById("featured-recipes-hr").style.display = "block";
-                }
-			});
-        });
+        }
         
-        document.getElementById("search-form").addEventListener('submit', (e) => {
-            e.preventDefault();
-        });
+        if (segment === undefined || segment === 'saved_items') {
+            document.getElementById("search-bar").addEventListener("keyup", () => {
+                query = document.getElementById("search-bar").value.toLowerCase();
+                all_items = document.querySelectorAll(".item");
+                all_items.forEach((element, index, array) => {
+                    item_name = element.getAttribute("item-name").split('-').join(' ');
+                    category_name = element.getAttribute("category-name").split('-').join(' ');
+                    if (test_equality(query, item_name) || test_equality(query, category_name) || query === "") {
+                        element.style.display = "block";
+                    } else {
+                        element.style.display = "none";
+                    }
+
+                    if (query != "" && segment === undefined) {
+                        document.getElementById("featured-recipes-title").style.display = "none";
+                        document.getElementById("featured-recipes-hr").style.display = "none";
+                    } else {
+                        document.getElementById("featured-recipes-title").style.display = "block";
+                        document.getElementById("featured-recipes-hr").style.display = "block";
+                    }
+                });
+            });
+            
+            document.getElementById("search-form").addEventListener('submit', (e) => {
+                e.preventDefault();
+            });
+        }
     });
 </script>
 
