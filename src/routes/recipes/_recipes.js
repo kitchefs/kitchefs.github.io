@@ -37,15 +37,14 @@ const recipes = [
 			'2 Tbs Bolling Water'
 		],
 		[
-			'1 Cup Coconut', 
-			'1 Cup Plan Flour', 
-			'1 Cup Caster Sugar', 
-			'1 Cup Rolled Oats', 
-			'125g Butter', 
-			'2 Tbs Golden Syrup', 
-			'2 Tsp Bicarbonate Soda', 
-			'2 Tbs Bolling Water'
-		],
+            'Line baking tray, preheat oven to 160°C.',
+            'In a large bowl, combine Coconut, Flour, Suga and oats. Make a well in the center.',
+            'In a medium sauspan over medium heat, mix Butter and Golden Syrup until Butter is melted.',
+            'Add Bicarbonate Soda and Water to Butter and pour into well.',
+            'Mix until well combined.',
+            'Roll into 20 equaly sized balls.',
+            'Cook for 18-20 minutes, Leave to cool.'
+        ],
 		[],
 		'20 Minutes',
 		'20 Minutes',
