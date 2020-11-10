@@ -26,12 +26,14 @@
                         element.style.display = "none";
                     }
 
-                    if (query != "" && segment === undefined) {
-                        document.getElementById("featured-recipes-title").style.display = "none";
-                        document.getElementById("featured-recipes-hr").style.display = "none";
-                    } else {
-                        document.getElementById("featured-recipes-title").style.display = "block";
-                        document.getElementById("featured-recipes-hr").style.display = "block";
+                    if (segment === undefined) {
+                        if (query != "") {
+                            document.getElementById("featured-recipes-title").style.display = "none";
+                            document.getElementById("featured-recipes-hr").style.display = "none";
+                        } else {
+                            document.getElementById("featured-recipes-title").style.display = "block";
+                            document.getElementById("featured-recipes-hr").style.display = "block";
+                        }
                     }
                 });
             });
@@ -82,11 +84,11 @@
         padding-left: 0.4em !important;
         padding-right: 0.6em !important;
 	}
-	.active-orange input.form-control[type=text]:focus:not([readonly]) {
+	.active-orange input[type=text]:focus:not([readonly]) {
 		border-bottom: 1px solid #ff3e00;
 		box-shadow: 0 1px 0 0 #ff3e00;
 	}
-	.active-orange input.form-control[type=text] {
+	.active-orange input[type=text] {
 		border-bottom: 1px solid #6c757d;
 		box-shadow: 0 1px 0 0 #6c757d;
 		border-radius: 0;
@@ -94,6 +96,7 @@
 		border: 0;
 		outline: 0;
 		color: #fff;
+        padding: 5px;
 	}
 </style>
 
@@ -120,7 +123,7 @@
         {#if segment === undefined || segment === 'saved_items'}
             <form class="form-inline active-orange" id="search-form">
                 <input
-                    class="form-control mr-sm-2"
+                    class="mr-sm-2"
                     type="text"
                     placeholder="Search"
                     aria-label="Search"
