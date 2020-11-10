@@ -92,7 +92,7 @@
         <div class="col p-4 d-flex flex-column position-static">
             <div class="d-flex justify-content-md-between justify-content-center text-md-left text-center flex-md-row flex-column row">
                 <h3 class="mb-0 pl-3">{name}</h3>
-                <hr class="d-md-none">
+                <hr class="d-md-none hide-dl">
                 <div class="d-flex justify-content-md-between justify-content-center row">
                     <h3 class="mb-0 pr-3 dl-button hide-dl" id="dl-button"><a href="../pdf/{lowercase(name)}.pdf"><span class="material-icons">get_app</span></a></h3>
                     <h3 class="mb-0 pr-3 save-button hide-dl" id="save-button"><span class="material-icons {saved ? 'ff3e00' : undefined}">{#if saved}favorite{:else}favorite_outline{/if}</span></h3>
