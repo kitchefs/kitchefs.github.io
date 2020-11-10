@@ -62,7 +62,7 @@
         cursor: pointer;
         margin-left: 10px;
     }
-    .dl-button, .save-button {
+    .dl-button, .save-button, .item_name {
         padding-right: 0.5rem !important;
         padding-left: 0.5rem !important;
     }
@@ -91,7 +91,7 @@
         </div>
         <div class="col p-4 d-flex flex-column position-static">
             <div class="d-flex justify-content-md-between justify-content-center text-md-left text-center flex-md-row flex-column row">
-                <h3 class="mb-0 pl-3">{name}</h3>
+                <h3 class="mb-0 pl-3 item-name">{name}</h3>
                 <hr class="d-md-none hide-dl">
                 <div class="d-flex justify-content-md-between justify-content-center row">
                     <h3 class="mb-0 pr-3 dl-button hide-dl" id="dl-button"><a href="../pdf/{lowercase(name)}.pdf"><span class="material-icons">get_app</span></a></h3>
