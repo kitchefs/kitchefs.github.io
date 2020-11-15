@@ -147,6 +147,34 @@ const recipes = [
 		'20'
 	),
 	new Recipe(
+		'Dark Choc Brownies',
+		'Perfect for any occasion, these brownies will take your breath away.',
+		'Dessert',
+		[
+			'1 cup Butter, Softened',
+			'3½ cup Brown Sugar', 
+			'4 Eggs', 
+			'1½ cup Cocoa Powder', 
+			'½ tsp Salt',
+			'1 tsp Baking Powder',
+			'1 dash Vabilla Essence'
+		],
+		[
+			'Line a 20cm x 10cm tray, preheat oven to 175°C.',
+			'Add the Butter, Sugar, Eggs and Vanilla Essence into a bowl, then Beat',
+			'Add the Flour, Cocoa Powder, Salt and Baking Powder, then Mix',
+			'Pour into tray. Bake for 35 Minutes. Leave to cool'
+		],
+		[
+			'For an Extra-dark flavour, serve with crused Lindt Excellence 95% Cocoa Ultimate Dark',
+			'Serve with Berries and Cream for a Freshened flavour'
+		],
+		'20 Minutes',
+		'35 Minutes',
+		'1 Hour',
+		'24'
+	),
+	new Recipe(
 		'Guacamole',
 		'Great with Nachos or Corn Chips.',
 		'Sides/Dips',
