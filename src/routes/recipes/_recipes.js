@@ -151,13 +151,14 @@ const recipes = [
 		'Perfect for any occasion, these brownies will take your breath away.',
 		'Dessert',
 		[
-			'1 cup Butter, Softened',
+			'250g Butter, Softened',
 			'3½ cup Brown Sugar', 
 			'4 Eggs', 
-			'1½ cup Cocoa Powder', 
+            '1½ cup Cocoa Powder', 
+            '1½ cup All Purpose Flour',
 			'½ tsp Salt',
 			'1 tsp Baking Powder',
-			'1 dash Vabilla Essence'
+			'1 dash Vanilla Essence'
 		],
 		[
 			'Line a 20cm x 10cm tray, preheat oven to 175°C.',
@@ -166,8 +167,8 @@ const recipes = [
 			'Pour into tray. Bake for 35 Minutes. Leave to cool'
 		],
 		[
-			'For an Extra-dark flavour, serve with crused Lindt Excellence 95% Cocoa Ultimate Dark',
-			'Serve with Berries and Cream for a Freshened flavour'
+			'For an Extra-dark flavour, serve with crushed Lindt Excellence 95% Cocoa Ultimate Dark',
+			'Serve with Berries and Cream for a Fresh flavour'
 		],
 		'20 Minutes',
 		'35 Minutes',
