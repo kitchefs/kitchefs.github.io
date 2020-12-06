@@ -235,6 +235,35 @@ const recipes = [
 		'8'
 	),
 	new Recipe(
+		'Meringue',
+		'Chewy desert merinuge for a festive desert.',
+		'Festive',
+		[
+			'6 egg whites', 
+			'1 cups caster sugar', 
+			'1 tsp cornflour', 
+			'1 tsp white vinegar', 
+			'50g dark cooking chocolate, melted'
+		],
+		[
+			'Line baking tray with baking paper, preheat oven to 150°C', 
+			'Wisk egg whtes with eletric mixer until mixture holds.', 
+			'Wisk in sugar 1 tbsp at a time for about 5-10 minutes.', 
+			'Combine cornflour and vinegar in a seperate bowl then combine with egg mitxure.', 
+			'Divide mixture into 18 and spoon onto baking tray 3cm apart.*', 
+			'Twirl 1/2 tsp chocolate into each meringue.', 
+			'Decrease oven temperature to 120°C and bake for 35-40 minutes.*', 
+			'Turn off oven and do not open until completly cooled'
+		],
+		[
+			'You can turn this into a pavlova by placing mixture in a large circle and baking for 1 hour.'
+		],
+		'15 Minutes',
+		'40 Minutes',
+		'1 Hour, 15 Minutes',
+		'18'
+	),
+	new Recipe(
 		'Pavlova',
 		'There\'s no occasion a well-made pavlova can\'t improve',
 		'Dessert',
