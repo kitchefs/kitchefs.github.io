@@ -152,10 +152,10 @@ const recipes = [
 		'Dessert',
 		[
 			'250g Butter, Softened',
-			'3½ cup Brown Sugar', 
+			'3 ½ cup Brown Sugar', 
 			'4 Eggs', 
-            '1½ cup Cocoa Powder', 
-            '1½ cup All Purpose Flour',
+            '1 ½ cup Cocoa Powder', 
+            '1 ½ cup All Purpose Flour',
 			'½ tsp Salt',
 			'1 tsp Baking Powder',
 			'1 dash Vanilla Essence'
@@ -174,6 +174,43 @@ const recipes = [
 		'35 Minutes',
 		'1 Hour',
 		'24'
+	),
+	new Recipe(
+		'Gingerbread House',
+		'Enjoy this with your family for a christmas treat.',
+		'Festive',
+		[
+			'125g butter, softened', 
+			'½ cup brown sugar', 
+			'½ cup golden sugar', 
+			'1 egg', 
+			'3 cups plain flour', 
+			'3 tsp ground ginger*',
+			'1 tsp ground cinnamon',
+			'½ tsp baking powder',
+			'½ tsp bicarbonate of soda',
+			'2 ½ cups icing sugar',
+			'2 egg whites',
+			'¼ tsp lemon juice',
+			'assorted lollies'
+		],
+		[
+			'Line 2 baking trays with baking paper, preheat oven to 175°C.',
+			'Beat butter and sugar until pale.', 
+			'Beat in golden syrup and egg until combined.',
+			'Bring dough together with your hands and cover with cling wrap.',
+			'Refrigerate dough for 2 hours.',
+			'Roll dough flat and cut 4 rectangles (roof and wall) and 2 pentagons (front Wall).*',
+			'Bake for 12 minutes or until golden, leave to cool.',
+			'To make the icing beat egg whites until foamy then mix in lemon juice.',
+			'Beat in the icing sugar 1 tsp at a time until you get your prefered consistancy (This is called Royal Icing).',
+			'Put house together with icing and stick on any lollies you like!**'
+		],
+		['Adjust ginger to taste', '*If you wish to take the easy path you can make a A-Frame with 2 triangles and 2 rectangles.', '*Cut any other parts you wish like doors and windows at this point.', '**Be Creative!'],
+		'20 Minutes',
+		'12 Minutes',
+		'40 Minutes',
+		'12'
 	),
 	new Recipe(
 		'Guacamole',
@@ -240,8 +277,8 @@ const recipes = [
 		'Festive',
 		[
 			'6 egg whites', 
-			'1 cups caster sugar', 
-			'1 tsp cornflour', 
+			'1 ½ cups caster sugar', 
+			'1 ½ tsp cornflour', 
 			'1 tsp white vinegar', 
 			'50g dark cooking chocolate, melted'
 		],
@@ -276,7 +313,7 @@ const recipes = [
 			'350ml Whipping Cream and 2 Tbs Caster Sugar for Icing'
 		],
 		[
-			'Preheat Oven to 140°C.',
+			'Line 2 baking trays with baking paper, preheat oven to 140°C.',
 			'Using a pencil, mark out the circumference of a dinner plate on baking papert.',
 			'Whisk egg whites with an eletric mixer until stiff peaks form, then whisk in caster sugar, 1 tbsp at a time, until the meringue looks glossy.',
 			'Wisk in vinegar, cornflour and vanilla.',
