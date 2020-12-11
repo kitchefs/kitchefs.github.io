@@ -2,11 +2,15 @@
 
 ***
 
-A new and improved Kitchefs website written in Svelte and Sapper.
+A new and improved Kitchefs website written in Svelte with Sapper.
 
 ## About
 
 Kitchefs is a free online cookbook with human verified recipes and no ads. Kitchefs will always remain free.
+
+## Contributing
+
+See [CONTRIBUTING.md](CONTRIBUTING.md)
 
 ## Screenshots
 
@@ -18,14 +22,14 @@ Kitchefs is a free online cookbook with human verified recipes and no ads. Kitch
 
 <img src="https://i.ibb.co/yWH0DT5/image.png" alt="light-theme">
 
-## Development
+## Usage
 
 ### Building for Development
 
 Run this on your local machine to test new code.
 
 ```
-git clone https://github.com/Kitchefs/beta.git
+git clone https://github.com/kitchefs/kitchefs.github.io.git
 cd beta
 npm install
 npm run dev
@@ -36,7 +40,7 @@ npm run dev
 Make sure you run this before you `git push`, exports the Svelte to HTML.
 
 ```
-git clone https://github.com/Kitchefs/beta.git
+git clone https://github.com/kitchefs/kitchefs.github.io.git
 cd beta
 npm install
 npm run export
@@ -46,7 +50,7 @@ npm run export
 
 Edit the `./src/routes/recipes/_recipes.js` file and add the required information.
 
-### Changing Features Recipes
+### Changing Featured Recipes
 
 Edit the `./src/routes/recipes/_featured_recipes.js` file and add the required information.
 
